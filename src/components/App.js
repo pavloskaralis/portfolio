@@ -12,7 +12,6 @@ import portfolio4 from '../backgrounds/portfolio4.png'
 
 
 function App({}){
-
   const Wrapper = styled.div`
     width: 100vw;
     height: calc(700vh - 96px);
@@ -21,6 +20,7 @@ function App({}){
     display: flex;
     flex-direction: column; 
     justify-content: space-between;
+
     @media (max-width: 1200px) {
       height: 4128px;
       padding: 0; 
@@ -45,10 +45,10 @@ function App({}){
       <ThemeProvider theme={theme}>
         <Cover/>
         <About/>
-        <Portfolio backgroundImage={portfolio1} project='One' title='Traveler'/>
-        <Portfolio backgroundImage={portfolio2} project='Two' title='Go Fish'/>
-        <Portfolio backgroundImage={portfolio3} project='Three' title='Appstractor'/>
-        <Portfolio backgroundImage={portfolio4} project='Four' title='Foodie'/>
+        <Portfolio backgroundImage={portfolio1} project='One' title='Traveler' href='https://traveler-planning-app.herokuapp.com/' />
+        <Portfolio backgroundImage={portfolio2} project='Two' title='Go Fish' href='https://pavloskaralis.github.io/go-fish/' />
+        <Portfolio backgroundImage={portfolio3} project='Three' title='Appstractor' href='http://appstractor.herokuapp.com/' />
+        <Portfolio backgroundImage={portfolio4} project='Four' title='Foodie' href='https://foodie-list-app.herokuapp.com/' />
         <Technologies/>
       </ThemeProvider>
     </Wrapper>
