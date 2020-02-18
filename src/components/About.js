@@ -29,13 +29,6 @@ function About({}){
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding-right: 64px;
-    @media (max-width: 1200px) {
-      padding-right: 32px;
-    }
-    @media (max-width: 992px) {
-      padding-right: 0px;
-    }
   `;
 
     const Title = styled.div`
@@ -80,22 +73,38 @@ function About({}){
     `;
 
       const Icon = styled.div`
-        margin: 0 8px;
+        margin: 5px 8px;
         cursor: pointer;
         width: 50px;
         height: 50px;
+        transition: .5s;
         background-position: center;
         background-size: cover;
         background-image: url(${props => props.image});
+
+        &:hover {
+          width: 60px;
+          height: 60px;
+          margin: 0px 8px;
+        }
       `;
 
   const SideB = styled.div`
     background-image: url(${about});
     margin-right: auto;
+    margin-left: 64px;
     min-width: 468px;
     height: 699px;
     background-size: cover;
     background-position: top;
+    @media (max-width: 1200px) {
+      margin-left: 32px;
+    }
+    @media (max-width: 992px) {
+      margin-left: 0px;
+    }    
+
+
     @media (max-width: 1200px) {
       min-width: 342px;
       height: 512px;
@@ -124,7 +133,7 @@ function About({}){
           <a target="_blank" href='https://www.linkedin.com/in/pavlos-karalis/'>
             <Icon image={linkedin}/>
           </a>
-          <a>
+          <a target="_blank" href='mailto:pavloskaralis@gmail.com'>
             <Icon image={gmail}/>
           </a>
         </IconWrap>

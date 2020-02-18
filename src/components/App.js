@@ -12,9 +12,11 @@ import portfolio4 from '../images/portfolio4.png'
 
 
 function App({}){
+  const minHeight = window.innerHeight + 96; 
   const Wrapper = styled.div`
     width: 100vw;
     height: calc(700vh - 96px);
+    min-height: ${minHeight}px;
     padding: 16px;
     box-sizing: border-box; 
     display: flex;
