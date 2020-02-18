@@ -17,125 +17,135 @@ import sass from '../images/sass.png'
 import bootstrap from '../images/bootstrap.png'
 import chart from '../images/chart.png'
 
-function Technologies({}){
+const Wrapper = styled(Section)`
+  background-color: rgba(240,240,240);
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  padding: 64px;
+  @media (max-width: 1200px) {
+    padding: 32px; 
+  }
+  @media (max-width: 576px) {
+    justify-content: space-evenly; 
+  }
+`;
 
-  const Technologies = styled(Section)`
-    background-color: rgba(240,240,240);
-    width: 100%;
-    max-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-bottom: 0px;
-  `;
-
-  const Title = styled.div`
+const Title = styled.div`
   // background: red;
-  font-family: 'Merriweather', serif;
+  font-family: Palatino;
   font-size: 14px;
   font-weight: 600;
+  max-height: 100%;
   text-transform: uppercase;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
 `;
 
-  const IconWrap = styled.div`
-    background-color: rgba(0,0,0,.2);
-    height: 621px;
-    width: 932px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; 
-    box-sizing: border-box;
-    margin: 0 auto;
-    @media (max-width: 1200px) {
-      height: 466px;
-      width: 699px;
-    }
-    @media (max-width: 992px) {
-      height: 404px;
-      width: 606px;
-    }
-    @media (max-width: 768px) {
-      height: 340px;
-      width: 510px;
-    }
-    @media (max-width: 576px) {
-      height: 240px;
-      width: 360px;
-    }
-  `;
+const IconWrap = styled.div`
+  background-color: rgba(0,0,0,.2);
+  min-height: 678px;
+  width: 1017px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  box-sizing: border-box;
+  margin: 0 auto;
+  @media (max-width: 1200px) {
+    min-height: 466px;
+    width: 699px;
+  }
+  @media (max-width: 992px) {
+    min-height: 356px;
+    width: 534px;
+  }
+  @media (max-width: 768px) {
+    min-height: 340px;
+    width: 510px;
+  }
+  @media (max-width: 576px) {
+    min-height: 240px;
+    width: 360px;
+  }
+`;
 
-  const Overlay = styled.div`
-    border: 2px solid rgb(240,240,240);
-    position: absolute;
-    height: 621px;
-    width: 932px;
-    box-sizing: border-box;
-    pointer-events: none;
-    @media (max-width: 1200px) {
-      height: 466px;
-      width: 699px;
-    }
-    @media (max-width: 992px) {
-      height: 404px;
-      width: 606px;
-    }
-    @media (max-width: 768px) {
-      height: 340px;
-      width: 510px;
-    }
-    @media (max-width: 576px) {
-      height: 240px;
-      width: 360px;
-    }
-  `;
+const Overlay = styled.div`
+  border: 2px solid rgb(240,240,240);
+  position: absolute;
+  height: 678px;
+  width: 1017px;
+  box-sizing: border-box;
+  pointer-events: none;
+  @media (max-width: 1200px) {
+    height: 466px;
+    width: 699px;
+  }
+  @media (max-width: 992px) {
+    height: 356px;
+    width: 534px;
+  }
+  @media (max-width: 768px) {
+    height: 340px;
+    width: 510px;
+  }
+  @media (max-width: 576px) {
+    height: 240px;
+    width: 360px;
+  }
+`;
 
-  const Icon = styled.div`
-    background-image: url(${props => props.image});
-    background-position: center;
-    background-size: 70%; 
-    background-repeat: no-repeat;
-    width: calc(20%);
-    background-color: rgb(240,240,240);
-    box-sizing: border-box; 
-    border: 1px rgba(0,0,0,.1) solid;
-    transition: .5s;
-    cursor: pointer;
+const Icon = styled.a`
+  background-image: url(${props => props.image});
+  background-position: center;
+  background-size: 70%; 
+  background-repeat: no-repeat;
+  width: calc(20%);
+  background-color: rgb(240,240,240);
+  box-sizing: border-box; 
+  border: 1px rgba(0,0,0,.1) solid;
+  transition: .5s;
+  cursor: pointer;
 
-    &:hover {
-      background-size: 80%;
-    }
-  `;
+  &:hover {
+    background-size: 80%;
+  }
+`;
+
+function Technologies(){
+
+ 
 
   return (
-    <Technologies>
+    <Wrapper>
       <Title>Technologies</Title>
       <IconWrap>
         <Overlay/>
-        <Icon image={react}/>
-        <Icon image={redux}/>
-        <Icon image={style}/>
-        <Icon image={express}/>
-        <Icon image={rails}/>
+        <Icon rel="noopener noreferrer" href="https://reactjs.org/" target="__blank" image={react}/>
+        <Icon rel="noopener noreferrer" href="https://redux.js.org/" target="__blank" image={redux}/>
+        <Icon rel="noopener noreferrer" href="https://styled-components.com/" target="__blank" image={style}/>
+        <Icon rel="noopener noreferrer" href="https://expressjs.com/" target="__blank" image={express}/>
+        <Icon rel="noopener noreferrer" href="https://rubyonrails.org/" target="__blank" image={rails}/>
 
-        <Icon image={jquery}/>
-        <Icon image={sass}/>
-        <Icon image={axios}/>
-        <Icon image={mongodb}/>
-        <Icon image={postgresql}/>
+        <Icon rel="noopener noreferrer" href="https://jquery.com/" target="__blank" image={jquery}/>
+        <Icon rel="noopener noreferrer" href="https://sass-lang.com/" target="__blank" image={sass}/>
+        <Icon rel="noopener noreferrer" href="https://www.axios.com/" target="__blank" image={axios}/>
+        <Icon rel="noopener noreferrer" href="https://www.mongodb.com/" target="__blank" image={mongodb}/>
+        <Icon rel="noopener noreferrer" href="https://www.postgresql.org/" target="__blank" image={postgresql}/>
 
 
-        <Icon image={photoshop}/>
-        <Icon image={bootstrap}/>
-        <Icon image={chart}/>
-        <Icon image={passport}/>
-        <Icon image={bcrypt}/>
+        <Icon rel="noopener noreferrer" href="https://www.adobe.com/products/photoshopfamily.html" target="__blank" image={photoshop}/>
+        <Icon rel="noopener noreferrer" href="https://getbootstrap.com/" target="__blank" image={bootstrap}/>
+        <Icon rel="noopener noreferrer" href="https://www.chartjs.org/" target="__blank" image={chart}/>
+        <Icon rel="noopener noreferrer" href="http://www.passportjs.org/" target="__blank" image={passport}/>
+        <Icon rel="noopener noreferrer" href="https://www.npmjs.com/package/bcrypt" target="__blank" image={bcrypt}/>
 
       </IconWrap>
-    </Technologies>
+    </Wrapper>
   )
 }
 

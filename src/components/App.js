@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, {ThemeProvider} from 'styled-components'
+import styled from 'styled-components'
 import About from './About.js'
 import Cover from './Cover.js'
 import Portfolio from './Portfolio.js'
@@ -9,18 +9,18 @@ import portfolio2 from '../images/portfolio2.png'
 import portfolio3 from '../images/portfolio3.png'
 import portfolio4 from '../images/portfolio4.png'
 
-function App({}){
-  const Wrapper = styled.div`
-    width: 100vw;
-    padding: 16px;
-    box-sizing: border-box; 
-    display: flex;
-    flex-direction: column; 
-    @media (max-width: 1200px) {
-      padding: 0; 
-    }
-  `;
+const Wrapper = styled.div`
+  width: 100vw;
+  padding: 16px;
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column; 
+  @media (max-width: 1200px) {
+    padding: 0; 
+  }
+`;
 
+function App(){
 
   return (
     <Wrapper>

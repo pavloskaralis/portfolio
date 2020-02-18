@@ -7,115 +7,110 @@ import github from '../images/github.png'
 import linkedin from '../images/linkedin.png'
 import gmail from '../images/gmail.png'
 
-function About({}){
+const Wrapper = styled(Section)`
+  background-color: rgba(240,240,240);
+  display: flex;
+  width: 100%;
+  padding: 64px;
+  @media (max-width: 1200px) {
+    padding: 32px; 
+  }
+  @media (max-width: 992px) {
+    padding: 16px;
+  }
+`;
 
-  const About = styled(Section)`
-    background-color: rgba(240,240,240);
-    display: flex;
-    width: 100%;
-    padding: 64px;
-    @media (max-width: 1200px) {
-      padding: 32px; 
-    }
-    @media (max-width: 992px) {
-      padding: 16px;
-    }
-  `;
+const SideA = styled.div`
+  // background: blue;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+`;
 
-  const SideA = styled.div`
-    // background: blue;
-    width: 100%;
-    height: 100%;
+  const Title = styled.div`
+    // background: red;
+    font-family: Palatino;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 auto;
+    width: 75%;
+    max-width: 560px;
+    min-width: 440px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center; 
+    @media (max-width: 992px) {
+      text-align: center;
+    }
   `;
 
-    const Title = styled.div`
-      // background: red;
-      font-family: 'Merriweather', serif;
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin: 0 auto;
-      width: 75%;
-      min-width: 440px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; 
-      @media (max-width: 992px) {
-        text-align: center;
-      }
-    `;
+  const Text = styled.div`
+    // background: yellow;
+    font-family: Helvetica;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 auto;
+    width: 75%;
+    max-width: 560px;
+    min-width: 440px;
+    display: flex;
+    flex-direction: center;
+    justify-content: center; 
+    color: rgba(0,0,0,.5);
+    @media (max-width: 992px) {
+      text-align: center;
+    }
 
-    const Text = styled.div`
-      // background: yellow;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      margin: 0 auto;
-      width: 75%;
-      min-width: 440px;
-      display: flex;
-      flex-direction: center;
-      justify-content: center; 
-      color: rgba(0,0,0,.6);
-      @media (max-width: 992px) {
-        text-align: center;
-      }
-    `;
+  `;
 
-    const IconWrap = styled.div`
-      // background: orange;
-      display: flex;
-      margin: 0 auto;
-      // height: 100px;
-    `;
+  const IconWrap = styled.div`
+    // background: orange;
+    display: flex;
+    margin: 0 auto;
+    // height: 100px;
+  `;
 
-      const Icon = styled.div`
-        margin: 5px 8px;
-        cursor: pointer;
+    const Icon = styled.div`
+      margin: 5px 8px;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      transition: .5s;
+      background-position: center;
+      background-size: cover;
+      background-image: url(${props => props.image});
+
+      &:hover {
         width: 50px;
         height: 50px;
-        transition: .5s;
-        background-position: center;
-        background-size: cover;
-        background-image: url(${props => props.image});
+        margin: 0px 8px;
+      }
+    `;
 
-        &:hover {
-          width: 60px;
-          height: 60px;
-          margin: 0px 8px;
-        }
-      `;
+const SideB = styled.div`
+  background-image: url(${about});
+  margin-right: auto;
+  margin-left: 64px;
+  min-width: 499px;
+  max-height: 756px;
+  background-size: cover;
+  background-position: top;
+  @media (max-width: 1200px) {
+    min-width: 342px;
+    height: 512px;
+  }
+  @media (max-width: 992px) {
+    display: none;
+  }
+`;
 
-  const SideB = styled.div`
-    background-image: url(${about});
-    margin-right: auto;
-    margin-left: 64px;
-    min-width: 468px;
-    height: 699px;
-    background-size: cover;
-    background-position: top;
-    @media (max-width: 1200px) {
-      margin-left: 32px;
-    }
-    @media (max-width: 992px) {
-      margin-left: 0px;
-    }    
-
-
-    @media (max-width: 1200px) {
-      min-width: 342px;
-      height: 512px;
-    }
-    @media (max-width: 992px) {
-      display: none;
-    }
-  `;
+function About(){
 
   return (
-    <About>
+    <Wrapper>
       <SideA>
         <Title>About</Title>
         <Text>
@@ -124,16 +119,16 @@ function About({}){
           For the past 7 years, I have been employed  as a photographer across a number of different work arrangements. This has included  freelance assignments, managing my own business profile, being contracted as a representative for other studios, and working  full time at RedFin. These experiences have taught me to work effectively with clients as well as team members, and to manage my time across several projects in order to quickly deliver a polished product.
         </Text>
         <IconWrap>
-          <a target="_blank" href='https://profiles.generalassemb.ly/pavlos-karalis'>
+          <a target="_blank" rel="noopener noreferrer" href='https://profiles.generalassemb.ly/pavlos-karalis'>
             <Icon image={ga}/>
           </a>
-          <a target="_blank" href='https://github.com/pavloskaralis'>
+          <a target="_blank" rel="noopener noreferrer" href='https://github.com/pavloskaralis'>
             <Icon image={github}/>
           </a>
-          <a target="_blank" href='https://www.linkedin.com/in/pavlos-karalis/'>
+          <a target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/in/pavlos-karalis/'>
             <Icon image={linkedin}/>
           </a>
-          <a target="_blank" href='mailto:pavloskaralis@gmail.com'>
+          <a target="_blank" rel="noopener noreferrer" href='mailto:pavloskaralis@gmail.com'>
             <Icon image={gmail}/>
           </a>
         </IconWrap>
@@ -141,7 +136,7 @@ function About({}){
  
       <SideB/>
      
-    </About>
+    </Wrapper>
   )
 }
 

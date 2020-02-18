@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Text4({}){
+function Text4(){
 
   return (
     <span>
