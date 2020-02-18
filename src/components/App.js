@@ -4,10 +4,10 @@ import About from './About.js'
 import Cover from './Cover.js'
 import Portfolio from './Portfolio.js'
 import Technologies from './Technologies.js'
-import portfolio1 from '../backgrounds/portfolio1.png'
-import portfolio2 from '../backgrounds/portfolio2.png'
-import portfolio3 from '../backgrounds/portfolio3.png'
-import portfolio4 from '../backgrounds/portfolio4.png'
+import portfolio1 from '../images/portfolio1.png'
+import portfolio2 from '../images/portfolio2.png'
+import portfolio3 from '../images/portfolio3.png'
+import portfolio4 from '../images/portfolio4.png'
 
 
 
@@ -45,10 +45,10 @@ function App({}){
       <ThemeProvider theme={theme}>
         <Cover/>
         <About/>
-        <Portfolio backgroundImage={portfolio1} project='One' title='Traveler' href='https://traveler-planning-app.herokuapp.com/' />
-        <Portfolio backgroundImage={portfolio2} project='Two' title='Go Fish' href='https://pavloskaralis.github.io/go-fish/' />
-        <Portfolio backgroundImage={portfolio3} project='Three' title='Appstractor' href='http://appstractor.herokuapp.com/' />
-        <Portfolio backgroundImage={portfolio4} project='Four' title='Foodie' href='https://foodie-list-app.herokuapp.com/' />
+        <Portfolio backgroundImage={portfolio1} project='1' title='Traveler' href='https://traveler-planning-app.herokuapp.com/' />
+        <Portfolio backgroundImage={portfolio2} project='2' title='Go Fish' href='https://pavloskaralis.github.io/go-fish/' />
+        <Portfolio backgroundImage={portfolio3} project='3' title='Appstractor' href='http://appstractor.herokuapp.com/' />
+        <Portfolio backgroundImage={portfolio4} project='4' title='Foodie' href='https://foodie-list-app.herokuapp.com/' />
         <Technologies/>
       </ThemeProvider>
     </Wrapper>

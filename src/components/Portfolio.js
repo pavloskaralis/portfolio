@@ -17,8 +17,8 @@ function Portfolio({backgroundImage, project, title, href}){
   const Overlay = styled.div`
     background-image: radial-gradient(
       circle, 
-      rgba(25,25,25,.6),
-      rgba(25,25,25,.8)
+      rgba(25,25,25,.7),
+      rgba(25,25,25,.85)
     );
     height: 100%;
     width: 100%;
@@ -38,9 +38,6 @@ function Portfolio({backgroundImage, project, title, href}){
     // background: red;
     display: flex;
     width: 100%;
-    @media (max-width: 992px) {
-     
-    }
   `;
 
     const Column = styled.div`
@@ -61,7 +58,7 @@ function Portfolio({backgroundImage, project, title, href}){
       const Project = styled(Column)`
         // background: red;
         font-family: 'Montserrat', sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
         width: 100%;
         text-transform: uppercase;
@@ -103,7 +100,7 @@ function Portfolio({backgroundImage, project, title, href}){
         display: flex; 
         flex-direction: column;
         justify-content: center; 
-        border: rgba(255,200,0,.75) solid 2.5px;
+        border: rgba(255,200,0) solid 2.5px;
         border-radius: 180px;
         cursor: pointer;
         transition: .5s;
@@ -139,7 +136,6 @@ function Portfolio({backgroundImage, project, title, href}){
 
     const Text = styled.div`
       // background: orange;
-      padding-right: 7px;
       width: 50%;
       font-family: 'Montserrat', sans-serif;
       font-size: 14px; 
@@ -150,6 +146,9 @@ function Portfolio({backgroundImage, project, title, href}){
       flex-direction: column;
       justify-content: center;
 
+      & span {
+        max-height: 100%;
+      }
       & a {
         color: rgb(255,200,0);
       }
@@ -189,10 +188,10 @@ function Portfolio({backgroundImage, project, title, href}){
             </SideA>
             <SideB>
               <Text>
-                {project === 'One' && <Text1/>}
-                {project === 'Two' && <Text2/>}
-                {project === 'Three' && <Text3/>}
-                {project === 'Four' && <Text4/>}
+                {project === '1' && <Text1/>}
+                {project === '2' && <Text2/>}
+                {project === '3' && <Text3/>}
+                {project === '4' && <Text4/>}
               </Text>
             </SideB>
         </Overlay>
