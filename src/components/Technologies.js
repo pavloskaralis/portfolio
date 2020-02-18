@@ -26,6 +26,7 @@ function Technologies({}){
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-bottom: 0px;
   `;
 
   const Title = styled.div`

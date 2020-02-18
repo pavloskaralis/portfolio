@@ -2,17 +2,16 @@ import styled from 'styled-components'
 
 
 const Section = styled.div`
-    width: ${props => props.theme.w};
-    height: ${props => props.theme.h};
-    box-sizing: ${props => props.theme.bs};
+    width: 100%;
+    height: calc(100vh - 32px);
+    min-height: 550px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
     @media(max-width: 1200px){
-        height: ${props => props.theme.h2};
+        min-height: 576px;
     }
     @media(max-width: 992px){
-        height: ${props => props.theme.h3};
-    }
-    @media(max-width: 768px){
-
+        min-height: 466px;
     }
 `;
 

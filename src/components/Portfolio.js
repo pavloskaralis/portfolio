@@ -8,7 +8,7 @@ import Text4 from '../texts/Text4.js'
 
 
 function Portfolio({backgroundImage, project, title, href}){
-  const Wrapper = styled(Section)`
+  const Portfolio = styled(Section)`
     background-image: url(${backgroundImage});
     background-size: cover;
     background-position: center;
@@ -138,7 +138,7 @@ function Portfolio({backgroundImage, project, title, href}){
       // background: orange;
       width: 50%;
       font-family: 'Montserrat', sans-serif;
-      font-size: 14px; 
+      font-size: 12px; 
       font-weight: 600;
       color: white; 
       overflow-y: hidden;
@@ -173,7 +173,7 @@ function Portfolio({backgroundImage, project, title, href}){
     `;
 
   return (
-    <Wrapper>
+    <Portfolio>
         <Overlay>
             <SideA>
               <Column>
@@ -195,7 +195,7 @@ function Portfolio({backgroundImage, project, title, href}){
               </Text>
             </SideB>
         </Overlay>
-    </Wrapper>
+    </Portfolio>
   )
 }
 
