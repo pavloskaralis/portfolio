@@ -74,7 +74,7 @@ function Technologies({}){
     height: 621px;
     width: 932px;
     box-sizing: border-box;
-    pointer-events:
+    pointer-events: none;
     @media (max-width: 1200px) {
       height: 466px;
       width: 699px;

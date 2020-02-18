@@ -8,11 +8,17 @@ const Section = styled.div`
     box-sizing: border-box;
     margin-bottom: 16px;
     @media(max-width: 1200px){
+        height: 576px;
         min-height: 576px;
     }
     @media(max-width: 992px){
+        height: 466px;
         min-height: 466px;
     }
+    @media(max-width: 768px){
+
+    }
 `;
+
 
 export default Section
