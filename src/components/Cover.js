@@ -39,30 +39,33 @@ const Overlay = styled(Section)`
 const FullStack = styled.div`
     font-family: Palatino;
     text-transform: uppercase;
+    height: 72px;
     font-size: 80px;
     font-weight: 600;
-    text-align: flex-end;
     max-width: 100%;
+r    background: red;
+    text-align: right;
     z-index: 1;
-    padding: 64px;
+    padding: 16px; 
     color: white;
     opacity: 0;
-    animation: ${fade} 2s linear;
+    animation: ${fade} 1.5s linear;
     animation-delay: 5.5s;
     animation-fill-mode: forwards;
     @media (max-width: 1200px) {
+      height: 64px;
       font-size: 64px;
-      text-align: right;
-      padding: 32px; 
     }
     @media (max-width: 992px) {
+      height: 40px;
       font-size: 48px;
-      padding: 16px; 
     }
     @media (max-width: 768px) {
+      height: 26px;
       font-size: 32px;
     }
     @media (max-width: 576px) {
+      height: 24px;
       font-size: 24px;
     }
 `;
@@ -89,9 +92,13 @@ const LoaderWrap = styled(Section)`
   flex-direction: column;
   justify-content: center;
   position: absolute;
+  margin: 0 auto;
   top: 0;
-  width: 100%;
+  width: calc(100% - 32px);
   height: 100%;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
   // background: red;
 `;
 

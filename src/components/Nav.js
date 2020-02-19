@@ -12,6 +12,7 @@ const Wrapper = styled.nav`
     top: ${props => props.top};
     box-sizing: border-box;
     width: calc(100vw - 32px);
+    height: 100px;
     min-height: 100px;
     margin: 0 auto;
     padding: 32px;
@@ -26,6 +27,10 @@ const Wrapper = styled.nav`
         width:100%;
         top: 0;
     }
+    @media (max-width: 768px) {
+        flex-direction: column;
+        min-height: 125px;
+    }
 `;
 
 
@@ -33,7 +38,7 @@ const Title = styled.a`
     // background: red;
     letter-spacing: 4px;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 22px;
     text-transform: uppercase;
     font-family: Helvetica;
     align-content: center;
@@ -45,11 +50,12 @@ const Title = styled.a`
     & span {
         color: rgba(255,200,0,1);
     }
-  
+    @media (max-width: 768px) {
+        margin: 0 auto;
+    }  
 `;
 
 const LinkWrap = styled.div`
-    // background: red;
     display: flex;
     justify-content: space-between;
     & a {
@@ -67,6 +73,11 @@ const LinkWrap = styled.div`
             color: rgb(255,200,0);
         }
     }
+    @media (max-width: 768px) {
+        max-width: 312px;
+        margin: 0 auto;
+        // background: blue;
+    }  
 `;
 
 
