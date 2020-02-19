@@ -102,12 +102,12 @@ const Overlay = styled.div`
 const Icon = styled.a`
   background-image: url(${props => props.image});
   background-position: center;
-  background-size: 70%; 
+  background-size: 65%; 
   background-repeat: no-repeat;
   width: calc(20%);
   background-color: rgb(240,240,240);
   box-sizing: border-box; 
-  border: 1px rgba(0,0,0,.1) solid;
+  border: .5px rgba(0,0,0,.1) solid;
   transition: .5s;
   cursor: pointer;
 
