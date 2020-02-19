@@ -15,9 +15,7 @@ const Section = styled.div`
         height: 466px;
         min-height: 466px;
     }
-    @media(max-width: 768px){
-
-    }
+ 
 `;
 
 

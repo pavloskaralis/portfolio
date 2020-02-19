@@ -31,9 +31,8 @@ const SideA = styled.div`
 
   const Title = styled.div`
     // background: red;
-    font-family: Palatino;
+    font-family: Helvetica;
     font-size: 14px;
-    font-weight: 600;
     text-transform: uppercase;
     margin: 0 auto;
     width: 75%;

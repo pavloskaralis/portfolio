@@ -3,15 +3,13 @@ import styled, {keyframes} from 'styled-components'
 import Section from '../styles/Section.js'
 import cover from '../images/cover.jpg'
 import Canvas from './Canvas.js'
+import Nav from './Nav.js'
 
 
 const Wrapper = styled(Section)`
-  background-image: linear-gradient(
-    to bottom, 
-    rgba(0,35,90,1) 0%, 
-    rgba(50,120,160,1) 50%, 
-    rgba(255,200,0,1) 100%
-  );
+  background-image: url(${cover});
+  background-size: cover; 
+  background-position: center; 
 `;
 
 const Overlay = styled(Section)`
@@ -30,20 +28,13 @@ const Overlay = styled(Section)`
   }
 `;
 
-
-const Image = styled(Overlay)`
-  background-image: url(${cover});
-  background-size: cover; 
-  background-position: center; 
-`;
-
 const spin = keyframes`
-  0% { opacity: .75; transform: rotate(0deg); }
-  100% { opacity: .75; transform: rotate(360deg); }
+  0% { opacity: 1; transform: rotate(0deg); }
+  100% { opacity: 1; transform: rotate(360deg); }
 `;
 
 const Loader = styled.div`
-  border: 5px solid black;
+  border: 5px solid rgba(50,120,160,1);
   border-top: 5px solid white;
   margin: 0 auto;
   border-radius: 50%;
@@ -60,7 +51,7 @@ const LoaderWrap = styled(Section)`
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: red;
+  // background: red;
 `;
 
 function Cover(){
@@ -74,12 +65,12 @@ function Cover(){
 
   return (
     <Wrapper>
-      <Image/>
       {delay && <Canvas/>}
       <Overlay/>
       <LoaderWrap>
         <Loader/>
       </LoaderWrap>
+      <Nav type='cover'/>
     </Wrapper>
   )
 }

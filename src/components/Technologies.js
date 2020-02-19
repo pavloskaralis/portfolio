@@ -36,9 +36,8 @@ const Wrapper = styled(Section)`
 
 const Title = styled.div`
   // background: red;
-  font-family: Palatino;
+  font-family: Helvetica;
   font-size: 14px;
-  font-weight: 600;
   max-height: 100%;
   text-transform: uppercase;
   margin: 0 auto;
