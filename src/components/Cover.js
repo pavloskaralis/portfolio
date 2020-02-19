@@ -39,33 +39,33 @@ const Overlay = styled(Section)`
 const FullStack = styled.div`
     font-family: Palatino;
     text-transform: uppercase;
-    height: 72px;
     font-size: 80px;
     font-weight: 600;
     max-width: 100%;
-r    background: red;
     text-align: right;
     z-index: 1;
-    padding: 16px; 
+    height: 76px;
     color: white;
     opacity: 0;
     animation: ${fade} 1.5s linear;
     animation-delay: 5.5s;
     animation-fill-mode: forwards;
+    padding: 32px;
     @media (max-width: 1200px) {
       height: 64px;
       font-size: 64px;
     }
     @media (max-width: 992px) {
-      height: 40px;
+      height: 44px;
       font-size: 48px;
     }
     @media (max-width: 768px) {
-      height: 26px;
+      height: 28px;
       font-size: 32px;
+      text-align: center;
     }
     @media (max-width: 576px) {
-      height: 24px;
+      height: 20px;
       font-size: 24px;
     }
 `;

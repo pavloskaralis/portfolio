@@ -1,5 +1,7 @@
 import React from 'react'
 import styled, {keyframes} from 'styled-components'
+import { Link, animateScroll as scroll } from "react-scroll";
+
 
 const fade = keyframes`
   0% { opacity: 0; }
@@ -69,6 +71,7 @@ const LinkWrap = styled.div`
         text-decoration-line: none;
         transition: .5s;
         text-transform: uppercase;
+        cursor: pointer; 
         &:hover {
             color: rgb(255,200,0);
         }
@@ -89,9 +92,15 @@ function Cover({type}){
     <Wrapper top={type==='cover' ? '16px' : '0'} opacity={type==='cover' ? '0' : '1'} position={type==='cover' ? 'absolute' : 'fixed'} background={type==='cover' ? '0,0,0,0' : '50,120,160'}>
         <Title href='/'><div>Pavlos<span>Karalis</span></div></Title>
         <LinkWrap>
-            <a href='#about'>About</a>
-            <a href='#portfolio'>Portfolio</a>
-            <a href='#technologies'>Technologies</a>
+        <Link activeClass="active" to="about" spy={true} smooth={true} offset={-16}duration= {500}>
+            About
+        </Link>
+        <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={-16}duration= {1000}>
+            Portfolio
+        </Link>
+        <Link activeClass="active" to="technologies" spy={true} smooth={true} offset={-16}duration= {500}>
+            Technologies
+        </Link>
         </LinkWrap>
     </Wrapper>
   )
