@@ -109,7 +109,7 @@ const SideB = styled.div`
 function About(){
 
   return (
-    <Wrapper>
+    <Wrapper id='about'>
       <SideA>
         <Title>About</Title>
         <Text>

@@ -5,13 +5,8 @@ import cover from '../images/cover.jpg'
 
 
 const fade = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 `;
 
 
@@ -99,7 +94,7 @@ function Canvas(){
         x -= 7;
         if(x < 0) x = 95;
         if((i%14 === 0) && (i > 13)) y -= 7.5;
-        if((i%14 === 0) && (i > 13)) base += .25;
+        if((i%14 === 0) && (i > 13)) base += .2;
 
         blocks.push(
         <Block blockDirection={r2 === 0 ? 'row' : 'column'} blockWidth={r3 === 0 ? '5%' : '8%'} key={i} id={i}>

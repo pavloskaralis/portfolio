@@ -6,10 +6,18 @@ import Canvas from './Canvas.js'
 import Nav from './Nav.js'
 
 
+const fade = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
 const Wrapper = styled(Section)`
   background-image: url(${cover});
   background-size: cover; 
   background-position: center; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 const Overlay = styled(Section)`
@@ -26,6 +34,37 @@ const Overlay = styled(Section)`
   @media (max-width: 1200px){
     width: 100%;
   }
+`;
+
+const FullStack = styled.div`
+    font-family: Palatino;
+    text-transform: uppercase;
+    font-size: 80px;
+    font-weight: 600;
+    text-align: flex-end;
+    max-width: 100%;
+    z-index: 1;
+    padding: 64px;
+    color: white;
+    opacity: 0;
+    animation: ${fade} 2s linear;
+    animation-delay: 5.5s;
+    animation-fill-mode: forwards;
+    @media (max-width: 1200px) {
+      font-size: 64px;
+      text-align: right;
+      padding: 32px; 
+    }
+    @media (max-width: 992px) {
+      font-size: 48px;
+      padding: 16px; 
+    }
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
+    @media (max-width: 576px) {
+      font-size: 24px;
+    }
 `;
 
 const spin = keyframes`
@@ -49,6 +88,8 @@ const LoaderWrap = styled(Section)`
   display: flex;  
   flex-direction: column;
   justify-content: center;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   // background: red;
@@ -71,6 +112,7 @@ function Cover(){
         <Loader/>
       </LoaderWrap>
       <Nav type='cover'/>
+      <FullStack>Full-Stack Developer</FullStack>
     </Wrapper>
   )
 }

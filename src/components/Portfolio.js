@@ -171,11 +171,11 @@ const SideB = styled.div`
     }
   `;
 
-function Portfolio({backgroundImage, project, title, href}){
+function Portfolio({backgroundImage, project, title, href, id}){
   
 
   return (
-    <Wrapper backgroundImage={backgroundImage}>
+    <Wrapper backgroundImage={backgroundImage} id={id || ''}>
         <Overlay>
             <SideA>
               <Column>

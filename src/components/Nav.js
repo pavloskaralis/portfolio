@@ -1,30 +1,41 @@
 import React from 'react'
 import styled, {keyframes} from 'styled-components'
-import Section from '../styles/Section.js'
+
+const fade = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+`;
 
 const Wrapper = styled.nav`
     background-color: ${props => `rgba(${props.background})`};
     position: ${props => props.position};
-    top: 0;
+    top: ${props => props.top};
     box-sizing: border-box;
     width: calc(100vw - 32px);
     min-height: 100px;
     margin: 0 auto;
     padding: 32px;
     display: flex;
+    opacity: ${props => props.opacity};
     justify-content: space-between;
+    // background: blue;
+    animation: ${fade} 2s linear;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
     @media (max-width: 1200px) {
-        max-width:100%;
+        width:100%;
+        top: 0;
     }
 `;
 
+
 const Title = styled.a`
+    // background: red;
     letter-spacing: 4px;
     font-weight: 600;
     font-size: 20px;
     text-transform: uppercase;
     font-family: Helvetica;
-    min-height: 100%;
     align-content: center;
     display: flex;
     flex-direction: column;
@@ -38,16 +49,23 @@ const Title = styled.a`
 `;
 
 const LinkWrap = styled.div`
+    // background: red;
     display: flex;
     justify-content: space-between;
-    background: red;
     & a {
         display: flex;
         flex-direction: column; 
         justify-content: center;
         color: white;
-        font-family: Helvetica; 
+        font-family: Helvetica;
+        font-size: 14px;
+        margin: 0 12px;
         text-decoration-line: none;
+        transition: .5s;
+        text-transform: uppercase;
+        &:hover {
+            color: rgb(255,200,0);
+        }
     }
 `;
 
@@ -57,12 +75,12 @@ function Cover({type}){
 
 
   return (
-    <Wrapper position={type==='cover' ? 'absolute' : 'fixed'} background={type==='cover' ? '0,0,0,0' : '50,120,160'}>
+    <Wrapper top={type==='cover' ? '16px' : '0'} opacity={type==='cover' ? '0' : '1'} position={type==='cover' ? 'absolute' : 'fixed'} background={type==='cover' ? '0,0,0,0' : '50,120,160'}>
         <Title href='/'><div>Pavlos<span>Karalis</span></div></Title>
         <LinkWrap>
-            <a>About</a>
-            <a>Portfolio</a>
-            <a>Technologies</a>
+            <a href='#about'>About</a>
+            <a href='#portfolio'>Portfolio</a>
+            <a href='#technologies'>Technologies</a>
         </LinkWrap>
     </Wrapper>
   )
