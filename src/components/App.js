@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import styled from 'styled-components'
 import About from './About.js'
 import Cover from './Cover.js'
@@ -18,6 +18,9 @@ const mapStateToProps = state => {
 }
 
 const Wrapper = styled.div`
+  scroll-snap-type: y mandatory;
+  overflow: scroll; 
+  max-height: 100vh; 
   max-width: 100vw;
   padding: 16px;
   box-sizing: border-box; 
@@ -28,17 +31,26 @@ const Wrapper = styled.div`
   }
 `;
 
+
+
+
+ 
+
 let App = ({status}) => {
 
-  
+  useEffect(() => {
+    
+  })
+
+
   return (
-    <Wrapper>
+    <Wrapper id="container">
       <Cover/>
       <About/>
       <Portfolio id='portfolio' backgroundImage={portfolio1} project='1' title='Traveler' href='https://traveler-planning-app.herokuapp.com/' />
-      <Portfolio backgroundImage={portfolio2} project='2' title='Go Fish' href='https://pavloskaralis.github.io/go-fish/' />
-      <Portfolio backgroundImage={portfolio3} project='3' title='Appstractor' href='http://appstractor.herokuapp.com/' />
-      <Portfolio backgroundImage={portfolio4} project='4' title='Foodie' href='https://foodie-list-app.herokuapp.com/' />
+      <Portfolio id='portfolio2' backgroundImage={portfolio2} project='2' title='Go Fish' href='https://pavloskaralis.github.io/go-fish/' />
+      <Portfolio id='portfolio3' backgroundImage={portfolio3} project='3' title='Appstractor' href='http://appstractor.herokuapp.com/' />
+      <Portfolio id='portfolio4' backgroundImage={portfolio4} project='4' title='Foodie' href='https://foodie-list-app.herokuapp.com/' />
       <Technologies/>
       {status && <Nav/>}
     </Wrapper>

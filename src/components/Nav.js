@@ -12,7 +12,6 @@ const Wrapper = styled.nav`
     background-color: ${props => `rgba(${props.background})`};
     box-shadow: ${props => props.shadow};
     position: fixed;
-    top: 0;
     box-sizing: border-box;
     width: calc(100vw - 32px);
     height: 100px;
@@ -23,7 +22,7 @@ const Wrapper = styled.nav`
     opacity: 0;
     top: ${props => props.top};
     justify-content: space-between;
-    transition: background-color .5s, box-shadow .5s;
+    transition: background-color .5s, box-shadow .5s, top .25s;
     animation: ${fade}  2s linear;
     animation-delay: 1.2s;
     animation-fill-mode: forwards;
@@ -89,32 +88,34 @@ const LinkWrap = styled.div`
 function Cover(){
     const[navTop, toggleNavTop] = useState(false);
     const[navBG, toggleNavBG] = useState(false);
+    const[scrollPos, updatedScrollPos] = useState(0)
+
     useEffect( () => {
+        
+        const container = document.getElementById('container');
 
         const onresize = () => {
             if ((navTop === false && window.innerWidth < 1200) || (navTop === true && window.innerWidth > 1200)) {
                 toggleNavTop(!navTop);
-                console.log(navTop)
             }
         }
 
         const onscroll = () => {
-            if ((navBG === false && window.scrollY > 0) || (navBG === true && window.scrollY < 1)) {
+            if ((navBG === false && container.scrollTop > 0) || (navBG === true && container.scrollTop < 1)) {
                 toggleNavBG(!navBG);
-                console.log(navBG)
+                updatedScrollPos(container.scrollTop)
             }
         }
-
         window.addEventListener('resize',onresize);
-        window.addEventListener('scroll', onscroll)
+        container.addEventListener('scroll', onscroll)
     }, [navBG,navTop])
     
 
     return (
         <Wrapper 
-            background={ window.scrollY > 0 ? '25,70,85,.95' : '0,0,0,0' } 
-            shadow={ window.scrollY > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
-            top={ window.innerWidth > 1200 & window.scrollY < 1 ? '16px' : '0'}
+            background={ scrollPos > 0 ? '25,70,85,.9' : '0,0,0,0' } 
+            shadow={ scrollPos > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
+            top={ window.innerWidth > 1200 & scrollPos < 1 ? '16px' : '0'}
         >
             <Title href='/'><div>Pavlos<span>Karalis</span></div></Title>
             <LinkWrap>

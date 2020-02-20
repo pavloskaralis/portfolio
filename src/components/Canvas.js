@@ -18,7 +18,7 @@ const fade = keyframes`
 
 const Wrapper = styled(Section)`
   position: absolute;
-  width: calc(100% - 32px);
+  min-width: calc(100vh - 32px);
   display: flex;
   justify-content: space-evenly;
   flex-direction: row-reverse;
@@ -94,7 +94,6 @@ let Canvas = ({toggleStatus}) => {
             const r6 = Math.floor(Math.random() * 3);
             //delay
             const r7 = Math.floor(Math.random() * 3);
-            console.log(x,y)
 
             cells.push({
                 maxWidth: r2 === 0 ? ['10%','20%','30%'][r4] : '100%',

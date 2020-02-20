@@ -33,7 +33,7 @@ const Overlay = styled(Section)`
     rgba(50,120,160,.7) 50%, 
     rgba(255,200,0,1) 100%
   );
-  width: calc(100% - 32px);
+  min-width: calc(100% - 32px);
   position: absolute; 
   filter: saturate(120%);
   pointer-events: none;
@@ -89,12 +89,12 @@ const Loader = styled.div`
 `;
 
 const LoaderWrap = styled(Section)`
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: absolute;
   margin: 0 auto;
-  top: 0;
   z-index: 1; 
   width: calc(100% - 32px);
   height: 100%;
