@@ -18,6 +18,7 @@ const mapStateToProps = state => {
 }
 
 const Wrapper = styled.div`
+  scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   overflow: scroll; 
   max-height: 100vh; 

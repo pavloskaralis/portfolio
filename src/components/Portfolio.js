@@ -5,6 +5,8 @@ import Text1 from '../texts/Text1.js'
 import Text2 from '../texts/Text2.js'
 import Text3 from '../texts/Text3.js'
 import Text4 from '../texts/Text4.js'
+import Fade from 'react-reveal/Fade';
+
 
 const Wrapper = styled(Section)`
   background-image: url(${props => props.backgroundImage});
@@ -171,6 +173,12 @@ const SideB = styled.div`
     }
   `;
 
+  const InnerWrap = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  `;
+
 function Portfolio({backgroundImage, project, title, href, id}){
   
 
@@ -188,14 +196,18 @@ function Portfolio({backgroundImage, project, title, href, id}){
                 </a>
               </Column>
             </SideA>
-            <SideB>
-              <Text>
-                {project === '1' && <Text1/>}
-                {project === '2' && <Text2/>}
-                {project === '3' && <Text3/>}
-                {project === '4' && <Text4/>}
-              </Text>
-            </SideB>
+              <SideB>
+                <Fade>
+                  <InnerWrap>
+                    <Text>
+                      {project === '1' && <Text1/>}
+                      {project === '2' && <Text2/>}
+                      {project === '3' && <Text3/>}
+                      {project === '4' && <Text4/>}
+                    </Text>
+                  </InnerWrap>
+                </Fade>
+              </SideB>
         </Overlay>
     </Wrapper>
   )

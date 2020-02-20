@@ -119,15 +119,9 @@ function Cover(){
         >
             <Title href='/'><div>Pavlos<span>Karalis</span></div></Title>
             <LinkWrap>
-            <Link activeClass="active" to="about" spy={true} smooth={true} offset={-100}duration= {500}>
-                About
-            </Link>
-            <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={-100}duration= {1000}>
-                Portfolio
-            </Link>
-            <Link activeClass="active" to="technologies" spy={true} smooth={true} offset={-100}duration= {500}>
-                Technologies
-            </Link>
+                <a href='/#about'>About</a>
+                <a href='/#portfolio'>Portfolio</a>
+                <a href='/#technologies'>Technologies</a>
             </LinkWrap>
         </Wrapper>
     )
