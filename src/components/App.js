@@ -9,7 +9,13 @@ import portfolio1 from '../images/portfolio1.png'
 import portfolio2 from '../images/portfolio2.png'
 import portfolio3 from '../images/portfolio3.png'
 import portfolio4 from '../images/portfolio4.png'
+import { connect } from 'react-redux'
 
+const mapStateToProps = state => {
+  return {
+    status: state.status
+  }
+}
 
 const Wrapper = styled.div`
   max-width: 100vw;
@@ -22,7 +28,7 @@ const Wrapper = styled.div`
   }
 `;
 
-function App(){
+function App({status}){
 
   return (
     <Wrapper>
@@ -33,9 +39,13 @@ function App(){
       <Portfolio backgroundImage={portfolio3} project='3' title='Appstractor' href='http://appstractor.herokuapp.com/' />
       <Portfolio backgroundImage={portfolio4} project='4' title='Foodie' href='https://foodie-list-app.herokuapp.com/' />
       <Technologies/>
-      <Nav/>
+      {status && <Nav/>}
     </Wrapper>
   )
 }
 
+App = connect(
+  mapStateToProps,
+  null
+)(App)
 export default App

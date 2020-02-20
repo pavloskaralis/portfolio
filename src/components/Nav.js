@@ -13,7 +13,7 @@ const Wrapper = styled.nav`
     position: fixed;
     top: 0;
     box-sizing: border-box;
-    width: calc(100vw - 48px);
+    width: calc(100vw - 32px);
     height: 100px;
     min-height: 100px;
     margin: 0 auto;
@@ -21,9 +21,9 @@ const Wrapper = styled.nav`
     display: flex;
     opacity: 0;
     justify-content: space-between;
-    transition: background-color 1s;
+    transition: background-color .5s;
     animation: ${fade}  2s linear;
-    animation-delay: 4.5s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
     z-index: 1;
     @media (max-width: 1200px) {
@@ -70,7 +70,7 @@ const LinkWrap = styled.div`
         margin: 0 12px;
         text-decoration-line: none;
         transition: .5s;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         cursor: pointer; 
         &:hover {
             color: rgb(255,200,0);
@@ -103,10 +103,10 @@ function Cover(){
         <Wrapper background={ window.scrollY > 250 ? '25,70,85,.95' : '0,0,0,0' } >
             <Title href='/'><div>Pavlos<span>Karalis</span></div></Title>
             <LinkWrap>
-            <Link activeClass="active" to="about" spy={true} smooth={true} offset={-116}duration= {500}>
+            <Link activeClass="active" to="about" spy={true} smooth={true} offset={-100}duration= {500}>
                 About
             </Link>
-            <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={-116}duration= {1000}>
+            <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={-100}duration= {1000}>
                 Portfolio
             </Link>
             <Link activeClass="active" to="technologies" spy={true} smooth={true} offset={-100}duration= {500}>

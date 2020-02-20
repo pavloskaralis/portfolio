@@ -1,8 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import styled, {keyframes} from 'styled-components'
+import { connect } from 'react-redux'
 import Section from '../styles/Section.js'
 import cover from '../images/cover.jpg'
 import Canvas from './Canvas.js'
+
+const mapStateToProps = state => {
+  return {
+    status: state.status
+  }
+}
 
 const fade = keyframes`
   from { opacity: 0; }
@@ -22,7 +29,7 @@ const Overlay = styled(Section)`
   background-image: linear-gradient(
     to bottom, 
     rgba(0,35,90,1) 0%, 
-    rgba(50,120,160,.5) 50%, 
+    rgba(50,120,160,.7) 50%, 
     rgba(255,200,0,1) 100%
   );
   width: calc(100% - 32px);
@@ -36,7 +43,7 @@ const Overlay = styled(Section)`
 
 const FullStack = styled.div`
     font-family: Palatino;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-size: 80px;
     font-weight: 600;
     max-width: 100%;
@@ -46,7 +53,7 @@ const FullStack = styled.div`
     color: white;
     opacity: 0;
     animation: ${fade} 1.5s linear;
-    animation-delay: 5s;
+    animation-delay: 1.5s;
     animation-fill-mode: forwards;
     padding: 16px 32px;
     @media (max-width: 1200px) {
@@ -76,13 +83,11 @@ const Loader = styled.div`
   border-radius: 50%;
   width: 35px;
   height: 35px;
-  animation: ${spin} 2s linear;
-  animation-iteration-count: 1.5;
-  opacity: 0;
+  animation: ${spin} 2s linear infinite; 
 `;
 
 const LoaderWrap = styled(Section)`
-  display: flex;  
+  display: flex; 
   flex-direction: column;
   justify-content: center;
   position: absolute;
@@ -96,7 +101,7 @@ const LoaderWrap = styled(Section)`
   // background: red;
 `;
 
-function Cover(){
+function Cover({status}){
 
   const [delay, updateDelay] = useState(false);
 
@@ -109,12 +114,19 @@ function Cover(){
     <Wrapper>
       {delay && <Canvas/>}
       <Overlay/>
-      <LoaderWrap>
-        <Loader/>
-      </LoaderWrap>
-      <FullStack>Full-Stack Developer</FullStack>
+      {!status && 
+        <LoaderWrap>
+          <Loader/>
+        </LoaderWrap>
+      }
+      {status && <FullStack>Full-Stack Developer</FullStack>}
     </Wrapper>
   )
 }
+
+Cover = connect(
+  mapStateToProps,
+  null
+)(Cover)
 
 export default Cover
