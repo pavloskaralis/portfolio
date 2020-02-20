@@ -10,6 +10,7 @@ const fade = keyframes`
 
 const Wrapper = styled.nav`
     background-color: ${props => `rgba(${props.background})`};
+    box-shadow: ${props => props.shadow};
     position: fixed;
     top: 0;
     box-sizing: border-box;
@@ -21,7 +22,7 @@ const Wrapper = styled.nav`
     display: flex;
     opacity: 0;
     justify-content: space-between;
-    transition: background-color .5s;
+    transition: background-color .5s, box-shadow .5s;
     animation: ${fade}  2s linear;
     animation-delay: 1s;
     animation-fill-mode: forwards;
@@ -86,21 +87,22 @@ const LinkWrap = styled.div`
 
 function Cover(){
 
-    const[scrollHeight, updateScrollHeight] = useState(window.scrollY);
+    const[navBG, toggleNavBG] = useState(false);
     useEffect( () => {
 
         const onscroll = () => {
-            if (scrollHeight > window.scrollY + 50 || scrollHeight < window.scrollY - 50 ){
-                updateScrollHeight({scrollHeight: window.scrollY})
+            if ((navBG === false && window.scrollY > 0) || (navBG === true && window.scrollY < 1)) {
+                toggleNavBG(!navBG);
+                console.log(navBG)
             }
         }
+
         window.addEventListener('scroll', onscroll)
-        // console.log(scrollHeight > window.scrollY + 100 || scrollHeight < window.scrollY - 100 )
-    }, [scrollHeight])
+    }, [navBG])
     
 
     return (
-        <Wrapper background={ window.scrollY > 250 ? '25,70,85,.95' : '0,0,0,0' } >
+        <Wrapper background={ window.scrollY > 0 ? '25,70,85,.95' : '0,0,0,0' } shadow={ window.scrollY > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }>
             <Title href='/'><div>Pavlos<span>Karalis</span></div></Title>
             <LinkWrap>
             <Link activeClass="active" to="about" spy={true} smooth={true} offset={-100}duration= {500}>

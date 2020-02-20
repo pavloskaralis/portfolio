@@ -20,6 +20,7 @@ const Wrapper = styled(Section)`
   background-image: url(${cover});
   background-size: cover; 
   background-position: center; 
+  background-color: rgba(50,120,160,1);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -52,10 +53,11 @@ const FullStack = styled.div`
     z-index: 1;
     color: white;
     opacity: 0;
-    animation: ${fade} 1.5s linear;
-    animation-delay: 1.5s;
+    animation: ${fade} 1s linear;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
     padding: 16px 32px;
+    cursor: default;
     @media (max-width: 1200px) {
       font-size: 64px;
     }

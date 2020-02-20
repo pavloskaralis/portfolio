@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 const Section = styled.div`
-    max-width: 100%;
+    width: 100%;
     height: calc(100vh - 32px);
     min-height: 800px;
     box-sizing: border-box;
