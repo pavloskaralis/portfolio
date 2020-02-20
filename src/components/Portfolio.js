@@ -187,13 +187,17 @@ function Portfolio({backgroundImage, project, title, href, id}){
         <Overlay>
             <SideA>
               <Column>
-                <Project>{`Project ${project}`}</Project>
-                <Title>{title}</Title>
+                <Fade>
+                  <Project>{`Project ${project}`}</Project>
+                  <Title>{title}</Title>
+                </Fade>
               </Column>
               <Column>
-                <a href={href} rel="noopener noreferrer" target='_blank'> 
-                  <Button>Visit Website</Button>
-                </a>
+                <Fade>
+                  <a href={href} rel="noopener noreferrer" target='_blank'> 
+                    <Button>Visit Website</Button>
+                  </a>
+                </Fade>
               </Column>
             </SideA>
               <SideB>
