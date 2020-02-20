@@ -103,7 +103,7 @@ const LoaderWrap = styled(Section)`
   // background: red;
 `;
 
-function Cover({status}){
+let Cover = ({status}) => {
 
   const [delay, updateDelay] = useState(false);
 

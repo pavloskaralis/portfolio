@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   }
 `;
 
-function App({status}){
+let App = ({status}) => {
 
   return (
     <Wrapper>

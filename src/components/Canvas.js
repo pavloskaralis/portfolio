@@ -20,7 +20,7 @@ const Wrapper = styled(Section)`
   position: absolute;
   width: calc(100% - 32px);
   display: flex;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   flex-direction: row-reverse;
   flex-wrap: wrap-reverse; 
   pointer-events: none;
@@ -41,26 +41,25 @@ const Block = styled.div`
 `;
 
 
-
-const Cell = styled.div`
+const Cell = styled.div.attrs(props => ({
+  style: {
+    minWidth: props.cellWidth,
+    minHeight: props.cellHeight,
+    backgroundPositionX: props.cellX,
+    backgroundPositionY: props.cellY,
+    animationDelay: props.delay
+  },
+}))`
   width: 100%;
   height: 100%; 
-  min-width: ${props => props.cellWidth};
-  min-height: ${props => props.cellHeight};
   background-image: url(${cover});
   background-size: 750%;
-  background-position-x: ${props => props.cellX};
-  background-position-y: ${props => props.cellY};
   animation: ${fade} .5s linear;
-  animation-delay: ${props => props.delay};
   opacity: 0;
   animation-fill-mode: forwards;
 `;
 
-
-
-
-function Canvas({toggleStatus}){
+let Canvas = ({toggleStatus}) => {
    
     const blocks = [];
 
