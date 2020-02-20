@@ -3,8 +3,6 @@ import styled, {keyframes} from 'styled-components'
 import Section from '../styles/Section.js'
 import cover from '../images/cover.jpg'
 import Canvas from './Canvas.js'
-import Nav from './Nav.js'
-
 
 const fade = keyframes`
   from { opacity: 0; }
@@ -42,30 +40,26 @@ const FullStack = styled.div`
     font-size: 80px;
     font-weight: 600;
     max-width: 100%;
+    box-sizing: border-box;
     text-align: right;
     z-index: 1;
-    height: 76px;
     color: white;
     opacity: 0;
     animation: ${fade} 1.5s linear;
-    animation-delay: 5.5s;
+    animation-delay: 5s;
     animation-fill-mode: forwards;
-    padding: 32px;
+    padding: 16px 32px;
     @media (max-width: 1200px) {
-      height: 64px;
       font-size: 64px;
     }
     @media (max-width: 992px) {
-      height: 44px;
       font-size: 48px;
     }
     @media (max-width: 768px) {
-      height: 28px;
       font-size: 32px;
       text-align: center;
     }
     @media (max-width: 576px) {
-      height: 20px;
       font-size: 24px;
     }
 `;
@@ -83,7 +77,7 @@ const Loader = styled.div`
   width: 35px;
   height: 35px;
   animation: ${spin} 2s linear;
-  animation-iteration-count: 2;
+  animation-iteration-count: 1.5;
   opacity: 0;
 `;
 
@@ -118,7 +112,6 @@ function Cover(){
       <LoaderWrap>
         <Loader/>
       </LoaderWrap>
-      <Nav type='cover'/>
       <FullStack>Full-Stack Developer</FullStack>
     </Wrapper>
   )

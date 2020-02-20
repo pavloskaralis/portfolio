@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled, {keyframes} from 'styled-components'
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 
 const fade = keyframes`
@@ -10,21 +10,22 @@ const fade = keyframes`
 
 const Wrapper = styled.nav`
     background-color: ${props => `rgba(${props.background})`};
-    position: ${props => props.position};
-    top: ${props => props.top};
+    position: fixed;
+    top: 0;
     box-sizing: border-box;
-    width: calc(100vw - 32px);
+    width: calc(100vw - 48px);
     height: 100px;
     min-height: 100px;
     margin: 0 auto;
     padding: 32px;
     display: flex;
-    opacity: ${props => props.opacity};
+    opacity: 0;
     justify-content: space-between;
-    // background: blue;
-    animation: ${fade} 2s linear;
-    animation-delay: 5s;
+    transition: background-color 1s;
+    animation: ${fade}  2s linear;
+    animation-delay: 4.5s;
     animation-fill-mode: forwards;
+    z-index: 1;
     @media (max-width: 1200px) {
         width:100%;
         top: 0;
@@ -34,7 +35,6 @@ const Wrapper = styled.nav`
         min-height: 125px;
     }
 `;
-
 
 const Title = styled.a`
     // background: red;
@@ -84,26 +84,37 @@ const LinkWrap = styled.div`
 `;
 
 
-function Cover({type}){
+function Cover(){
 
+    const[scrollHeight, updateScrollHeight] = useState(window.scrollY);
+    useEffect( () => {
 
+        const onscroll = () => {
+            if (scrollHeight > window.scrollY + 50 || scrollHeight < window.scrollY - 50 ){
+                updateScrollHeight({scrollHeight: window.scrollY})
+            }
+        }
+        window.addEventListener('scroll', onscroll)
+        // console.log(scrollHeight > window.scrollY + 100 || scrollHeight < window.scrollY - 100 )
+    }, [scrollHeight])
+    
 
-  return (
-    <Wrapper top={type==='cover' ? '16px' : '0'} opacity={type==='cover' ? '0' : '1'} position={type==='cover' ? 'absolute' : 'fixed'} background={type==='cover' ? '0,0,0,0' : '50,120,160'}>
-        <Title href='/'><div>Pavlos<span>Karalis</span></div></Title>
-        <LinkWrap>
-        <Link activeClass="active" to="about" spy={true} smooth={true} offset={-16}duration= {500}>
-            About
-        </Link>
-        <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={-16}duration= {1000}>
-            Portfolio
-        </Link>
-        <Link activeClass="active" to="technologies" spy={true} smooth={true} offset={-16}duration= {500}>
-            Technologies
-        </Link>
-        </LinkWrap>
-    </Wrapper>
-  )
+    return (
+        <Wrapper background={ window.scrollY > 250 ? '25,70,85,.95' : '0,0,0,0' } >
+            <Title href='/'><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap>
+            <Link activeClass="active" to="about" spy={true} smooth={true} offset={-116}duration= {500}>
+                About
+            </Link>
+            <Link activeClass="active" to="portfolio" spy={true} smooth={true} offset={-116}duration= {1000}>
+                Portfolio
+            </Link>
+            <Link activeClass="active" to="technologies" spy={true} smooth={true} offset={-100}duration= {500}>
+                Technologies
+            </Link>
+            </LinkWrap>
+        </Wrapper>
+    )
 }
 
 export default Cover
