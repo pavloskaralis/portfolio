@@ -21,6 +21,7 @@ const Wrapper = styled.nav`
     padding: 32px;
     display: flex;
     opacity: 0;
+    top: ${props => props.top};
     justify-content: space-between;
     transition: background-color .5s, box-shadow .5s;
     animation: ${fade}  2s linear;
@@ -86,9 +87,16 @@ const LinkWrap = styled.div`
 
 
 function Cover(){
-
+    const[navTop, toggleNavTop] = useState(false);
     const[navBG, toggleNavBG] = useState(false);
     useEffect( () => {
+
+        const onresize = () => {
+            if ((navTop === false && window.innerWidth < 1200) || (navTop === true && window.innerWidth > 1200)) {
+                toggleNavTop(!navTop);
+                console.log(navTop)
+            }
+        }
 
         const onscroll = () => {
             if ((navBG === false && window.scrollY > 0) || (navBG === true && window.scrollY < 1)) {
@@ -97,12 +105,17 @@ function Cover(){
             }
         }
 
+        window.addEventListener('resize',onresize);
         window.addEventListener('scroll', onscroll)
-    }, [navBG])
+    }, [navBG,navTop])
     
 
     return (
-        <Wrapper background={ window.scrollY > 0 ? '25,70,85,.95' : '0,0,0,0' } shadow={ window.scrollY > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }>
+        <Wrapper 
+            background={ window.scrollY > 0 ? '25,70,85,.95' : '0,0,0,0' } 
+            shadow={ window.scrollY > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
+            top={ window.innerWidth > 1200 & window.scrollY < 1 ? '16px' : '0'}
+        >
             <Title href='/'><div>Pavlos<span>Karalis</span></div></Title>
             <LinkWrap>
             <Link activeClass="active" to="about" spy={true} smooth={true} offset={-100}duration= {500}>
