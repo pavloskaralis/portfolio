@@ -31,10 +31,13 @@ const Wrapper = styled(Section)`
   }
 `;
 
-const Block = styled.div`
+const Block = styled.div.attrs(props => ({
+  style: {
+    flexDirection: props.blockDirection,
+    minWidth: props.blockWidth
+  },
+}))`
   display: flex; 
-  flex-direction: ${props => props.blockDirection};
-  min-width: ${props => props.blockWidth};
   max-height: 8.5%;
   min-height: 8.5%;
   overflow: hidden; 

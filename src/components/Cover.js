@@ -37,7 +37,6 @@ const Overlay = styled(Section)`
   position: absolute; 
   filter: saturate(120%);
   pointer-events: none;
-  z-index: 1;
   @media (max-width: 1200px){
     width: 100%;
   }
@@ -90,12 +89,13 @@ const Loader = styled.div`
 `;
 
 const LoaderWrap = styled(Section)`
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: center;
   position: absolute;
   margin: 0 auto;
   top: 0;
+  z-index: 1; 
   width: calc(100% - 32px);
   height: 100%;
   @media (max-width: 1200px) {
@@ -116,12 +116,12 @@ let Cover = ({status}) => {
   return (
     <Wrapper>
       {delay && <Canvas/>}
-      <Overlay/>
       {!status && 
         <LoaderWrap>
           <Loader/>
         </LoaderWrap>
       }
+      <Overlay/>
       {status && <FullStack>Full-Stack Developer</FullStack>}
     </Wrapper>
   )

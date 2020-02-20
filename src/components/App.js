@@ -30,6 +30,7 @@ const Wrapper = styled.div`
 
 let App = ({status}) => {
 
+  
   return (
     <Wrapper>
       <Cover/>

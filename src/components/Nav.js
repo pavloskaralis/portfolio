@@ -25,7 +25,7 @@ const Wrapper = styled.nav`
     justify-content: space-between;
     transition: background-color .5s, box-shadow .5s;
     animation: ${fade}  2s linear;
-    animation-delay: 1s;
+    animation-delay: 1.2s;
     animation-fill-mode: forwards;
     z-index: 2;
     @media (max-width: 1200px) {
