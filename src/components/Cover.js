@@ -37,6 +37,7 @@ const Overlay = styled(Section)`
   position: absolute; 
   filter: saturate(120%);
   pointer-events: none;
+  z-index: 1;
   @media (max-width: 1200px){
     width: 100%;
   }

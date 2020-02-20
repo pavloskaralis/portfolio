@@ -27,7 +27,7 @@ const Wrapper = styled.nav`
     animation: ${fade}  2s linear;
     animation-delay: 1s;
     animation-fill-mode: forwards;
-    z-index: 1;
+    z-index: 2;
     @media (max-width: 1200px) {
         width:100%;
         top: 0;

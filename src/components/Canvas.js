@@ -20,7 +20,7 @@ const Wrapper = styled(Section)`
   position: absolute;
   width: calc(100% - 32px);
   display: flex;
-  // justify-content: space-evenly;
+  justify-content: space-evenly;
   flex-direction: row-reverse;
   flex-wrap: wrap-reverse; 
   pointer-events: none;
@@ -35,8 +35,8 @@ const Block = styled.div`
   display: flex; 
   flex-direction: ${props => props.blockDirection};
   min-width: ${props => props.blockWidth};
-  max-height: 10%;
-  min-height: 10%;
+  max-height: 8.5%;
+  min-height: 8.5%;
   overflow: hidden; 
 `;
 
@@ -53,7 +53,7 @@ const Cell = styled.div.attrs(props => ({
   width: 100%;
   height: 100%; 
   background-image: url(${cover});
-  background-size: 750%;
+  background-size: 800%;
   animation: ${fade} .5s linear;
   opacity: 0;
   animation-fill-mode: forwards;
@@ -72,7 +72,7 @@ let Canvas = ({toggleStatus}) => {
 
 
       const loop = () => { 
-          for(let i = 0; i < 135; i ++) {
+          for(let i = 0; i < 170; i ++) {
           //cell quantity
           const r1 = Math.floor(Math.random() * 3 + 3);
           //block direction
@@ -91,6 +91,8 @@ let Canvas = ({toggleStatus}) => {
             const r6 = Math.floor(Math.random() * 3);
             //delay
             const r7 = Math.floor(Math.random() * 3);
+            console.log(x,y)
+
             cells.push({
                 maxWidth: r2 === 0 ? ['10%','20%','30%'][r4] : '100%',
                 maxHeight: r2 === 1 ? ['10%','20%','40%'][r4] : '100%',
@@ -101,13 +103,13 @@ let Canvas = ({toggleStatus}) => {
             })
           }
 
-          x -= 7.5;
+          x -= 6.5;
           if(x < 0) x = 95;
-          if((i%14 === 0) && (i > 13)) y -= 10;
+          if((i%14 === 0) && (i > 13)) y -= 7.5;
           if((i%14 === 0) && (i > 13)) base += .2;
 
           blocks.push(
-          <Block blockDirection={r2 === 0 ? 'row' : 'column'} blockWidth={r3 === 0 ? '6%' : '9%'} key={i} id={i}>
+          <Block blockDirection={r2 === 0 ? 'row' : 'column'} blockWidth={r3 === 0 ? '5%' : '8%'} key={i} id={i}>
               {cells.map(cell => {
                   return(
                   <Cell key={`${i}${cell.key}`} delay={`${cell.delay}s`} cellX={cell.posX} cellY={cell.posY} cellWidth={cell.maxWidth} cellHeight={cell.maxHeight}  background={`rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`}/>
