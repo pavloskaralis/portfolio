@@ -26,7 +26,7 @@ const Wrapper = styled.nav`
     @media (max-width: 1200px) {
         background-color: ${props => `rgba(${props.background})`};
         box-shadow: ${props => props.shadow};
-        width: calc(100vw - 14.5px);
+        width: 100vw;
         top: 0;
     }
     @media (max-width: 768px) {
@@ -72,7 +72,6 @@ const LinkWrap = styled.div`
         font-size: 14px;
         margin: 0 12px;
         text-decoration-line: none;
-        transition: .5s;
         transition: color .5s;
         // text-transform: uppercase;
         cursor: pointer; 
@@ -92,40 +91,46 @@ const LinkWrap = styled.div`
 
 
 function Cover(){
-    const[navBG, toggleNavBG] = useState(false);
+   
+    function throttle(fn, wait) {
+        var time = Date.now();
+        return function() {
+            if ((time + wait - Date.now()) < 0) {
+            fn();
+            time = Date.now();
+            }
+        }
+    }
+
     const[scrollPos, updatedScrollPos] = useState(0)
+    const container = document.getElementById('container');
 
     useEffect( () => {
-        function throttle(fn, wait) {
-            var time = Date.now();
-            return function() {
-              if ((time + wait - Date.now()) < 0) {
-                fn();
-                time = Date.now();
-              }
-            }
-        }
-
-        const container = document.getElementById('container');
 
         const onscroll = () => {
-            if ((navBG === false && container.scrollTop > 0) || (navBG === true && container.scrollTop < 1)) {
-                toggleNavBG(!navBG);
+            if ((scrollPos < 1 && container.scrollTop > 0) || (scrollPos > 0 && container.scrollTop < 1)) {
                 updatedScrollPos(container.scrollTop);
-                console.log('changed')
+                console.log('condition1',(scrollPos < 1 && container.scrollTop > 0))
+                console.log('condition 2', (scrollPos > 0 && container.scrollTop < 1))
+                console.log('scrollPos',scrollPos)
+                console.log('container.scrollTop',container.scrollTop)
+                console.log('changed', container.scrollTop)
             }
         }
-        // container.addEventListener('scroll', throttle(onscroll, 250))
-    }, [navBG])
-    
+        
+        container.addEventListener('scroll', onscroll, {
+            capture: true,
+            passive: true
+        })
+    }, [scrollPos])
 
     return (
         <Wrapper 
-            background={ scrollPos > 0 ? '25,70,85,.85' : '0,0,0,0' } 
-            shadow={ scrollPos > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
+            background={ scrollPos > 50 ? '25,70,85,.85' : '0,0,0,0' } 
+            shadow={ scrollPos > 50 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
         >
-            <Title href='/' color={ (scrollPos >= 836 && scrollPos <= 1672) || scrollPos >= 5000 ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap color={ (scrollPos >= 836 && scrollPos <= 1672) || scrollPos >= 5000 ? 'black' : 'white' }>
+            <Title href='/' color={ (scrollPos >= 800 && scrollPos <= 1550) || scrollPos >= 4800 ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap color={ (scrollPos >= 800 && scrollPos <= 1550) || scrollPos >= 4800 ? 'black' : 'white' }>
                 <a href='/#about'>About</a>
                 <a href='/#portfolio'>Portfolio</a>
                 <a href='/#technologies'>Technologies</a>
