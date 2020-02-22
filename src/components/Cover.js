@@ -45,7 +45,6 @@ const Overlay = styled(Section)`
 
 const FullStack = styled.div`
     font-family: Palatino;
-    // text-transform: uppercase;
     font-size: 80px;
     font-weight: 600;
     max-width: 100%;

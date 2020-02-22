@@ -11,7 +11,7 @@ const Wrapper = styled.nav`
     position: fixed;
     box-sizing: border-box;
     width: calc(100vw - 32px);
-    min-height: 95px;
+    min-height: 100px;
     margin: 0 auto;
     padding: 32px;
     display: flex;
@@ -20,13 +20,13 @@ const Wrapper = styled.nav`
     justify-content: space-between;
     transition: background-color .5s, box-shadow .5s;
     animation: ${fade}  2s linear;
-    animation-delay: 1s;
+    animation-delay: 1.2s;
     animation-fill-mode: forwards;
     z-index: 2;
     @media (max-width: 1200px) {
         background-color: ${props => `rgba(${props.background})`};
         box-shadow: ${props => props.shadow};
-        width:100%;
+        width: calc(100vw - 14.5px);
         top: 0;
     }
     @media (max-width: 768px) {
@@ -96,16 +96,26 @@ function Cover(){
     const[scrollPos, updatedScrollPos] = useState(0)
 
     useEffect( () => {
-        
+        function throttle(fn, wait) {
+            var time = Date.now();
+            return function() {
+              if ((time + wait - Date.now()) < 0) {
+                fn();
+                time = Date.now();
+              }
+            }
+        }
+
         const container = document.getElementById('container');
 
         const onscroll = () => {
             if ((navBG === false && container.scrollTop > 0) || (navBG === true && container.scrollTop < 1)) {
                 toggleNavBG(!navBG);
-                updatedScrollPos(container.scrollTop)
+                updatedScrollPos(container.scrollTop);
+                console.log('changed')
             }
         }
-        container.addEventListener('scroll', onscroll)
+        // container.addEventListener('scroll', throttle(onscroll, 250))
     }, [navBG])
     
 
@@ -114,8 +124,8 @@ function Cover(){
             background={ scrollPos > 0 ? '25,70,85,.85' : '0,0,0,0' } 
             shadow={ scrollPos > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
         >
-            <Title href='/' color={ (scrollPos >= 836 && scrollPos <= 1672) || scrollPos >= 5016 ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap color={ (scrollPos >= 836 && scrollPos <= 1672) || scrollPos >= 5016 ? 'black' : 'white' }>
+            <Title href='/' color={ (scrollPos >= 836 && scrollPos <= 1672) || scrollPos >= 5000 ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap color={ (scrollPos >= 836 && scrollPos <= 1672) || scrollPos >= 5000 ? 'black' : 'white' }>
                 <a href='/#about'>About</a>
                 <a href='/#portfolio'>Portfolio</a>
                 <a href='/#technologies'>Technologies</a>

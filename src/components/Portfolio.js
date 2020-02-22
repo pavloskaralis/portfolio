@@ -14,7 +14,7 @@ const Wrapper = styled(Section)`
   background-position: center;
 `;
 
-const Overlay = styled.div`
+const Overlay = styled(Section)`
   background-image: radial-gradient(
     circle, 
     rgba(25,25,25,.7),
@@ -107,7 +107,7 @@ const SideA = styled.div`
       transition: .5s;
       margin-bottom: 4px;
       &:hover {
-        background-color: rgba(255,200,0,.75);
+        background-color: rgba(255,200,0,.85);
       }
     `;
   
