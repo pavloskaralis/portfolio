@@ -102,19 +102,26 @@ function Cover(){
         }
     }
 
-    const[scrollPos, updatedScrollPos] = useState(0)
     const container = document.getElementById('container');
+
+    const [scroll, setScroll] = useState(container.scrollTop)
 
     useEffect( () => {
 
+  
+
         const onscroll = () => {
-            if ((scrollPos < 1 && container.scrollTop > 0) || (scrollPos > 0 && container.scrollTop < 1)) {
-                updatedScrollPos(container.scrollTop);
-                console.log('condition1',(scrollPos < 1 && container.scrollTop > 0))
-                console.log('condition 2', (scrollPos > 0 && container.scrollTop < 1))
-                console.log('scrollPos',scrollPos)
-                console.log('container.scrollTop',container.scrollTop)
-                console.log('changed', container.scrollTop)
+            const scrollCheck1 = container.scrollTop >= 0 && container.scrollTop <= 100;
+            const scrollCheck2 = container.scrollTop >= 800 && container.scrollTop%2 === 0;
+          
+
+            if (scrollCheck1 || scrollCheck2) {
+                setScroll(container.scrollTop);        
+                // console.log('POSTscroll',scroll)
+                console.log('condition1',(scroll < 1 && container.scrollTop > 0))
+                console.log('condition 2', (scroll > 0 && container.scrollTop < 1))
+                // console.log('container.scrollTop',container.scrollTop)
+                // console.log('changed', container.scrollTop)
             }
         }
         
@@ -122,15 +129,15 @@ function Cover(){
             capture: true,
             passive: true
         })
-    }, [scrollPos])
+    }, [scroll])
 
     return (
         <Wrapper 
-            background={ scrollPos > 50 ? '25,70,85,.85' : '0,0,0,0' } 
-            shadow={ scrollPos > 50 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
+            background={ scroll > 0 ? '25,70,85,.85' : '0,0,0,0' } 
+            shadow={ scroll > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
         >
-            <Title href='/' color={ (scrollPos >= 800 && scrollPos <= 1550) || scrollPos >= 4800 ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap color={ (scrollPos >= 800 && scrollPos <= 1550) || scrollPos >= 4800 ? 'black' : 'white' }>
+            <Title href='/' color={ (scroll >= 800 && scroll <= 1600) || scroll >= 4800 ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap color={ (scroll >= 800 && scroll <= 1600) || scroll >= 4800 ? 'black' : 'white' }>
                 <a href='/#about'>About</a>
                 <a href='/#portfolio'>Portfolio</a>
                 <a href='/#technologies'>Technologies</a>
