@@ -49,8 +49,8 @@ const Title = styled.div`
 
 const IconWrap = styled.div`
   background-color: rgba(0,0,0,.2);
-  min-height: 662px;
-  width: 993px;
+  min-height: 630px;
+  width: 945px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; 
@@ -64,10 +64,7 @@ const IconWrap = styled.div`
     min-height: 356px;
     width: 534px;
   }
-  @media (max-width: 768px) {
-    min-height: 340px;
-    width: 510px;
-  }
+ 
   @media (max-width: 576px) {
     min-height: 240px;
     width: 360px;
@@ -77,8 +74,8 @@ const IconWrap = styled.div`
 const Overlay = styled.div`
   border: 2px solid rgb(240,240,240);
   position: absolute;
-  height: 662px;
-  width: 993px;
+  height: 630px;
+  width: 945px;
   box-sizing: border-box;
   pointer-events: none;
   @media (max-width: 1200px) {
@@ -89,10 +86,7 @@ const Overlay = styled.div`
     height: 356px;
     width: 534px;
   }
-  @media (max-width: 768px) {
-    height: 340px;
-    width: 510px;
-  }
+
   @media (max-width: 576px) {
     height: 240px;
     width: 360px;

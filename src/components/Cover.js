@@ -21,6 +21,7 @@ const Wrapper = styled(Section)`
   background-size: cover; 
   background-position: center; 
   background-color: rgba(50,120,160,1);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
