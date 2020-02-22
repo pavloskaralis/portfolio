@@ -115,7 +115,7 @@ function About(){
         <Text>
           As a recent graduate of General Assembly’s full stack bootcamp, I am eagerly searching for my first web developer role. At GA, I have established  a foundation that will allow me to build quality software and effectively continue to grow my skills. The program has also given me a hands-on introduction to many different building blocks of modern web applications, and allowed me to explore beyond the course material through open-ended projects.
           <br/><br/>
-          For the past 7 years, I have been employed  as a photographer across a number of different work arrangements. This has included  freelance assignments, managing my own business profile, being contracted as a representative for other studios, and working  full time at RedFin. These experiences have taught me to work effectively with clients as well as team members, and to manage my time across several projects in order to quickly deliver a polished product.
+          For the past 7 years, I have been employed  as a photographer across a number of different work arrangements. This has included freelance assignments, managing my own business profile, being contracted as a representative for other studios, and working full time at RedFin. These experiences have taught me to work effectively with clients as well as team members, and to manage my time across several projects in order to quickly deliver a polished product.
         </Text>
         <IconWrap>
           <a target="_blank" rel="noopener noreferrer" href='https://profiles.generalassemb.ly/pavlos-karalis'>

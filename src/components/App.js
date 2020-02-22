@@ -5,6 +5,7 @@ import Cover from './Cover.js'
 import Portfolio from './Portfolio.js'
 import Technologies from './Technologies.js'
 import Nav from './Nav.js'
+import Photography from './Photography.js'
 import portfolio1 from '../images/portfolio1.png'
 import portfolio2 from '../images/portfolio2.png'
 import portfolio3 from '../images/portfolio3.png'
@@ -53,6 +54,7 @@ let App = ({status}) => {
       <Portfolio id='portfolio3' backgroundImage={portfolio3} project='3' title='Appstractor' href='http://appstractor.herokuapp.com/' />
       <Portfolio id='portfolio4' backgroundImage={portfolio4} project='4' title='Foodie' href='https://foodie-list-app.herokuapp.com/' />
       <Technologies/>
+      {/* <Photography/> */}
       {status && <Nav/>}
     </Wrapper>
   )

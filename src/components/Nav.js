@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled, {keyframes} from 'styled-components'
-import { Link } from "react-scroll";
-
 
 const fade = keyframes`
   0% { opacity: 0; }
@@ -14,8 +12,7 @@ const Wrapper = styled.nav`
     position: fixed;
     box-sizing: border-box;
     width: calc(100vw - 32px);
-    height: 100px;
-    min-height: 100px;
+    min-height: 96px;
     margin: 0 auto;
     padding: 32px;
     display: flex;
@@ -24,7 +21,7 @@ const Wrapper = styled.nav`
     justify-content: space-between;
     transition: background-color .5s, box-shadow .5s, top .25s;
     animation: ${fade}  2s linear;
-    animation-delay: 1.2s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
     z-index: 2;
     @media (max-width: 1200px) {
@@ -122,6 +119,7 @@ function Cover(){
                 <a href='/#about'>About</a>
                 <a href='/#portfolio'>Portfolio</a>
                 <a href='/#technologies'>Technologies</a>
+                {/* <a href='/#photography'>Photography</a> */}
             </LinkWrap>
         </Wrapper>
     )

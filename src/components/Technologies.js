@@ -23,10 +23,11 @@ const Wrapper = styled(Section)`
   max-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 0px;
+  justify-content: space-evenly;
   padding: 64px;
+  margin-bottom: 0;
   @media (max-width: 1200px) {
+    justify-content: space-between;
     padding: 32px; 
   }
   @media (max-width: 576px) {
@@ -48,8 +49,8 @@ const Title = styled.div`
 
 const IconWrap = styled.div`
   background-color: rgba(0,0,0,.2);
-  min-height: 678px;
-  width: 1017px;
+  min-height: 540px;
+  width: 819px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; 
@@ -76,8 +77,8 @@ const IconWrap = styled.div`
 const Overlay = styled.div`
   border: 2px solid rgb(240,240,240);
   position: absolute;
-  height: 678px;
-  width: 1017px;
+  height: 540px;
+  width: 819px;
   box-sizing: border-box;
   pointer-events: none;
   @media (max-width: 1200px) {

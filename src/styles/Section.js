@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Section = styled.div`
     position: relative; 
     scroll-snap-align: start;
-    scroll-margin: 17px; 
+    scroll-margin: 16px; 
     width: 100%;
     height: calc(100vh - 32px);
     min-height: 836px;
