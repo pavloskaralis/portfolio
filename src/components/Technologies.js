@@ -23,11 +23,10 @@ const Wrapper = styled(Section)`
   max-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 64px;
   margin-bottom: 0;
   @media (max-width: 1200px) {
-    justify-content: space-between;
     padding: 32px; 
   }
   @media (max-width: 576px) {
@@ -37,6 +36,7 @@ const Wrapper = styled(Section)`
 
 const Title = styled.div`
   // background: red;
+  letter-spacing: 4px;
   font-family: Helvetica;
   font-size: 14px;
   max-height: 100%;
@@ -49,8 +49,8 @@ const Title = styled.div`
 
 const IconWrap = styled.div`
   background-color: rgba(0,0,0,.2);
-  min-height: 540px;
-  width: 819px;
+  min-height: 662px;
+  width: 993px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; 
@@ -77,8 +77,8 @@ const IconWrap = styled.div`
 const Overlay = styled.div`
   border: 2px solid rgb(240,240,240);
   position: absolute;
-  height: 540px;
-  width: 819px;
+  height: 662px;
+  width: 993px;
   box-sizing: border-box;
   pointer-events: none;
   @media (max-width: 1200px) {

@@ -31,6 +31,7 @@ const SideA = styled.div`
 
   const Title = styled.div`
     // background: red;
+    letter-spacing: 4px;
     font-family: Helvetica;
     font-size: 14px;
     text-transform: uppercase;

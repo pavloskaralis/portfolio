@@ -7,24 +7,25 @@ const fade = keyframes`
 `;
 
 const Wrapper = styled.nav`
-    background-color: ${props => `rgba(${props.background})`};
-    box-shadow: ${props => props.shadow};
+    background-color: rgb(0,0,0,0);
     position: fixed;
     box-sizing: border-box;
     width: calc(100vw - 32px);
-    min-height: 96px;
+    min-height: 95px;
     margin: 0 auto;
     padding: 32px;
     display: flex;
     opacity: 0;
-    top: ${props => props.top};
+    top: 16px;
     justify-content: space-between;
-    transition: background-color .5s, box-shadow .5s, top .25s;
+    transition: background-color .5s, box-shadow .5s;
     animation: ${fade}  2s linear;
     animation-delay: 1s;
     animation-fill-mode: forwards;
     z-index: 2;
     @media (max-width: 1200px) {
+        background-color: ${props => `rgba(${props.background})`};
+        box-shadow: ${props => props.shadow};
         width:100%;
         top: 0;
     }
@@ -46,9 +47,13 @@ const Title = styled.a`
     flex-direction: column;
     justify-content: center; 
     text-decoration-line: none;
-    color: white; 
+    transition: color .5s;
+    color: ${props => props.color}; 
     & span {
         color: rgba(255,200,0,1);
+    }
+    @media (max-width: 1200px) {
+        color: white; 
     }
     @media (max-width: 768px) {
         margin: 0 auto;
@@ -62,16 +67,20 @@ const LinkWrap = styled.div`
         display: flex;
         flex-direction: column; 
         justify-content: center;
-        color: white;
+        color: ${props => props.color}; 
         font-family: Helvetica;
         font-size: 14px;
         margin: 0 12px;
         text-decoration-line: none;
         transition: .5s;
+        transition: color .5s;
         // text-transform: uppercase;
         cursor: pointer; 
         &:hover {
             color: rgb(255,200,0);
+        }
+        @media (max-width: 1200px) {
+            color: white; 
         }
     }
     @media (max-width: 768px) {
@@ -83,7 +92,6 @@ const LinkWrap = styled.div`
 
 
 function Cover(){
-    const[navTop, toggleNavTop] = useState(false);
     const[navBG, toggleNavBG] = useState(false);
     const[scrollPos, updatedScrollPos] = useState(0)
 
@@ -91,31 +99,23 @@ function Cover(){
         
         const container = document.getElementById('container');
 
-        const onresize = () => {
-            if ((navTop === false && window.innerWidth < 1200) || (navTop === true && window.innerWidth > 1200)) {
-                toggleNavTop(!navTop);
-            }
-        }
-
         const onscroll = () => {
             if ((navBG === false && container.scrollTop > 0) || (navBG === true && container.scrollTop < 1)) {
                 toggleNavBG(!navBG);
                 updatedScrollPos(container.scrollTop)
             }
         }
-        window.addEventListener('resize',onresize);
         container.addEventListener('scroll', onscroll)
-    }, [navBG,navTop])
+    }, [navBG])
     
 
     return (
         <Wrapper 
-            background={ scrollPos > 0 ? '25,70,85,.9' : '0,0,0,0' } 
+            background={ scrollPos > 0 ? '25,70,85,.85' : '0,0,0,0' } 
             shadow={ scrollPos > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
-            top={ window.innerWidth > 1200 & scrollPos < 1 ? '16px' : '0'}
         >
-            <Title href='/'><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap>
+            <Title href='/' color={ (scrollPos >= 836 && scrollPos <= 1672) || scrollPos >= 5016 ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap color={ (scrollPos >= 836 && scrollPos <= 1672) || scrollPos >= 5016 ? 'black' : 'white' }>
                 <a href='/#about'>About</a>
                 <a href='/#portfolio'>Portfolio</a>
                 <a href='/#technologies'>Technologies</a>
