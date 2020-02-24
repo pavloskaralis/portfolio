@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import photos from '../photos.js'
 import Section from '../styles/Section.js'
@@ -10,7 +10,7 @@ const Wrapper = styled(Section)`
   display: flex;
   animation-delay: 2s; 
   transition: background-image 0s;
-  transition-delay: .2s; 
+  transition-delay: .25s; 
   background-image: ${props => `url(${props.image})`};
   background-size: cover;
   background-position: center; 
@@ -33,6 +33,7 @@ const ButtonContainer = styled.div`
   justify-content: center;
   font-size: 160px;
   cursor: pointer;
+  z-index: 1;
   -webkit-text-stroke: 2.5px white;
 
   &:hover {
@@ -47,6 +48,7 @@ const ButtonContainer = styled.div`
 `;
 
 const Text = styled.div`
+  z-index: 1;
   cursor: default;
   letter-spacing: 4px;
   font-family: Helvetica;
@@ -71,6 +73,16 @@ const Text = styled.div`
   }
 `;
 
+const Overlay = styled(Section)`
+  background-image: radial-gradient(
+    circle, 
+    rgba(25,25,25,0)50%,
+    rgba(25,25,25,.85)
+  );
+  height: 100%;
+  width: 100%;
+  position: absolute; 
+`;
 
 function About(){
   
@@ -93,7 +105,8 @@ function About(){
     // useEffect(() => {document.addEventListener("keydown", handleKeyDown)},[index])
 
     return (
-    <Wrapper image={photos[index]}>
+    <Wrapper image={photos[index]} id='photography'>
+      <Overlay/>
       <ButtonContainer onClick={()=> toggleIndex(-1)}>
         &#8249;
       </ButtonContainer>
