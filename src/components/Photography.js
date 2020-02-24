@@ -77,8 +77,9 @@ const Overlay = styled(Section)`
   background-image: radial-gradient(
     circle, 
     rgba(25,25,25,0)50%,
-    rgba(25,25,25,.85)
+    rgba(25,25,25,.33)
   );
+  margin-bottom: 0;
   height: 100%;
   width: 100%;
   position: absolute; 
