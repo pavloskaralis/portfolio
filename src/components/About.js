@@ -31,6 +31,7 @@ const SideA = styled.div`
 
   const Title = styled.div`
     // background: red;
+    cursor: default;
     letter-spacing: 4px;
     font-family: Helvetica;
     font-size: 14px;
@@ -49,6 +50,7 @@ const SideA = styled.div`
 
   const Text = styled.div`
     // background: yellow;
+    cursor: default;
     font-family: Helvetica;
     font-size: 14px;
     line-height: 20px;

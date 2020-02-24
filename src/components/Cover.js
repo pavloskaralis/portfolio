@@ -54,7 +54,7 @@ const FullStack = styled.div`
     color: white;
     opacity: 0;
     animation: ${fade} 1s linear;
-    animation-delay: 2.2s;
+    animation-delay: 2.3s;
     animation-fill-mode: forwards;
     padding: 16px 32px;
     cursor: default;

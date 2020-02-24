@@ -17,81 +17,21 @@ import photo15 from './images/photo15.jpg'
 
 
 export const photos = [
-    {
-      src: photo01,
-      width: 4,
-      height: 3
-    },
-    {
-      src: photo02,
-      width: 3,
-      height: 4
-    },
-    {
-      src: photo03,
-      width: 4,
-      height: 3
-    },
-    {
-      src: photo04,
-      width: 4,
-      height: 3
-    },
-    {
-      src: photo05,
-      width: 4,
-      height: 3
-    },
-    {
-      src: photo06,
-      width: 4,
-      height: 3
-    },
-    {
-      src: photo07,
-      width: 4,
-      height: 3
-    },
-    {
-      src: photo08,
-      width: 4,
-      height: 3
-    },
-    {
-      src: photo09,
-      width: 4,
-      height: 3
-    },
-    {
-        src: photo10,
-      width: 4,
-      height: 3
-      },
-      {
-        src: photo11,
-        width: 4,
-        height: 3
-      },
-      {
-        src: photo12,
-        width: 4,
-        height: 3
-      },
-      {
-        src: photo13,
-        width: 4,
-        height: 3
-      },
-      {
-        src: photo14,
-        width: 3,
-        height: 4
-      },
-      {
-        src: photo15,
-        width: 3,
-        height: 4
-      }
-  ];
+  photo01,
+  photo02,
+  photo03,
+  photo04,
+  photo05,
+  photo06,
+  photo07,
+  photo08,
+  photo09,
+  photo10,
+  photo11,
+  photo12,
+  photo13,
+  photo14,
+  photo15
+];
 
-  export default photos
+export default photos

@@ -27,16 +27,17 @@ const Wrapper = styled(Section)`
   padding: 64px;
   @media (max-width: 1200px) {
     justify-content: space-between;
-    margin-bottom: 0;
     padding: 32px; 
   }
   @media (max-width: 576px) {
+    padding: 16px; 
     justify-content: space-evenly; 
   }
 `;
 
 const Title = styled.div`
   // background: red;
+  cursor: default;
   letter-spacing: 4px;
   font-family: Helvetica;
   font-size: 14px;

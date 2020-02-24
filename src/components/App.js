@@ -57,7 +57,7 @@ let App = ({status}) => {
       <Portfolio id='portfolio3' backgroundImage={portfolio3} project='3' title='Appstractor' href='http://appstractor.herokuapp.com/' />
       <Portfolio id='portfolio4' backgroundImage={portfolio4} project='4' title='Foodie' href='https://foodie-list-app.herokuapp.com/' />
       <Technologies/>
-      {/* <Photography/> */}
+      <Photography/>
       {status && <Nav/>}
     </Wrapper>
   )

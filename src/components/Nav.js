@@ -20,7 +20,7 @@ const Wrapper = styled.nav`
     justify-content: space-between;
     transition: background-color .5s, box-shadow .5s;
     animation: ${fade}  2s linear;
-    animation-delay: 1.2s;
+    animation-delay: 1.3s;
     animation-fill-mode: forwards;
     z-index: 2;
     @media (max-width: 1200px) {
@@ -112,14 +112,14 @@ function Cover(){
 
         const onscroll = () => {
             const scrollCheck1 = container.scrollTop >= 0 && container.scrollTop <= 100;
-            const scrollCheck2 = container.scrollTop >= 800 && container.scrollTop%2 === 0;
+            const scrollCheck2 = container.scrollTop >= 800 && container.scrollTop%4 === 0;
           
 
             if (scrollCheck1 || scrollCheck2) {
                 setScroll(container.scrollTop);        
                 // console.log('POSTscroll',scroll)
-                console.log('condition1',(scroll < 1 && container.scrollTop > 0))
-                console.log('condition 2', (scroll > 0 && container.scrollTop < 1))
+                // console.log('condition1',(scroll < 1 && container.scrollTop > 0))
+                // console.log('condition 2', (scroll > 0 && container.scrollTop < 1))
                 // console.log('container.scrollTop',container.scrollTop)
                 // console.log('changed', container.scrollTop)
             }
@@ -136,12 +136,12 @@ function Cover(){
             background={ scroll > 0 ? '25,70,85,.85' : '0,0,0,0' } 
             shadow={ scroll > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
         >
-            <Title href='/' color={ (scroll >= 800 && scroll <= 1600) || scroll >= 4800 ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap color={ (scroll >= 800 && scroll <= 1600) || scroll >= 4800 ? 'black' : 'white' }>
+            <Title href='/' color={ (scroll >= 800 && scroll <= 1600) || scroll >= 4800 && scroll <= 5600 ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap color={ (scroll >= 800 && scroll <= 1600) || scroll >= 4800 && scroll <= 5600 ? 'black' : 'white' }>
                 <a href='/#about'>About</a>
                 <a href='/#portfolio'>Portfolio</a>
                 <a href='/#technologies'>Technologies</a>
-                {/* <a href='/#photography'>Photography</a> */}
+                <a href='/#photography'>Photography</a>
             </LinkWrap>
         </Wrapper>
     )

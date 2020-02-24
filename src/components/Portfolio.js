@@ -57,6 +57,7 @@ const SideA = styled.div`
 
     const Project = styled(Column)`
       // background: red;
+      cursor: default;
       font-family: Helvetica;
       font-size: 14px;
       width: 100%;
@@ -70,6 +71,7 @@ const SideA = styled.div`
 
     const Title = styled(Column)`
       // background: yellow;
+      cursor: default;
       font-family: Palatino;
       text-transform: uppercase;
       font-size: 80px;
@@ -146,6 +148,7 @@ const SideB = styled.div`
     display: flex; 
     flex-direction: column;
     justify-content: center;
+    cursor: default;
 
     & span {
       max-height: 100%;
@@ -156,7 +159,7 @@ const SideB = styled.div`
     @media (max-width: 1200px) {
       margin: 0 auto;
       width: 768px;
-      height: 260px;
+      height: 270px;
       justify-content: flex-start;
     }
     @media (max-width: 992px) {
