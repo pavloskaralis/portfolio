@@ -37,7 +37,7 @@ const ButtonContainer = styled.div`
   -webkit-text-stroke: 2.5px white;
 
   &:hover {
-    color: white; 
+    color: rgba(255,255,255,.85); 
   }
   @media (max-width: 1200px) {
     padding: 32px; 
@@ -73,18 +73,6 @@ const Text = styled.div`
   }
 `;
 
-const Overlay = styled(Section)`
-  background-image: radial-gradient(
-    circle, 
-    rgba(25,25,25,0)50%,
-    rgba(25,25,25,.33)
-  );
-  margin-bottom: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute; 
-`;
-
 function About(){
   
     const[index, setIndex] = useState(0);
@@ -107,7 +95,6 @@ function About(){
 
     return (
     <Wrapper image={photos[index]} id='photography'>
-      <Overlay/>
       <ButtonContainer onClick={()=> toggleIndex(-1)}>
         &#8249;
       </ButtonContainer>
