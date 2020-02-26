@@ -36,6 +36,7 @@ const Overlay = styled(Section)`
   );
   min-width: calc(100% - 32px);
   position: absolute; 
+  top: 0;
   filter: saturate(120%);
   pointer-events: none;
   @media (max-width: 1200px){
@@ -94,6 +95,7 @@ const LoaderWrap = styled(Section)`
   flex-direction: column;
   justify-content: center;
   position: absolute;
+  top: 0;
   margin: 0 auto;
   z-index: 1; 
   width: calc(100% - 32px);

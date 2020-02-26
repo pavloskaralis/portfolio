@@ -33,6 +33,9 @@ const Wrapper = styled(Section)`
     padding: 16px; 
     justify-content: space-evenly; 
   }
+  @media (max-width: 499px) {
+    padding: 4px;
+  }
 `;
 
 const Title = styled.div`
@@ -71,27 +74,35 @@ const IconWrap = styled.div`
     min-height: 240px;
     width: 360px;
   }
+  @media (max-width: 499px) {
+    min-height: 200px;
+    width: 300px;
+  }
 `;
 
 const Overlay = styled.div`
   border: 2px solid rgb(240,240,240);
   position: absolute;
-  height: 594px;
+  min-height: 594px;
   width: 891px;
   box-sizing: border-box;
   pointer-events: none;
   @media (max-width: 1200px) {
-    height: 466px;
+    min-height: 466px;
     width: 699px;
   }
   @media (max-width: 992px) {
-    height: 356px;
+    min-height: 356px;
     width: 534px;
   }
 
   @media (max-width: 576px) {
-    height: 240px;
+    min-height: 240px;
     width: 360px;
+  }
+  @media (max-width: 499px) {
+    min-height: 200px;
+    width: 300px;
   }
 `;
 
@@ -110,6 +121,8 @@ const Icon = styled.a`
   &:hover {
     background-size: 80%;
   }
+
+
 `;
 
 function Technologies(){

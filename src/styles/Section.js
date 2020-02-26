@@ -29,7 +29,9 @@ const Section = styled.div`
         min-height: 466px;
         scroll-margin: 125px; 
     }
+    @media(max-width: 499px){
 
+    }
 `;
 
 

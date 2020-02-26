@@ -18,7 +18,8 @@ const fade = keyframes`
 
 const Wrapper = styled(Section)`
   position: absolute;
-  min-width: calc(100vh - 32px);
+  top: 0;
+  min-width: calc(100vw - 32px);
   display: flex;
   justify-content: space-evenly;
   flex-direction: row-reverse;
@@ -28,6 +29,9 @@ const Wrapper = styled(Section)`
   overflow: hidden; 
   @media (max-width: 1200px){
     width: 100%;
+  }
+  @media (max-width: 499px){
+    max-width: 100vw;
   }
 `;
 

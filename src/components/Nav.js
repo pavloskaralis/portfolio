@@ -33,6 +33,9 @@ const Wrapper = styled.nav`
         flex-direction: column;
         min-height: 125px;
     }
+    @media (max-width: 499px) {
+        padding: 32px 8px;
+    }
 `;
 
 const Title = styled.a`
@@ -80,6 +83,10 @@ const LinkWrap = styled.div`
         }
         @media (max-width: 1200px) {
             color: white; 
+        }
+        @media (max-width: 499px) {
+            font-size: 14px;
+            margin: 0 6px;
         }
     }
     @media (max-width: 768px) {

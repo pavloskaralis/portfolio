@@ -111,6 +111,11 @@ const SideA = styled.div`
       &:hover {
         background-color: rgba(255,200,0,.85);
       }
+      @media (max-width: 499px) {
+        font-size: 10px;
+        width: 140px;
+        height: 30px; 
+      }
     `;
   
 const SideB = styled.div`
@@ -173,6 +178,9 @@ const SideB = styled.div`
     @media (max-width: 576px) {
       width: 400px;
       height: 220px;
+    }
+    @media (max-width: 499px) {
+      font-size: 10px;
     }
   `;
 

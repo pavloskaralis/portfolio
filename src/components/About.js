@@ -46,6 +46,9 @@ const SideA = styled.div`
     @media (max-width: 992px) {
       text-align: center;
     }
+    @media (max-width: 499px) {
+      min-width: 280px;
+    }
   `;
 
   const Text = styled.div`
@@ -65,7 +68,10 @@ const SideA = styled.div`
     @media (max-width: 992px) {
       text-align: center;
     }
-
+    @media (max-width: 499px) {
+      min-width: 280px;
+      font-size: 10px;
+    }
   `;
 
   const IconWrap = styled.div`
