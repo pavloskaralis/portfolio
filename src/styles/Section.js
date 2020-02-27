@@ -17,7 +17,7 @@ const Section = styled.div`
         scroll-snap-align: none;
         height: 576px;
         min-height: 576px;
-        scroll-margin: 100px; 
+        scroll-margin: 116px; 
     }
     @media(max-width: 992px){
         height: 466px;
@@ -26,7 +26,7 @@ const Section = styled.div`
     @media(max-width: 768px){
         height: 466px;
         min-height: 466px;
-        scroll-margin: 125px; 
+        scroll-margin: 141px; 
     }
     @media(max-width: 499px){
 

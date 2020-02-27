@@ -18,6 +18,10 @@ const Wrapper = styled(Section)`
   @media (max-width: 1200px), (max-height: 800px) {
     margin-bottom: 0;
   }
+  @media (min-width: 1200px) and (max-height: 800px) {
+    height: 100vh;
+    min-height: 100vh;
+  }
 `;
 
 const ButtonContainer = styled.div`

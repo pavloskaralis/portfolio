@@ -161,7 +161,7 @@ const SideB = styled.div`
     @media (max-width: 1200px), (max-height: 800px) {
       margin: 0 auto;
       width: 768px;
-      height: 270px;
+      height: 267px;
       justify-content: flex-start;
     }
     @media (max-width: 992px) {
