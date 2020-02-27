@@ -116,14 +116,15 @@ const SideA = styled.div`
     `;
   
 const SideB = styled.div`
+      // background: blue; 
   height: calc(100% - 120px);
   box-sizing: border-box; 
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  flex-direction: column;
+
   @media (max-width: 1200px), (max-height: 799px) {
-    flex-direction: column;
-    justify-content: center;
     height: calc(100% - 99px);
   }
   @media (max-width: 992px) {
@@ -150,7 +151,7 @@ const SideB = styled.div`
     flex-direction: column;
     justify-content: center;
     cursor: default;
-    margin-top: 16px; 
+    min-width: 570px; 
     & span {
       max-height: 100%;
     }
@@ -163,6 +164,7 @@ const SideB = styled.div`
       height:  335px;
     }
     @media (max-width: 1200px) {
+      min-width:0;
       margin: 0 auto;
       width: 768px;
       height: 267px;
