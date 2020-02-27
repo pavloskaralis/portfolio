@@ -39,6 +39,10 @@ const SideA = styled.div`
   // background: red;
   display: flex;
   width: 100%;
+  margin-top: 16px; 
+  @media (max-width: 1200px) {
+    margin-top: 0; 
+  }
 `;
 
   const Column = styled.div`
