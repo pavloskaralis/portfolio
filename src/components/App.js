@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   box-sizing: border-box; 
   display: flex;
   flex-direction: column; 
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px), (max-height: 800px) {
     padding: 0; 
   }
 `;

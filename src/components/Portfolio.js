@@ -27,7 +27,7 @@ const Overlay = styled(Section)`
   // justify-content: space-evenly; 
   padding: 64px;
   box-sizing: border-box;
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px), (max-height: 800px) {
     padding: 32px; 
   }
   @media (max-width: 992px) {
@@ -39,10 +39,6 @@ const SideA = styled.div`
   // background: red;
   display: flex;
   width: 100%;
-  margin-top: 16px; 
-  @media (max-width: 1200px) {
-    margin-top: 0; 
-  }
 `;
 
   const Column = styled.div`
@@ -68,10 +64,6 @@ const SideA = styled.div`
       width: 100%;
       text-transform: uppercase;
       height: 100%;
-      @media (max-width: 1200px) {
-      }
-      @media (max-width: 992px) {
-      }
     `;
 
     const Title = styled(Column)`
@@ -82,7 +74,7 @@ const SideA = styled.div`
       font-size: 80px;
       font-weight: 600;
       width: 100%;
-      @media (max-width: 1200px) {
+      @media (max-width: 1200px), (max-height: 800px) {
         font-size: 64px;
       }
       @media (max-width: 992px) {
@@ -130,7 +122,7 @@ const SideB = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px), (max-height: 800px) {
     flex-direction: column;
     justify-content: center;
     height: calc(100% - 99px);
@@ -166,7 +158,7 @@ const SideB = styled.div`
     & a {
       color: rgb(255,200,0);
     }
-    @media (max-width: 1200px) {
+    @media (max-width: 1200px), (max-height: 800px) {
       margin: 0 auto;
       width: 768px;
       height: 270px;

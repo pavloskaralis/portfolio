@@ -39,7 +39,7 @@ const Overlay = styled(Section)`
   top: 0;
   filter: saturate(120%);
   pointer-events: none;
-  @media (max-width: 1200px){
+  @media (max-width: 1200px), (max-height: 800px) {
     width: 100%;
   }
 `;
@@ -59,7 +59,7 @@ const FullStack = styled.div`
     animation-fill-mode: forwards;
     padding: 16px 32px;
     cursor: default;
-    @media (max-width: 1200px) {
+    @media (max-width: 1200px), (max-height: 800px) {
       font-size: 64px;
     }
     @media (max-width: 992px) {
@@ -100,7 +100,7 @@ const LoaderWrap = styled(Section)`
   z-index: 1; 
   width: calc(100% - 32px);
   height: 100%;
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px), (max-height: 800px) {
     width: 100%;
   }
   // background: red;

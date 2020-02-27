@@ -5,18 +5,15 @@ const Section = styled.div`
     position: relative; 
     scroll-margin: 16px; 
     width: calc(100%);
-    height: calc(100 - 32px);
+    height: calc(100vh - 32px);
     flex-shrink: 0;
-    min-height: 736px;
+    min-height: 800px;
     box-sizing: border-box;
     margin-bottom: 16px;
-    @media(min-height: 736px){
+    @media(min-height: 800px){
         scroll-snap-align: start;
     }
-    @media(min-width: 1200px){
-        height: calc(100vh - 32px);
-    }
-    @media(max-width: 1200px){
+    @media(max-width: 1200px), (max-height: 800px) {
         scroll-snap-align: none;
         height: 576px;
         min-height: 576px;

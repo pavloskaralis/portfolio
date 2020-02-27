@@ -15,7 +15,7 @@ const Wrapper = styled(Section)`
   background-size: cover;
   background-position: center; 
   width: 100%;
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px), (max-height: 800px) {
     margin-bottom: 0;
   }
 `;
@@ -39,7 +39,7 @@ const ButtonContainer = styled.div`
   &:hover {
     color: rgba(255,255,255,.85); 
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px), (max-height: 800px) {
     padding: 32px; 
   }
   @media (max-width: 992px) {
@@ -65,7 +65,7 @@ const Text = styled.div`
   position: absolute; 
   bottom: 64px;
   min-width: 100%; 
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px), (max-height: 800px) {
     bottom: 32px; 
   }
   @media (max-width: 992px) {

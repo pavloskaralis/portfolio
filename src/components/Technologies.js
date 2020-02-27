@@ -25,7 +25,7 @@ const Wrapper = styled(Section)`
   flex-direction: column;
   justify-content: space-around;
   padding: 64px;
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px), (max-height: 800px) {
     justify-content: space-between;
     padding: 32px; 
   }
@@ -61,7 +61,7 @@ const IconWrap = styled.div`
   flex-wrap: wrap; 
   box-sizing: border-box;
   margin: 0 auto;
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px), (max-height: 800px) {
     min-height: 466px;
     width: 699px;
   }
@@ -87,7 +87,7 @@ const Overlay = styled.div`
   width: 891px;
   box-sizing: border-box;
   pointer-events: none;
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px), (max-height: 800px) {
     min-height: 466px;
     width: 699px;
   }
