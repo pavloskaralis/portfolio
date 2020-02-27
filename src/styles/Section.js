@@ -7,13 +7,13 @@ const Section = styled.div`
     width: calc(100%);
     height: calc(100vh - 32px);
     flex-shrink: 0;
-    min-height: 800px;
+    min-height: 736px;
     box-sizing: border-box;
     margin-bottom: 16px;
-    @media(min-height: 800px){
+    @media(min-height: 736px){
         scroll-snap-align: start;
     }
-    @media(max-width: 1200px), (max-height: 800px) {
+    @media(max-width: 1200px), (max-height: 732px) {
         scroll-snap-align: none;
         height: 576px;
         min-height: 576px;

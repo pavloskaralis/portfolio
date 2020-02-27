@@ -27,7 +27,7 @@ const Overlay = styled(Section)`
   // justify-content: space-evenly; 
   padding: 64px;
   box-sizing: border-box;
-  @media (max-width: 1200px), (max-height: 800px) {
+  @media (max-width: 1200px), (max-height: 732px) {
     padding: 32px; 
   }
   @media (max-width: 992px) {
@@ -74,7 +74,7 @@ const SideA = styled.div`
       font-size: 80px;
       font-weight: 600;
       width: 100%;
-      @media (max-width: 1200px), (max-height: 800px) {
+      @media (max-width: 1200px), (max-height: 732px) {
         font-size: 64px;
       }
       @media (max-width: 992px) {
@@ -116,13 +116,12 @@ const SideA = styled.div`
     `;
   
 const SideB = styled.div`
-  // background: blue;
   height: calc(100% - 120px);
   box-sizing: border-box; 
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  @media (max-width: 1200px), (max-height: 800px) {
+  @media (max-width: 1200px), (max-height: 799px) {
     flex-direction: column;
     justify-content: center;
     height: calc(100% - 99px);
@@ -158,12 +157,14 @@ const SideB = styled.div`
     & a {
       color: rgb(255,200,0);
     }
-    @media (max-width: 1200px), (max-height: 800px) {
+    
+    @media (max-width: 1200px), (max-height: 799px) {
       margin: 0 auto;
       width: 768px;
       height: 267px;
       justify-content: flex-start;
     }
+   
     @media (max-width: 992px) {
       width: 576px;
       height: 155px;

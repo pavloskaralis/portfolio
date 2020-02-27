@@ -27,7 +27,7 @@ const Wrapper = styled(Section)`
   pointer-events: none;
   opacity: 1;
   overflow: hidden; 
-  @media (max-width: 1200px), (max-height: 800px) {
+  @media (max-width: 1200px), (max-height: 732px) {
     width: 100%;
   }
   @media (max-width: 499px){

@@ -12,7 +12,7 @@ const Wrapper = styled(Section)`
   display: flex;
   width: 100%;
   padding: 64px;
-  @media (max-width: 1200px), (max-height: 800px) {
+  @media (max-width: 1200px), (max-height: 732px) {
     padding: 32px; 
   }
   @media (max-width: 992px) {
@@ -107,7 +107,7 @@ const SideB = styled.div`
   max-height: 756px;
   background-size: cover;
   background-position: top;
-  @media (max-width: 1200px), (max-height: 800px) {
+  @media (max-width: 1200px), (max-height: 732px) {
     min-width: 342px;
     height: 512px;
   }

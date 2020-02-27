@@ -23,7 +23,7 @@ const Wrapper = styled.nav`
     animation-delay: 1.3s;
     animation-fill-mode: forwards;
     z-index: 2;
-    @media (max-width: 1200px), (max-height: 800px) {
+    @media (max-width: 1200px), (max-height: 732px) {
         background-color: ${props => `rgba(${props.background})`};
         box-shadow: ${props => props.shadow};
         width: 100vw;
@@ -55,7 +55,7 @@ const Title = styled.a`
     & span {
         color: rgba(255,200,0,1);
     }
-    @media (max-width: 1200px), (max-height: 800px) {
+    @media (max-width: 1200px), (max-height: 732px) {
         color: white; 
     }
     @media (max-width: 768px) {
@@ -81,7 +81,7 @@ const LinkWrap = styled.div`
         &:hover {
             color: rgb(255,200,0);
         }
-        @media (max-width: 1200px), (max-height: 800px) {
+        @media (max-width: 1200px), (max-height: 732px) {
             color: white; 
         }
         @media (max-width: 499px) {
