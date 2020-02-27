@@ -3,14 +3,16 @@ import styled from 'styled-components'
 
 const Section = styled.div`
     position: relative; 
-    scroll-snap-align: start;
     scroll-margin: 16px; 
     width: calc(100%);
     height: calc(100 - 32px);
     flex-shrink: 0;
-    min-height: 800px;
+    min-height: 736px;
     box-sizing: border-box;
     margin-bottom: 16px;
+    @media(min-height: 736px){
+        scroll-snap-align: start;
+    }
     @media(min-width: 1200px){
         height: calc(100vh - 32px);
     }

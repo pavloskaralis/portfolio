@@ -111,40 +111,57 @@ function Cover(){
 
     const container = document.getElementById('container');
 
+    const [maxHeight, setMaxHeight] = useState(container.scrollHeight);
     const [scroll, setScroll] = useState(container.scrollTop)
 
     useEffect( () => {
 
-  
-
-        const onscroll = () => {
+          const onScroll = () => {
             const scrollCheck1 = container.scrollTop >= 0 && container.scrollTop <= 100;
-            const scrollCheck2 = container.scrollTop >= 800 && container.scrollTop%4 === 0;
+            const scrollCheck2 = container.scrollTop >= 600 && container.scrollTop%4 === 0;
           
 
             if (scrollCheck1 || scrollCheck2) {
                 setScroll(container.scrollTop);        
-                // console.log('POSTscroll',scroll)
-                // console.log('condition1',(scroll < 1 && container.scrollTop > 0))
-                // console.log('condition 2', (scroll > 0 && container.scrollTop < 1))
-                // console.log('container.scrollTop',container.scrollTop)
-                // console.log('changed', container.scrollTop)
+            }
+        }
+
+        const onResize = () => {
+            console.log('inside Resize')
+            if((container.scrollHeight > maxHeight + 10) || (container.scrollHeight < maxHeight - 10)) {           
+                if(container.scrollHeight > 7216 ) {
+                    console.log('resize 1')
+                    setMaxHeight(7216) 
+                } else if (container.scrollHeight < 6032) {
+                    console.log('resize 2')
+                    setMaxHeight(6032);
+                } else {
+                    console.log('resize 3')
+                    setMaxHeight(container.scrollHeight)
+                }
             }
         }
         
-        container.addEventListener('scroll', onscroll, {
+        // container.addEventListener('resize', onResize, {
+        //     capture: true,
+        //     passive: true
+        // })
+        window.onresize = onResize;
+
+        container.addEventListener('scroll', onScroll, {
             capture: true,
             passive: true
         })
-    }, [scroll])
+
+    }, [scroll, container.scrollHeight])
 
     return (
         <Wrapper 
             background={ scroll > 0 ? '25,70,85,.85' : '0,0,0,0' } 
             shadow={ scroll > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
         >
-            <Title href='/' color={ (scroll >= 800 && scroll <= 1600) || scroll >= 4800 && scroll <= 5600 ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap color={ (scroll >= 800 && scroll <= 1600) || scroll >= 4800 && scroll <= 5600 ? 'black' : 'white' }>
+            <Title href='/' color={ (scroll >= (maxHeight * .12) && scroll <= (maxHeight * .24)) || (scroll >= (maxHeight * .735) && scroll <= (maxHeight * .86)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap color={ (scroll >= (maxHeight * .12) && scroll <= (maxHeight * .24)) || (scroll >= (maxHeight * .735) && scroll <= (maxHeight * .86)) ? 'black' : 'white' }>
                 <a href='/#about'>About</a>
                 <a href='/#portfolio'>Portfolio</a>
                 <a href='/#technologies'>Technologies</a>

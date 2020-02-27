@@ -24,6 +24,7 @@ const Overlay = styled(Section)`
   width: 100%;
   display: flex;
   flex-direction: column-reverse;
+  // justify-content: space-evenly; 
   padding: 64px;
   box-sizing: border-box;
   @media (max-width: 1200px) {
@@ -154,7 +155,7 @@ const SideB = styled.div`
     flex-direction: column;
     justify-content: center;
     cursor: default;
-
+    margin-top: 16px; 
     & span {
       max-height: 100%;
     }
