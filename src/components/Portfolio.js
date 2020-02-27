@@ -157,8 +157,12 @@ const SideB = styled.div`
     & a {
       color: rgb(255,200,0);
     }
-    
-    @media (max-width: 1200px), (max-height: 799px) {
+    @media  (max-height: 799px) {
+      // margin:  auto 0;
+      width: 600px;
+      height:  335px;
+    }
+    @media (max-width: 1200px) {
       margin: 0 auto;
       width: 768px;
       height: 267px;
