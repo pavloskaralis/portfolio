@@ -21,6 +21,7 @@ const mapStateToProps = state => {
 const Wrapper = styled.div`
   position: relative; 
   scroll-behavior: smooth;
+  scroll-padding: 16px; 
   scroll-snap-type: y mandatory;
   overflow: scroll; 
   height: 100vh;
