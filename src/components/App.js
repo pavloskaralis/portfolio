@@ -26,7 +26,6 @@ const Wrapper = styled.div`
   height: 100vh;
   max-width: 100vw;
   padding: 16px;
-  padding-bottom: 0px;
   box-sizing: border-box; 
   display: flex;
   flex-direction: column; 

@@ -69,6 +69,7 @@ const Text = styled.div`
   position: absolute; 
   bottom: 64px;
   min-width: 100%; 
+  
   @media (max-width: 1200px), (max-height: 732px) {
     bottom: 32px; 
   }
