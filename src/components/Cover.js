@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Section from '../styles/Section.js'
 import cover from '../images/cover.jpg'
 import Canvas from './Canvas.js'
+import cover2 from '../images/cover2.jpg'
 
 const mapStateToProps = state => {
   return {
@@ -25,6 +26,10 @@ const Wrapper = styled(Section)`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  @media not all and (min-resolution:.001dpcm)
+  { @supports (-webkit-appearance:none) {
+      background-image: url(${cover2}); 
+  }}
 `;
 
 const Overlay = styled(Section)`
@@ -42,6 +47,10 @@ const Overlay = styled(Section)`
   @media (max-width: 1200px), (max-height: 732px) {
     width: 100%;
   }
+  @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+        background-image: none; 
+    }}
 `;
 
 const FullStack = styled.div`
@@ -117,16 +126,24 @@ let Cover = ({status}) => {
 
   return (
     <Wrapper>
-      {delay && <Canvas/>}
-      {!status && 
-        <LoaderWrap>
-          <Loader/>
-        </LoaderWrap>
-      }
-      <Overlay/>
-      {status && <FullStack>Full-Stack Developer</FullStack>}
-    </Wrapper>
-  )
+        {(navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) ?
+          <>
+            <Overlay/>
+            <FullStack>Full-Stack Developer</FullStack>
+          </> :
+          <>
+            {delay && <Canvas/>}
+            {!status && 
+              <LoaderWrap>
+                <Loader/>
+              </LoaderWrap>
+            }
+            <Overlay/>
+            {status && <FullStack>Full-Stack Developer</FullStack>}
+          </>
+        }
+      </Wrapper>
+    )
 }
 
 Cover = connect(

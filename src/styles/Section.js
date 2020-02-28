@@ -28,9 +28,11 @@ const Section = styled.div`
         min-height: 466px;
         scroll-margin: 141px; 
     }
-    @media(max-width: 499px){
 
-    }
+    @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+        // scroll-snap-align: none;
+    }}
 `;
 
 

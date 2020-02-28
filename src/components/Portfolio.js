@@ -8,6 +8,7 @@ import Text4 from '../texts/Text4.js'
 import Fade from 'react-reveal/Fade';
 
 
+
 const Wrapper = styled(Section)`
   background-image: url(${props => props.backgroundImage});
   background-size: cover;
@@ -202,30 +203,55 @@ function Portfolio({backgroundImage, project, title, href, id}){
         <Overlay>
             <SideA>
               <Column>
-                <Fade>
-                  <Project>{`Project ${project}`}</Project>
-                  <Title>{title}</Title>
-                </Fade>
+                {(navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) ?
+                  <>
+                    <Project>{`Project ${project}`}</Project>
+                    <Title>{title}</Title>
+                  </> :
+                  <Fade>
+                    <Project>{`Project ${project}`}</Project>
+                    <Title>{title}</Title>
+                  </Fade>
+                }   
               </Column>
               <Column>
-                <Fade>
-                  <a href={href} rel="noopener noreferrer" target='_blank'> 
-                    <Button>Visit Website</Button>
-                  </a>
-                </Fade>
+                {(navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) ?
+                  <>
+                    <a href={href} rel="noopener noreferrer" target='_blank'> 
+                      <Button>Visit Website</Button>
+                    </a>
+                  </> :
+                  <Fade>
+                    <a href={href} rel="noopener noreferrer" target='_blank'> 
+                      <Button>Visit Website</Button>
+                    </a>
+                  </Fade>
+                }   
               </Column>
             </SideA>
               <SideB>
-                <Fade>
-                  <InnerWrap>
-                    <Text>
-                      {project === '1' && <Text1/>}
-                      {project === '2' && <Text2/>}
-                      {project === '3' && <Text3/>}
-                      {project === '4' && <Text4/>}
-                    </Text>
-                  </InnerWrap>
-                </Fade>
+                {(navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) ?
+                  <>
+                    <InnerWrap>
+                      <Text>
+                        {project === '1' && <Text1/>}
+                        {project === '2' && <Text2/>}
+                        {project === '3' && <Text3/>}
+                        {project === '4' && <Text4/>}
+                      </Text>
+                    </InnerWrap>                  
+                  </> :
+                  <Fade>
+                    <InnerWrap>
+                      <Text>
+                        {project === '1' && <Text1/>}
+                        {project === '2' && <Text2/>}
+                        {project === '3' && <Text3/>}
+                        {project === '4' && <Text4/>}
+                      </Text>
+                    </InnerWrap>
+                  </Fade>
+                }   
               </SideB>
         </Overlay>
     </Wrapper>

@@ -98,60 +98,52 @@ const LinkWrap = styled.div`
 
 
 function Cover(){
-   
-    function throttle(fn, wait) {
-        var time = Date.now();
-        return function() {
-            if ((time + wait - Date.now()) < 0) {
-            fn();
-            time = Date.now();
+
+        let root = document.querySelector('#root')
+        let container = document.querySelector('#container') || root;
+        // console.log('test',window.innerHeight)
+        let scrollHeight = container.scrollHeight > 0 ? container.scrollHeight : window.innerHeight * 8;
+
+        const [maxHeight, setMaxHeight] = useState(scrollHeight);
+        const [scroll, setScroll] = useState(container.scrollTop)
+
+        useEffect( () => {
+            if ((navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1)) {
+                container = document.querySelector('#container');
             }
-        }
-    }
 
-    const container = document.getElementById('container');
+            const onScroll = () => {
+                const scrollCheck1 = container.scrollTop >= 0 && container.scrollTop <= 100;
+                const scrollCheck2 = container.scrollTop >= 600 && container.scrollTop%4 === 0;
+            
 
-    const [maxHeight, setMaxHeight] = useState(container.scrollHeight);
-    const [scroll, setScroll] = useState(container.scrollTop)
-
-    useEffect( () => {
-
-          const onScroll = () => {
-            const scrollCheck1 = container.scrollTop >= 0 && container.scrollTop <= 100;
-            const scrollCheck2 = container.scrollTop >= 600 && container.scrollTop%4 === 0;
-          
-
-            if (scrollCheck1 || scrollCheck2) {
-                setScroll(container.scrollTop);        
-            }
-        }
-
-        const onResize = () => {
-            console.log('inside Resize')
-            if((container.scrollHeight > maxHeight + 10) || (container.scrollHeight < maxHeight - 10)) {           
-                if(container.scrollHeight > 7216 ) {
-                    console.log('resize 1')
-                    setMaxHeight(7216) 
-                } else if (container.scrollHeight < 6032) {
-                    console.log('resize 2')
-                    setMaxHeight(6032);
-                } else {
-                    console.log('resize 3')
-                    setMaxHeight(container.scrollHeight)
+                if (scrollCheck1 || scrollCheck2) {
+                    setScroll(container.scrollTop);        
                 }
             }
-        }
-        
-        // container.addEventListener('resize', onResize, {
-        //     capture: true,
-        //     passive: true
-        // })
-        window.onresize = onResize;
 
-        container.addEventListener('scroll', onScroll, {
-            capture: true,
-            passive: true
-        })
+            const onResize = () => {
+                // console.log('inside Resize')
+                if((container.scrollHeight > maxHeight + 10) || (container.scrollHeight < maxHeight - 10)) {           
+                    if(container.scrollHeight > 7216 ) {
+                        // console.log('resize 1')
+                        setMaxHeight(7216) 
+                    } else if (container.scrollHeight < 6032) {
+                        // console.log('resize 2')
+                        setMaxHeight(6032);
+                    } else {
+                        // console.log('resize 3')
+                        setMaxHeight(container.scrollHeight)
+                    }
+                }
+            }
+        
+            window.onresize = onResize;
+
+            container.addEventListener('scroll', onScroll, {
+                capture: true,
+                passive: true
+            });
 
     }, [scroll, container.scrollHeight])
 

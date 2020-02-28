@@ -88,13 +88,6 @@ function About(){
       setIndex(newIndex);
     }
 
-    const handleKeyDown = e => {
-      console.log('works')
-      console.log(e.keyCode)
-      if (e.keyCode === 37) toggleIndex(-1);
-      if (e.keyCode === 39) toggleIndex(1);
-    }
-
     // useEffect(() => {document.addEventListener("keydown", handleKeyDown)},[index])
 
     return (

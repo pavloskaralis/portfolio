@@ -57,7 +57,10 @@ let App = ({status}) => {
       <Portfolio id='portfolio4' backgroundImage={portfolio4} project='4' title='Foodie' href='https://foodie-list-app.herokuapp.com/' />
       <Technologies/>
       <Photography/>
-      {status && <Nav/>}
+      {(navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) ?
+        <Nav/> :
+        status && <Nav/> 
+      }
     </Wrapper>
   )
 }
