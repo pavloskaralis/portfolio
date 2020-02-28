@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, {keyframes} from 'styled-components'
 import Section from '../styles/Section.js'
-import cover from '../images/cover.jpg'
+import cover from '../images/cell.jpg'
 import { connect } from 'react-redux'
 import toggleStatus from '../toggleStatus.js'
 
