@@ -125,14 +125,11 @@ function Cover(){
             const onResize = () => {
                 // console.log('inside Resize')
                 if((container.scrollHeight > maxHeight + 10) || (container.scrollHeight < maxHeight - 10)) {           
-                    if(container.scrollHeight > 7216 ) {
-                        // console.log('resize 1')
-                        setMaxHeight(7216) 
-                    } else if (container.scrollHeight < 6032) {
-                        // console.log('resize 2')
+                    if (container.scrollHeight < 6032) {
+                        console.log('resize 2')
                         setMaxHeight(6032);
                     } else {
-                        // console.log('resize 3')
+                        console.log('resize 3')
                         setMaxHeight(container.scrollHeight)
                     }
                 }
