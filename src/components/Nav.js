@@ -152,8 +152,8 @@ function Cover(){
             background={ scroll > 0 ? '25,70,85,.85' : '0,0,0,0' } 
             shadow={ scroll > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
         >
-            <Title href='/' color={ (scroll >= (maxHeight * .10) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .70) && scroll <= (maxHeight * .84)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap color={ (scroll >= (maxHeight * .10) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .70) && scroll <= (maxHeight * .84)) ? 'black' : 'white' }>
+            <Title href='/' color={ (scroll >= (maxHeight * .10) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .73) && scroll <= (maxHeight * .86)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap color={ (scroll >= (maxHeight * .10) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .73) && scroll <= (maxHeight * .86)) ? 'black' : 'white' }>
                 <a href='/#about'>About</a>
                 <a href='/#portfolio'>Portfolio</a>
                 <a href='/#technologies'>Technologies</a>
