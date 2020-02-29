@@ -10,7 +10,7 @@ const Wrapper = styled(Section)`
   display: flex;
   animation-delay: 2s; 
   transition: background-image 0s;
-  transition-delay: .25s; 
+  transition-delay: .3s; 
   background-image: ${props => `url(${props.image})`};
   background-size: cover;
   background-position: center; 
