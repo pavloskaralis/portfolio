@@ -119,7 +119,7 @@ const Icon = styled.a`
   cursor: pointer;
 
   &:hover {
-    background-size: 80%;
+    background-size: 75%;
   }
 
 
