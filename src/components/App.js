@@ -31,6 +31,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column; 
   @media (max-width: 1200px), (max-height: 736px) {
+    scroll-padding: 0; 
     padding: 0; 
   }
 `;
