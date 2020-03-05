@@ -6,6 +6,8 @@ import ga from '../images/ga.png'
 import github from '../images/github.png'
 import linkedin from '../images/linkedin.png'
 import gmail from '../images/gmail.png'
+import cv from '../images/cv.png'
+import resume from '../images/PK_Resume.pdf'
 
 const Wrapper = styled(Section)`
   background-color: rgba(240,240,240);
@@ -128,6 +130,9 @@ function About(){
           For the past 7 years, I have been employed  as a photographer across a number of different work arrangements. This has included freelance assignments, managing my own business profile, being contracted as a representative for other studios, and working full time at RedFin. These experiences have taught me to work effectively with clients as well as team members, and to manage my time across several projects in order to quickly deliver a polished product.
         </Text>
         <IconWrap>
+          <a download='PK_Resume.pdf' href={resume}>
+            <Icon image={cv}/>
+          </a>
           <a target="_blank" rel="noopener noreferrer" href='https://profiles.generalassemb.ly/pavlos-karalis'>
             <Icon image={ga}/>
           </a>

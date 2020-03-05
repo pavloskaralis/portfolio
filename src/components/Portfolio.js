@@ -87,6 +87,9 @@ const SideA = styled.div`
       @media (max-width: 576px) {
         font-size: 24px;
       }
+      @media (max-width: 480px) {
+        font-size: 18px;
+      }
     `;
 
     const Button = styled.div`
@@ -184,8 +187,16 @@ const SideB = styled.div`
       width: 400px;
       height: 220px;
     }
-    @media (max-width: 499px) {
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+    @media (max-width: 380px) {
       font-size: 10px;
+      height: 200px;
+    }
+    @media (max-width: 340px) {
+      font-size: 10px;
+      height: 220px;
     }
   `;
 
