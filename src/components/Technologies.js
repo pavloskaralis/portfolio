@@ -5,13 +5,13 @@ import react from '../images/react.png'
 import redux from '../images/redux.png'
 import postgresql from '../images/postgresql.png'
 import mongodb from '../images/mongodb.png'
-import axios from '../images/axios.png'
+import mysql from '../images/mysql.png'
 import passport from '../images/passport.png'
 import jquery from '../images/jquery.png'
 import rails from '../images/rails.png'
 import bcrypt from '../images/bcrypt.png'
 import express from '../images/express.png'
-import style from '../images/styled.png'
+import spring from '../images/springboot.png'
 import photoshop from '../images/photoshop.png'
 import sass from '../images/sass.png'
 import bootstrap from '../images/bootstrap.png'
@@ -136,13 +136,13 @@ function Technologies(){
         <Overlay/>
         <Icon rel="noopener noreferrer" href="https://reactjs.org/" target="__blank" image={react}/>
         <Icon rel="noopener noreferrer" href="https://redux.js.org/" target="__blank" image={redux}/>
-        <Icon rel="noopener noreferrer" href="https://styled-components.com/" target="__blank" image={style}/>
+        <Icon rel="noopener noreferrer" href="https://spring.io/projects/spring-boot" target="__blank" image={spring}/>
         <Icon rel="noopener noreferrer" href="https://expressjs.com/" target="__blank" image={express}/>
         <Icon rel="noopener noreferrer" href="https://rubyonrails.org/" target="__blank" image={rails}/>
 
         <Icon rel="noopener noreferrer" href="https://jquery.com/" target="__blank" image={jquery}/>
         <Icon rel="noopener noreferrer" href="https://sass-lang.com/" target="__blank" image={sass}/>
-        <Icon rel="noopener noreferrer" href="https://www.axios.com/" target="__blank" image={axios}/>
+        <Icon rel="noopener noreferrer" href="https://www.mysql.com/" target="__blank" image={mysql}/>
         <Icon rel="noopener noreferrer" href="https://www.mongodb.com/" target="__blank" image={mongodb}/>
         <Icon rel="noopener noreferrer" href="https://www.postgresql.org/" target="__blank" image={postgresql}/>
 
