@@ -15,7 +15,7 @@ import spring from '../images/springboot.png'
 import photoshop from '../images/photoshop.png'
 import sass from '../images/sass.png'
 import bootstrap from '../images/bootstrap.png'
-import chart from '../images/chart.png'
+import angular from '../images/angular.png'
 
 const Wrapper = styled(Section)`
   background-color: rgba(240,240,240);
@@ -140,16 +140,15 @@ function Technologies(){
         <Icon rel="noopener noreferrer" href="https://expressjs.com/" target="__blank" image={express}/>
         <Icon rel="noopener noreferrer" href="https://rubyonrails.org/" target="__blank" image={rails}/>
 
+        <Icon rel="noopener noreferrer" href="https://angular.io/" target="__blank" image={angular}/>
         <Icon rel="noopener noreferrer" href="https://jquery.com/" target="__blank" image={jquery}/>
-        <Icon rel="noopener noreferrer" href="https://sass-lang.com/" target="__blank" image={sass}/>
         <Icon rel="noopener noreferrer" href="https://www.mysql.com/" target="__blank" image={mysql}/>
         <Icon rel="noopener noreferrer" href="https://www.mongodb.com/" target="__blank" image={mongodb}/>
         <Icon rel="noopener noreferrer" href="https://www.postgresql.org/" target="__blank" image={postgresql}/>
 
-
+        <Icon rel="noopener noreferrer" href="https://sass-lang.com/" target="__blank" image={sass}/>
         <Icon rel="noopener noreferrer" href="https://www.adobe.com/products/photoshopfamily.html" target="__blank" image={photoshop}/>
         <Icon rel="noopener noreferrer" href="https://getbootstrap.com/" target="__blank" image={bootstrap}/>
-        <Icon rel="noopener noreferrer" href="https://www.chartjs.org/" target="__blank" image={chart}/>
         <Icon rel="noopener noreferrer" href="http://www.passportjs.org/" target="__blank" image={passport}/>
         <Icon rel="noopener noreferrer" href="https://www.npmjs.com/package/bcrypt" target="__blank" image={bcrypt}/>
 
