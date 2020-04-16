@@ -7,7 +7,7 @@ import github from '../images/github.png'
 import linkedin from '../images/linkedin.png'
 import gmail from '../images/gmail.png'
 import cv from '../images/cv.png'
-import resume from '../images/PK_Resume.pdf'
+import resume from '../images/Resume.pdf'
 
 const Wrapper = styled(Section)`
   background-color: rgba(240,240,240);
