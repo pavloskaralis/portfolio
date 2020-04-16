@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styled, {keyframes} from 'styled-components'
 
 const fade = keyframes`
@@ -100,43 +100,42 @@ const LinkWrap = styled.div`
 function Cover(){
 
         let root = document.querySelector('#root')
-        let container = document.querySelector('#container') || root;
+        let container = useRef(document.querySelector('#container') || root);
         // console.log('test',window.innerHeight)
-        let scrollHeight = container.scrollHeight > 0 ? container.scrollHeight : window.innerHeight * 8;
+        let scrollHeight = container.current.scrollHeight > 0 ? container.current.scrollHeight : window.innerHeight * 8;
 
         const [maxHeight, setMaxHeight] = useState(scrollHeight);
-        const [scroll, setScroll] = useState(container.scrollTop)
+        const [scroll, setScroll] = useState(container.current.scrollTop)
 
         useEffect( () => {
             if ((navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1)) {
-                container = document.querySelector('#container');
+                container.current = document.querySelector('#container');
             }
 
             const onScroll = () => {
-                const scrollCheck1 = container.scrollTop >= 0 && container.scrollTop <= 850;
-                const scrollCheck2 = container.scrollTop >= 850 && container.scrollTop%4 === 0;
+                const scrollCheck1 = container.current.scrollTop >= 0 && container.current.scrollTop <= 850;
+                const scrollCheck2 = container.current.scrollTop >= 850 && container.current.scrollTop%4 === 0;
             
 
                 if (scrollCheck1 || scrollCheck2) {
-                    setScroll(container.scrollTop);        
+                    setScroll(container.current.scrollTop);        
                 }
             }
 
             const onResize = () => {
                 // console.log('inside Resize')
-                if((container.scrollHeight > maxHeight + 10) || (container.scrollHeight < maxHeight - 10)) {           
-                    setMaxHeight(container.scrollHeight)
+                if((container.current.scrollHeight > maxHeight + 10) || (container.current.scrollHeight < maxHeight - 10)) {           
+                    setMaxHeight(container.current.scrollHeight)
                 }
             }
         
             window.onresize = onResize;
 
-            container.addEventListener('scroll', onScroll, {
+            container.current.addEventListener('scroll', onScroll, {
                 capture: true,
                 passive: true
             });
-            console.log((maxHeight * .10),(maxHeight * .22), scroll)
-    }, [scroll, container.scrollHeight])
+    }, [scroll, container.current.scrollHeight, maxHeight])
 
     return (
         <Wrapper 
