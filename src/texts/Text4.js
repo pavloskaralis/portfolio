@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Text4(){
+function Text5(){
 
   return (
     <span>
-      As a means to get acclimated with merging GitHub branches between multiple developers, the concept of a shared-model list app was selected for the group project. Thus, Foodie is designed to provide users with a platform for creating and editing sharable shopping lists. To help organize the project, my group employed a <a target="_blank" href='https://trello.com/b/z1mnXZJq/project'>Trello board</a> to keep track of tasks. The strategy implemented was to separate the work into three parts: design, frontend, and backend. As such, my primary focus became to structure React components and implement user authentication via Passport.js middleware.  
+      Being a shared-model application, Foodie is designed to provide users with a platform for creating and editing shopping lists with friends and familiy. The project was a group effort that involved merging GitHub branches between multiple developers. To help organize the project, the group employed a <a target="_blank" href='https://trello.com/b/z1mnXZJq/project'>Trello board</a> to keep track of tasks. The strategy implemented was to separate the work into three parts: design, frontend, and backend. As such, my primary focus became to structure React components and implement user authentication via Passport.js middleware.  
       <br/><br/>
       The application’s most important feature is its shared user-model, which is made possible through the Mongoose schema design. Within an array field, each list model keeps track of all users with access rights. When the Index component mounts after <a target="_blank" href='https://github.com/pavloskaralis/foodie/blob/master/backend/controllers/user.js'>user authentication</a>, an Axios get request is dispatched and sends the accessing username to the server via a URL parameter. The server then responds with all associated lists, allowing the component to fully render. At this point any list can now be accessed, and the user is able to add other valid usernames to the document via a form. 
       <br/><br/>
@@ -13,6 +13,6 @@ function Text4(){
   )
 }
 
-export default Text4
+export default Text5
 
 

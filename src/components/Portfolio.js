@@ -5,6 +5,7 @@ import Text1 from '../texts/Text1.js'
 import Text2 from '../texts/Text2.js'
 import Text3 from '../texts/Text3.js'
 import Text4 from '../texts/Text4.js'
+import Text5 from '../texts/Text5.js'
 import Fade from 'react-reveal/Fade';
 
 
@@ -75,6 +76,7 @@ const SideA = styled.div`
       font-size: 80px;
       font-weight: 600;
       width: 100%;
+ 
       @media (max-width: 1200px), (max-height: 732px) {
         font-size: 64px;
       }
@@ -237,9 +239,10 @@ function Portfolio({backgroundImage, project, title, href, id}){
                     <InnerWrap>
                       <Text>
                         {project === '1' && <Text1/>}
-                        {project === '2' && <Text2/>}
-                        {project === '3' && <Text3/>}
-                        {project === '4' && <Text4/>}
+                        {project === '2' && <Text5/>}
+                        {project === '3' && <Text2/>}
+                        {project === '4' && <Text3/>}
+                        {project === '5' && <Text4/>}
                       </Text>
                     </InnerWrap>
                   </Fade>
