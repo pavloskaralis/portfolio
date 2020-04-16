@@ -113,8 +113,8 @@ function Cover(){
             }
 
             const onScroll = () => {
-                const scrollCheck1 = container.scrollTop >= 0 && container.scrollTop <= 100;
-                const scrollCheck2 = container.scrollTop >= 600 && container.scrollTop%4 === 0;
+                const scrollCheck1 = container.scrollTop >= 0 && container.scrollTop <= 850;
+                const scrollCheck2 = container.scrollTop >= 850 && container.scrollTop%4 === 0;
             
 
                 if (scrollCheck1 || scrollCheck2) {
@@ -135,7 +135,7 @@ function Cover(){
                 capture: true,
                 passive: true
             });
-
+            console.log((maxHeight * .10),(maxHeight * .22), scroll)
     }, [scroll, container.scrollHeight])
 
     return (
