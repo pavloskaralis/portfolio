@@ -6,6 +6,7 @@ import Text2 from '../texts/Text2.js'
 import Text3 from '../texts/Text3.js'
 import Text4 from '../texts/Text4.js'
 import Text5 from '../texts/Text5.js'
+import Text6 from '../texts/Text6.js'
 import Fade from 'react-reveal/Fade';
 
 
@@ -218,7 +219,7 @@ function Portfolio({backgroundImage, project, title, href, id}){
               <Column>
                 
                   <Fade>
-                    <Project>{`Project ${project} of 4`}</Project>
+                    <Project>{`Project ${project} of 5`}</Project>
                     <Title>{title}</Title>
                   </Fade>
             
@@ -238,10 +239,11 @@ function Portfolio({backgroundImage, project, title, href, id}){
                   <Fade>
                     <InnerWrap>
                       <Text>
-                        {project === '1' && <Text1/>}
-                        {project === '2' && <Text5/>}
-                        {project === '3' && <Text2/>}
+                        {project === '1' && <Text6/>}
+                        {project === '2' && <Text1/>}
+                        {project === '3' && <Text5/>}
                         {project === '4' && <Text3/>}
+                        {project === '5' && <Text2/>}
                       </Text>
                     </InnerWrap>
                   </Fade>

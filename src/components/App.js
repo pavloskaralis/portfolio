@@ -11,6 +11,7 @@ import portfolio2 from '../images/portfolio2.png'
 import portfolio3 from '../images/portfolio3.png'
 import portfolio4 from '../images/portfolio4.png'
 import portfolio5 from '../images/portfolio5.png'
+import portfolio6 from '../images/portfolio6.png'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => {
@@ -53,11 +54,12 @@ let App = ({status}) => {
     <Wrapper id="container">
       <Cover/>
       <About/>
-      <Portfolio id='portfolio' backgroundImage={portfolio1} project='1' title='Traveler' href='https://traveler-planning-app.herokuapp.com/' />
-      <Portfolio id='portfolio2' backgroundImage={portfolio5} project='2' title='Spell &#x2713; It' href='https://spell-check-it.herokuapp.com//' />
-      <Portfolio id='portfolio3' backgroundImage={portfolio2} project='3' title='Go Fish' href='https://pavloskaralis.github.io/go-fish/' />
+      <Portfolio id='portfolio' backgroundImage={portfolio6} project='1' title='Cafe Racers' href='https://cafe-racers.herokuapp.com/' />
+      <Portfolio id='portfolio2' backgroundImage={portfolio1} project='2' title='Traveler' href='https://traveler-planning-app.herokuapp.com/' />
+      <Portfolio id='portfolio3' backgroundImage={portfolio5} project='3' title='Spell &#x2713; It' href='https://spell-check-it.herokuapp.com//' />
       <Portfolio id='portfolio4' backgroundImage={portfolio3} project='4' title='Appstractor' href='http://appstractor.herokuapp.com/' />
-      <Portfolio id='portfolio5' backgroundImage={portfolio4} project='5' title='Foodie' href='https://foodie-list-app.herokuapp.com/' />
+      <Portfolio id='portfolio5' backgroundImage={portfolio2} project='5' title='Go Fish' href='https://pavloskaralis.github.io/go-fish/' />
+      {/* <Portfolio id='portfolio5' backgroundImage={portfolio4} project='5' title='Foodie' href='https://foodie-list-app.herokuapp.com/' /> */}
       <Technologies/>
       <Photography/>
       {(navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) ?
