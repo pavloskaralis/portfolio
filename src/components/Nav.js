@@ -100,37 +100,43 @@ const LinkWrap = styled.div`
 function Cover(){
 
         let root = document.querySelector('#root')
+        //set container to app.js; use root div as backup for first load.
         let container = useRef(document.querySelector('#container') || root);
-        // console.log('test',window.innerHeight)
+        //set scroll height to app.js scroll height; use window height * 9 as backup for first load
         let scrollHeight = container.current.scrollHeight > 0 ? container.current.scrollHeight : window.innerHeight * 9;
-
+        //total page height relative to current browser size
         const [maxHeight, setMaxHeight] = useState(scrollHeight);
+        //current scroll height 
         const [scroll, setScroll] = useState(container.current.scrollTop)
 
         useEffect( () => {
+            //for safari, set container on mount 
             if ((navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1)) {
                 container.current = document.querySelector('#container');
             }
-
+            
             const onScroll = () => {
+                //if viewing cover
                 const scrollCheck1 = container.current.scrollTop >= 0 && container.current.scrollTop <= 850;
+                //if viewing past cover, buffering every 4 pixels 
                 const scrollCheck2 = container.current.scrollTop >= 850 && container.current.scrollTop%4 === 0;
             
 
                 if (scrollCheck1 || scrollCheck2) {
+                    //reset current scroll height
                     setScroll(container.current.scrollTop);        
                 }
             }
 
             const onResize = () => {
-                // console.log('inside Resize')
+                //if user resizes client, reset maxheight 
                 if((container.current.scrollHeight > maxHeight + 10) || (container.current.scrollHeight < maxHeight - 10)) {           
                     setMaxHeight(container.current.scrollHeight)
                 }
             }
-        
+            //sync method to resize event listener 
             window.onresize = onResize;
-
+            //add scroll event listener to app.js
             container.current.addEventListener('scroll', onScroll, {
                 capture: true,
                 passive: true
@@ -139,9 +145,11 @@ function Cover(){
 
     return (
         <Wrapper 
+        // when not in full screen, give color and shadow to background when scrolling down from initial page load position
             background={ scroll > 0 ? '25,70,85,.85' : '0,0,0,0' } 
             shadow={ scroll > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
-        >
+        >  
+        {/* when in full screen, change text color over white background sections */}
             <Title href='/' color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
             <LinkWrap color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
                 <a href='/#about'>About</a>
