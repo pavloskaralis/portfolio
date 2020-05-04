@@ -113,13 +113,14 @@ function Cover(){
             //for safari, set container on mount 
             if ((navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1)) {
                 container.current = document.querySelector('#container');
+                console.log(container.current.scrollHeight )
             }
             
             const onScroll = () => {
                 //if viewing cover
-                const scrollCheck1 = container.current.scrollTop >= 0 && container.current.scrollTop <= 850;
-                //if viewing past cover, buffering every 4 pixels 
-                const scrollCheck2 = container.current.scrollTop >= 850 && container.current.scrollTop%4 === 0;
+                const scrollCheck1 = container.current.scrollTop >= 0 && container.current.scrollTop <= 950;
+                //if viewing past cover, buffering every 2 pixels 
+                const scrollCheck2 = container.current.scrollTop >= 950 && container.current.scrollTop%2 === 0;
             
 
                 if (scrollCheck1 || scrollCheck2) {

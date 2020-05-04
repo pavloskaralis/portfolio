@@ -130,7 +130,7 @@ function About(){
           For the past 8 years, I’ve also been employed as a photographer across a number of different work arrangements. This has included freelance assignments, managing my own business profile, being contracted as a representative for other studios, and working full time at RedFin. These experiences have taught me to work effectively with clients as well as team members, and to manage my time across several projects in order to quickly deliver a polished product.
         </Text>
         <IconWrap>
-          <a target="_blank" href={resume} download='PK_Resume.pdf' >
+          <a target="_blank" href={resume} rel="noopener noreferrer" download='PK_Resume.pdf' >
             <Icon image={cv}/>
           </a>
           <a target="_blank" rel="noopener noreferrer" href='https://profiles.generalassemb.ly/pavlos-karalis'>
