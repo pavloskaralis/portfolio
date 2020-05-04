@@ -103,7 +103,7 @@ function Cover(){
         //set container to app.js; use root div as backup for first load.
         let container = useRef(document.querySelector('#container') || root);
         //set scroll height to app.js scroll height; use window height * 9 as backup for first load
-        let scrollHeight = container.current.scrollHeight > 0 ? container.current.scrollHeight : window.innerHeight * 9;
+        let scrollHeight = container.current.scrollHeight > 0 ? container.current.scrollHeight : window.innerHeight * 8;
         //total page height relative to current browser size
         const [maxHeight, setMaxHeight] = useState(scrollHeight);
         //current scroll height 

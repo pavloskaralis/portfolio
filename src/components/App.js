@@ -32,10 +32,14 @@ const Wrapper = styled.div`
   box-sizing: border-box; 
   display: flex;
   flex-direction: column; 
+  @media screen and (-webkit-min-device-pixel-ratio:0) { 
+    padding-bottom: 0;
+  }
   @media (max-width: 1200px), (max-height: 736px) {
     scroll-padding: 0; 
     padding: 0; 
   }
+  
 `;
 
 
