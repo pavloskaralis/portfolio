@@ -56,6 +56,8 @@ const SideA = styled.div`
       text-decoration-line: none;
       color: white; 
       display: inline;
+      width: 180px;
+      margin: 0 auto;
     }
   `;
 
