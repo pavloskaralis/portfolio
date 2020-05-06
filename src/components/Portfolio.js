@@ -77,6 +77,7 @@ const SideA = styled.div`
       font-size: 80px;
       font-weight: 600;
       width: 100%;
+      white-space: nowrap;
  
       @media (max-width: 1200px), (max-height: 732px) {
         font-size: 64px;
