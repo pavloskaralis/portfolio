@@ -63,8 +63,8 @@ const FullStack = styled.div`
     z-index: 1;
     color: white;
     opacity: 0;
-    animation: ${fade} 1.1s linear;
-    animation-delay: 2s;
+    animation: ${fade} 1.2s linear;
+    animation-delay: 2.1s;
     animation-fill-mode: forwards;
     padding: 16px 32px;
     cursor: default;

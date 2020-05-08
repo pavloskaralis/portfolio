@@ -6,6 +6,11 @@ const fade = keyframes`
   100% { opacity: 1; }
 `;
 
+const glow = keyframes`
+    0% {color: white;}
+    50% {color: white;}
+    100% {color: rgb(255,200,0);}
+`;
 const Wrapper = styled.nav`
     background-color: rgb(0,0,0,0);
     position: fixed;
@@ -89,6 +94,17 @@ const LinkWrap = styled.div`
             margin: 0 6px;
         }
     }
+
+    & .glow {
+        animation: ${props => props.animation === "true" ? glow : ''};
+        animation-duration: 1.4s;
+        animation-timing-function: linear; 
+        animation-iteration-count: infinite;
+        animation-direction: alternate; 
+        &:hover{
+            animation: none; 
+        }
+    }
     @media (max-width: 768px) {
         max-width: 312px;
         margin: 0 auto;
@@ -152,9 +168,9 @@ function Cover(){
         >  
         {/* when in full screen, change text color over white background sections */}
             <Title href='/' color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
+            <LinkWrap animation={ scroll > 0 ? "false" : "true" } color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
                 <a href='/#about'>About</a>
-                <a href='/#portfolio'>Portfolio</a>
+                <a className="glow" href='/#portfolio'>Portfolio</a>
                 <a href='/#technologies'>Technologies</a>
                 <a href='/#photography'>Photography</a>
             </LinkWrap>
