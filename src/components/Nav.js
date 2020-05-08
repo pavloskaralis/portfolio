@@ -97,7 +97,7 @@ const LinkWrap = styled.div`
 
     & .glow {
         animation: ${props => props.animation === "true" ? glow : ''};
-        animation-duration: 1.4s;
+        animation-duration: 1.3s;
         animation-timing-function: linear; 
         animation-iteration-count: infinite;
         animation-direction: alternate; 
