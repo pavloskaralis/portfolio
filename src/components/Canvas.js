@@ -61,9 +61,8 @@ const Cell = styled.div.attrs(props => ({
   height: 100%; 
   background-image: url(${cover});
   background-size: 800%;
-  animation: ${fade} .65s linear;
-  opacity: 0; 
-  border-radius: 2.5px;
+  animation: ${fade} .5s linear;
+  opacity: 0;
   animation-fill-mode: forwards;
 `;
 
@@ -115,14 +114,11 @@ let Canvas = ({toggleStatus}) => {
           if((i%14 === 0) && (i > 13)) y -= 7.5;
           if((i%14 === 0) && (i > 13)) base += .2;
 
-    
           blocks.push(
           <Block blockDirection={r2 === 0 ? 'row' : 'column'} blockWidth={r3 === 0 ? '5%' : '8%'} key={i} id={i}>
               {cells.map(cell => {
                   return(
-                    <div key={`${i}${cell.key}`} style={{width: cell.maxWidth, height: cell.maxHeight, transition: '1.5s', filter: 'brightness(1)'}}>
-                      <Cell  delay={`${cell.delay}s`} cellX={cell.posX} cellY={cell.posY} cellWidth={cell.maxWidth} cellHeight={cell.maxHeight}  background={`rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`}/>
-                    </div>
+                  <Cell key={`${i}${cell.key}`} delay={`${cell.delay}s`} cellX={cell.posX} cellY={cell.posY} cellWidth={cell.maxWidth} cellHeight={cell.maxHeight}  background={`rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`}/>
                   )
               })}
           </Block>
@@ -132,32 +128,12 @@ let Canvas = ({toggleStatus}) => {
 
       await loop();
       toggleStatus();
-    
-      setInterval(()=> {
-        for(let i = 0; i < 20; i ++){
-          let blocks = document.getElementById('blocks');
-          let blocksLength = blocks.childElementCount;
-          let blockIndex = Math.floor(Math.random() * blocksLength);
-          let cells = blocks.children[blockIndex];
-          let cellsLength = cells.childElementCount;
-      
-          let cellIndex = Math.floor(Math.random() * cellsLength);
-          let cell = cells.children[cellIndex];
-          let cellOpacity = cell.style.opacity;
-          let newOpacity = cellOpacity === '1' ? '.5' : '1';
-          let cellBrightness = cell.style.filter;
-          let newBrightness = cellBrightness === 'brightness(1)' ? 'brightness(1.3)' : 'brightness(1)';
-          cell.style.opacity = newOpacity; 
-          cell.style.filter= newBrightness;
-        }
-      },90)
- 
     }
 
     promise();
 
   return (
-      <Wrapper id='blocks'> 
+      <Wrapper> 
         {blocks}
       </Wrapper>
   )
