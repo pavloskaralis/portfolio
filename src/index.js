@@ -4,15 +4,15 @@ import App from './components/App.js'
 import {Router} from 'react-router-dom'
 import history from './history.js'
 import reducer from './reducer.js'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { createLogger } from 'redux-logger'
+// import { createLogger } from 'redux-logger'
 
-const loggerMiddleware = createLogger()
+// const loggerMiddleware = createLogger()
 
 const store = createStore(
     reducer,
-    applyMiddleware(loggerMiddleware)
+    // applyMiddleware(loggerMiddleware)
 )
 
 ReactDOM.render(
