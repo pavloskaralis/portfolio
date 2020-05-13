@@ -5,6 +5,7 @@ import Section from '../styles/Section.js'
 import cover from '../images/cover.jpg'
 import Canvas from './Canvas.js'
 import cover2 from '../images/cover2.jpg'
+import Fade from 'react-reveal/Fade';
 
 const mapStateToProps = state => {
   return {
@@ -12,10 +13,7 @@ const mapStateToProps = state => {
   }
 }
 
-const fade = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
+
 
 const Wrapper = styled(Section)`
   background-image: url(${cover});
@@ -62,10 +60,6 @@ const FullStack = styled.div`
     text-align: right;
     z-index: 1;
     color: white;
-    opacity: 0;
-    animation: ${fade} 1.2s linear;
-    animation-delay: 2.1s;
-    animation-fill-mode: forwards;
     padding: 16px 32px;
     cursor: default;
     @media (max-width: 1200px), (max-height: 732px) {
@@ -129,7 +123,9 @@ let Cover = ({status}) => {
         {(navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) ?
           <>
             <Overlay/>
-            <FullStack>Full-Stack Developer</FullStack>
+            <Fade>
+              <FullStack>Full-Stack Developer</FullStack>
+            </Fade>
           </> :
           <>
             {delay && <Canvas/>}
@@ -139,7 +135,11 @@ let Cover = ({status}) => {
               </LoaderWrap>
             }
             <Overlay/>
-            {status && <FullStack>Full-Stack Developer</FullStack>}
+            {status && 
+              <Fade>
+                <FullStack>Full-Stack Developer</FullStack>
+              </Fade>
+            }
           </>
         }
       </Wrapper>

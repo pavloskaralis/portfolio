@@ -1,16 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styled, {keyframes} from 'styled-components'
+import Fade from 'react-reveal/Fade';
 
-const fade = keyframes`
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-`;
 
-const glow = keyframes`
-    0% {color: white;}
-    50% {color: white;}
-    100% {color: rgb(255,200,0);}
-`;
+
+
 const Wrapper = styled.nav`
     background-color: rgb(0,0,0,0);
     position: fixed;
@@ -20,13 +14,9 @@ const Wrapper = styled.nav`
     margin: 0 auto;
     padding: 32px;
     display: flex;
-    opacity: 0;
     top: 16px;
     justify-content: space-between;
     transition: background-color .5s, box-shadow .5s;
-    animation: ${fade}  2.2s linear;
-    animation-delay: 1.4s;
-    animation-fill-mode: forwards;
     z-index: 2;
     @media (max-width: 1200px), (max-height: 732px) {
         background-color: ${props => `rgba(${props.background})`};
@@ -95,16 +85,6 @@ const LinkWrap = styled.div`
         }
     }
 
-    & .glow {
-        animation: ${props => props.animation === "true" ? glow : ''};
-        animation-duration: 1.3s;
-        animation-timing-function: linear; 
-        animation-iteration-count: infinite;
-        animation-direction: alternate; 
-        &:hover{
-            animation: none; 
-        }
-    }
     @media (max-width: 768px) {
         max-width: 312px;
         margin: 0 auto;
@@ -166,14 +146,16 @@ function Cover(){
             background={ scroll > 0 ? '25,70,85,.85' : '0,0,0,0' } 
             shadow={ scroll > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
         >  
-        {/* when in full screen, change text color over white background sections */}
-            <Title href='/' color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap animation={ scroll > 0 ? "false" : "true" } color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
-                <a href='/#about'>About</a>
-                <a className="glow" href='/#portfolio'>Portfolio</a>
-                <a href='/#technologies'>Technologies</a>
-                <a href='/#photography'>Photography</a>
-            </LinkWrap>
+            <Fade>
+                {/* when in full screen, change text color over white background sections */}
+                <Title href='/' color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+                <LinkWrap color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
+                    <a href='/#about'>About</a>
+                    <a className="glow" href='/#portfolio'>Portfolio</a>
+                    <a href='/#technologies'>Technologies</a>
+                    <a href='/#photography'>Photography</a>
+                </LinkWrap>
+            </Fade>
         </Wrapper>
     )
 }
