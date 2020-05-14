@@ -189,7 +189,7 @@ const Icon = styled('div')`
    
 const IconText = styled('div')`
   font-family: Helvetica;
-  padding-top: 4px;
+  padding-top: 8px;
   font-size: 14px;
   text-align: center;
   text-shadow: 0 0 5px rgba(0,0,0,.5);
