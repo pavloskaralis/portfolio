@@ -6,6 +6,11 @@ import cover from '../images/cover.jpg'
 import Canvas from './Canvas.js'
 import cover2 from '../images/cover2.jpg'
 import Fade from 'react-reveal/Fade';
+import icon1 from '../images/icon1.png';
+import icon2 from '../images/icon2.png';
+import icon3 from '../images/icon3.png';
+import icon4 from '../images/icon4.png';
+import icon5 from '../images/icon5.png';
 
 const mapStateToProps = state => {
   return {
@@ -13,7 +18,10 @@ const mapStateToProps = state => {
   }
 }
 
-
+const fade = keyframes`
+    from{opacity: 0}
+    to{opacity: 1}
+`
 
 const Wrapper = styled(Section)`
   background-image: url(${cover});
@@ -58,10 +66,18 @@ const FullStack = styled.div`
     max-width: 100%;
     box-sizing: border-box;
     text-align: right;
-    z-index: 1;
+    z-index: ;
     color: white;
     padding: 16px 32px;
     cursor: default;
+
+    opacity: 0; 
+    animation: ${fade};
+    animation-timing-function: linear;
+    animation-fill-mode: forwards; 
+    animation-duration: .2s;
+    animation-delay: 2.1s;
+
     @media (max-width: 1200px), (max-height: 732px) {
       font-size: 64px;
     }
@@ -106,8 +122,86 @@ const LoaderWrap = styled(Section)`
   @media (max-width: 1200px), (max-height: 732px) {
     width: 100%;
   }
-  // background: red;
 `;
+
+const IconsWrap = styled(Section)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box; 
+
+  backdrop-filter: blur(3px);
+  opacity: 0; 
+  animation: ${fade};
+  animation-timing-function: linear;
+  animation-fill-mode: forwards; 
+  animation-duration: 2.4s;
+
+  @media (max-width: 768px) {
+    padding-top: 32px;
+  }
+`;
+
+const Icons = styled('div')`
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; 
+  flex-wrap: wrap;
+  position: relative; 
+`;
+
+const IconWrap = styled('a')`
+  display: flex;
+  flex-direction: column;
+  cursor: pointer; 
+  margin: 16px;
+  text-decoration: none;
+  color: white; 
+  transition: .5s;
+  opacity: 0;
+
+  &:hover {
+    color: rgb(255,200,0);
+  }
+
+  animation: ${fade};
+  animation-timing-function: linear;
+  animation-fill-mode: forwards; 
+  animation-duration: .2s;
+  animation-delay: ${props => props.delay};
+`
+
+const Icon = styled('div')`
+  width: 60px;
+  height: 60px; 
+  transition: .5s;
+  background-image: ${props => `url(${props.image})`};
+  background-size: cover;
+  background-repeat: no-repeat; 
+  margin: 0 auto;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
+`;
+
+const IconText = styled('div')`
+  font-family: Helvetica;
+  padding-top: 4px;
+  font-size: 14px;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(0,0,0,.5);
+`;
+
+const projects = [
+  {url: icon1, text: 'Cafe Racers', delay: '.35s', href:'#CafeRacers'}, 
+  {url: icon2, text: 'Traveler', delay: '.7s', href:'#Traveler'}, 
+  {url: icon3, text: 'Spell ✓ It', delay: '1.05s', href:'#SpellCheckIt'}, 
+  {url: icon4, text: 'Appstractor', delay: '1.4s', href:'#Appstractor'}, 
+  {url: icon5, text: 'Go Fish', delay: '1.75s', href:'#GoFish'}
+];
 
 let Cover = ({status}) => {
 
@@ -123,6 +217,20 @@ let Cover = ({status}) => {
         {(navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) ?
           <>
             <Overlay/>
+            <IconsWrap>
+              <Icons>
+                { projects.map((project, index) => {
+                  return(
+                    <IconWrap href={project.href} delay={project.delay} key={index}>
+                      <Icon image={project.url}></Icon>
+                      <IconText>{project.text}</IconText>
+                    </IconWrap>
+                  )
+                })
+
+                }
+              </Icons>
+            </IconsWrap>
             <Fade>
               <FullStack>Full-Stack Developer</FullStack>
             </Fade>
@@ -135,10 +243,24 @@ let Cover = ({status}) => {
               </LoaderWrap>
             }
             <Overlay/>
+            {status &&
+              <IconsWrap>
+                <Icons>
+                  { projects.map((project, index) => {
+                    return(
+                      <IconWrap href={project.href} delay={project.delay} key={index}>
+                        <Icon image={project.url}></Icon>
+                        <IconText>{project.text}</IconText>
+                      </IconWrap>
+                    )
+                  })
+
+                  }
+                </Icons>
+              </IconsWrap>
+            }
             {status && 
-              <Fade>
-                <FullStack>Full-Stack Developer</FullStack>
-              </Fade>
+              <FullStack>Full-Stack Developer</FullStack>        
             }
           </>
         }

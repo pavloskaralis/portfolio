@@ -92,7 +92,7 @@ function About(){
     // useEffect(() => {document.addEventListener("keydown", handleKeyDown)},[index])
 
     return (
-    <Wrapper image={photos[index]} id='photography'>
+    <Wrapper image={photos[index]} id='Photography'>
       <ButtonContainer onClick={()=> toggleIndex(-1)}>
         &#8249;
       </ButtonContainer>

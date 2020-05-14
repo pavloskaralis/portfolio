@@ -121,7 +121,7 @@ const SideB = styled.div`
 function About(){
 
   return (
-    <Wrapper id='about'>
+    <Wrapper id='About'>
       <SideA>
         <Title>About</Title>
         <Text>

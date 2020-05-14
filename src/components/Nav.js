@@ -1,15 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styled, {keyframes} from 'styled-components'
-import Fade from 'react-reveal/Fade';
 
-
-
+const fade = keyframes`
+    from{opacity: 0}
+    to{opacity: 1}
+`
 
 const Wrapper = styled.nav`
     background-color: rgb(0,0,0,0);
     position: fixed;
     box-sizing: border-box;
-    width: calc(100vw - 32px);
+    width: calc(100% - 32px);
     min-height: 100px;
     margin: 0 auto;
     padding: 32px;
@@ -18,10 +19,18 @@ const Wrapper = styled.nav`
     justify-content: space-between;
     transition: background-color .5s, box-shadow .5s;
     z-index: 2;
+
+
+    opacity: 0; 
+    animation: ${fade};
+    animation-timing-function: linear;
+    animation-fill-mode: forwards; 
+    animation-duration: .1s;
+
     @media (max-width: 1200px), (max-height: 732px) {
         background-color: ${props => `rgba(${props.background})`};
         box-shadow: ${props => props.shadow};
-        width: 100vw;
+        width: 100%;
         top: 0;
     }
     @media (max-width: 768px) {
@@ -34,7 +43,6 @@ const Wrapper = styled.nav`
 `;
 
 const Title = styled.a`
-    // background: red;
     letter-spacing: 4px;
     font-weight: 600;
     font-size: 22px;
@@ -46,6 +54,7 @@ const Title = styled.a`
     justify-content: center; 
     text-decoration-line: none;
     transition: color .5s;
+
     color: ${props => props.color}; 
     & span {
         color: rgba(255,200,0,1);
@@ -54,6 +63,7 @@ const Title = styled.a`
         color: white; 
     }
     @media (max-width: 768px) {
+        text-align: center;
         margin: 0 auto;
     }  
 `;
@@ -61,6 +71,7 @@ const Title = styled.a`
 const LinkWrap = styled.div`
     display: flex;
     justify-content: space-between;
+    max-width: 100%;
     & a {
         display: flex;
         flex-direction: column; 
@@ -71,7 +82,6 @@ const LinkWrap = styled.div`
         margin: 0 12px;
         text-decoration-line: none;
         transition: color .5s;
-        // text-transform: uppercase;
         cursor: pointer; 
         &:hover {
             color: rgb(255,200,0);
@@ -86,9 +96,8 @@ const LinkWrap = styled.div`
     }
 
     @media (max-width: 768px) {
-        max-width: 312px;
+        width: 350px;
         margin: 0 auto;
-        // background: blue;
     }  
 `;
 
@@ -145,17 +154,15 @@ function Cover(){
         // when not in full screen, give color and shadow to background when scrolling down from initial page load position
             background={ scroll > 0 ? '25,70,85,.85' : '0,0,0,0' } 
             shadow={ scroll > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
-        >  
-            <Fade>
-                {/* when in full screen, change text color over white background sections */}
-                <Title href='/' color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-                <LinkWrap color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
-                    <a href='/#about'>About</a>
-                    <a className="glow" href='/#portfolio'>Portfolio</a>
-                    <a href='/#technologies'>Technologies</a>
-                    <a href='/#photography'>Photography</a>
-                </LinkWrap>
-            </Fade>
+        >    
+            {/* when in full screen, change text color over white background sections */}
+            <Title href='/' color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
+                <a href='/#About'>About</a>
+                <a href='/#CafeRacers'>Portfolio</a>
+                <a href='/#Technologies'>Technologies</a>
+                <a href='/#Photography'>Photography</a>
+            </LinkWrap>
         </Wrapper>
     )
 }

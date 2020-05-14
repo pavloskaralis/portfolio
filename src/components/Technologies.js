@@ -132,7 +132,7 @@ function Technologies(){
  
 
   return (
-    <Wrapper id='technologies'>
+    <Wrapper id='Technologies'>
       <Title>Technologies</Title>
       <IconWrap>
         <Overlay/>
