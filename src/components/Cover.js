@@ -196,7 +196,7 @@ const IconText = styled('div')`
 `;
 
 const projects = [
-  {url: icon1, text: 'Cafe Racers', delay: '.35s', href:'#CafeRacers'}, 
+  {url: icon1, text: 'Café Racers', delay: '.35s', href:'#CafeRacers'}, 
   {url: icon2, text: 'Traveler', delay: '.7s', href:'#Traveler'}, 
   {url: icon3, text: 'Spell ✓ It', delay: '1.05s', href:'#SpellCheckIt'}, 
   {url: icon4, text: 'Appstractor', delay: '1.4s', href:'#Appstractor'}, 
