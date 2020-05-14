@@ -147,6 +147,8 @@ function Cover(){
                 capture: true,
                 passive: true
             });
+    
+            
     }, [scroll, container.current.scrollHeight, maxHeight])
 
     return (

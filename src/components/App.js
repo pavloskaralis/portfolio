@@ -39,6 +39,7 @@ const Wrapper = styled.div`
     padding: 0; 
   }
   
+  
 `;
 
 

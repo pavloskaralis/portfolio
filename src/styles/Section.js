@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const Section = styled.div`
     position: relative; 
-    // scroll-margin: 16px; 
     width: calc(100%);
     height: calc(100vh - 32px);
     flex-shrink: 0;
@@ -11,6 +10,7 @@ const Section = styled.div`
     box-sizing: border-box;
     margin-bottom: 16px;
     scroll-snap-stop: always; 
+
     @media(min-height: 736px){
         scroll-snap-align: start;
     }
