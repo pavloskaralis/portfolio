@@ -159,12 +159,12 @@ const IconWrap = styled('a')`
   display: flex;
   flex-direction: column;
   cursor: pointer; 
-  margin: 16px;
+  margin: 4px;
   text-decoration: none;
   color: white; 
   transition: .5s;
   opacity: 0;
-
+  width: 80px;
   &:hover {
     color: rgb(255,200,0);
   }
