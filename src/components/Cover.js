@@ -5,7 +5,6 @@ import Section from '../styles/Section.js'
 import cover from '../images/cover.jpg'
 import Canvas from './Canvas.js'
 import cover2 from '../images/cover2.jpg'
-import Fade from 'react-reveal/Fade';
 import icon1 from '../images/icon1.png';
 import icon2 from '../images/icon2.png';
 import icon3 from '../images/icon3.png';
@@ -231,9 +230,8 @@ let Cover = ({status}) => {
                 }
               </Icons>
             </IconsWrap>
-            <Fade>
-              <FullStack>Full-Stack Developer</FullStack>
-            </Fade>
+    
+            <FullStack>Full-Stack Developer</FullStack>
           </> :
           <>
             {delay && <Canvas/>}
