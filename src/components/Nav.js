@@ -25,7 +25,7 @@ const Wrapper = styled.nav`
     animation: ${fade};
     animation-timing-function: linear;
     animation-fill-mode: forwards; 
-    animation-duration: .1s;
+    animation-duration: .2s;
 
     @media (max-width: 1200px), (max-height: 732px) {
         background-color: ${props => `rgba(${props.background})`};

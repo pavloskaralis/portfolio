@@ -76,7 +76,7 @@ const FullStack = styled.div`
     animation-timing-function: linear;
     animation-fill-mode: forwards; 
     animation-duration: .2s;
-    animation-delay: 2.1s;
+    animation-delay: 1.25s;
 
     @media (max-width: 1200px), (max-height: 732px) {
       font-size: 64px;
@@ -133,11 +133,11 @@ const IconsWrap = styled(Section)`
   box-sizing: border-box; 
 
   // backdrop-filter: blur(.5px);
-  opacity: 0; 
-  animation: ${fade};
-  animation-timing-function: linear;
-  animation-fill-mode: forwards; 
-  animation-duration: 2.4s;
+  // opacity: 0; 
+  // animation: ${fade};
+  // animation-timing-function: linear;
+  // animation-fill-mode: forwards; 
+  // animation-duration: .2s;
 
   @media (max-width: 768px) {
     padding-top: 32px;
@@ -196,11 +196,11 @@ const IconText = styled('div')`
 `;
 
 const projects = [
-  {url: icon1, text: 'Café Racers', delay: '.35s', href:'#CafeRacers'}, 
-  {url: icon2, text: 'Traveler', delay: '.7s', href:'#Traveler'}, 
-  {url: icon3, text: 'Spell ✓ It', delay: '1.05s', href:'#SpellCheckIt'}, 
-  {url: icon4, text: 'Appstractor', delay: '1.4s', href:'#Appstractor'}, 
-  {url: icon5, text: 'Go Fish', delay: '1.75s', href:'#GoFish'}
+  {url: icon1, text: 'Café Racers', delay: '0s', href:'#CafeRacers'}, 
+  {url: icon2, text: 'Traveler', delay: '.25s', href:'#Traveler'}, 
+  {url: icon3, text: 'Spell ✓ It', delay: '.5s', href:'#SpellCheckIt'}, 
+  {url: icon4, text: 'Appstractor', delay: '.75s', href:'#Appstractor'}, 
+  {url: icon5, text: 'Go Fish', delay: '1s', href:'#GoFish'}
 ];
 
 let Cover = ({status}) => {
