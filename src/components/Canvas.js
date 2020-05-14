@@ -112,7 +112,7 @@ let Canvas = ({toggleStatus}) => {
           x -= 6.5;
           if(x < 0) x = 95;
           if((i%14 === 0) && (i > 13)) y -= 7.5;
-          if((i%14 === 0) && (i > 13)) base += .15;
+          if((i%14 === 0) && (i > 13)) base += .2;
 
           blocks.push(
           <Block blockDirection={r2 === 0 ? 'row' : 'column'} blockWidth={r3 === 0 ? '5%' : '8%'} key={i} id={i}>
