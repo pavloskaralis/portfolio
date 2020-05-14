@@ -61,9 +61,14 @@ const Cell = styled.div.attrs(props => ({
   height: 100%; 
   background-image: url(${cover});
   background-size: 800%;
-  animation: ${fade} .4s linear;
+  animation: ${fade};
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-duration: ${props => props.duration};
   opacity: 0;
-  animation-fill-mode: forwards;
+
+  // animation-fill-mode: forwards;
 `;
 
 let Canvas = ({toggleStatus}) => {
@@ -105,20 +110,21 @@ let Canvas = ({toggleStatus}) => {
                 posX: `${[x - 40, x, x + 40][r5]}%`,
                 posY: `${[y - 10, y, y + 10][r6]}%`,
                 key: j,
-                delay: [base, base + .5, base + 1][r7]
+                delay: [base, base + .5, base + 1][r7],
+                duration: (Math.floor(Math.random() * 5) + 1) * 1.3
             })
           }
 
           x -= 6.5;
           if(x < 0) x = 95;
           if((i%14 === 0) && (i > 13)) y -= 7.5;
-          if((i%14 === 0) && (i > 13)) base += .2;
+          if((i%14 === 0) && (i > 13)) base += .23;
 
           blocks.push(
           <Block blockDirection={r2 === 0 ? 'row' : 'column'} blockWidth={r3 === 0 ? '5%' : '8%'} key={i} id={i}>
               {cells.map(cell => {
                   return(
-                  <Cell key={`${i}${cell.key}`} delay={`${cell.delay}s`} cellX={cell.posX} cellY={cell.posY} cellWidth={cell.maxWidth} cellHeight={cell.maxHeight}  background={`rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`}/>
+                  <Cell key={`${i}${cell.key}`} duration={`${cell.duration}s`} delay={`${cell.delay}s`} cellX={cell.posX} cellY={cell.posY} cellWidth={cell.maxWidth} cellHeight={cell.maxHeight}  background={`rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`}/>
                   )
               })}
           </Block>
