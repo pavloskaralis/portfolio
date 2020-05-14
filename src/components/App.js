@@ -14,11 +14,11 @@ import portfolio5 from '../images/portfolio5.png'
 import portfolio6 from '../images/portfolio6.png'
 import { connect } from 'react-redux'
 
-const mapStateToProps = state => {
-  return {
-    status: state.status
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     status: state.status
+//   }
+// }
 
 const Wrapper = styled.div`
   position: relative; 
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
 
  
 
-let App = ({status}) => {
+let App = () => {
 
   useEffect(() => {
     
@@ -65,16 +65,14 @@ let App = ({status}) => {
       {/* <Portfolio id='portfolio5' backgroundImage={portfolio4} project='5' title='Foodie' href='https://foodie-list-app.herokuapp.com/' /> */}
       <Technologies/>
       <Photography/>
-      {(navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) ?
-        <Nav/> :
-        status && <Nav/> 
-      }
+      <Nav/> 
+      
     </Wrapper>
   )
 }
 
-App = connect(
-  mapStateToProps,
-  null
-)(App)
+// App = connect(
+//   mapStateToProps,
+//   null
+// )(App)
 export default App

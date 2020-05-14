@@ -21,8 +21,8 @@ const Wrapper = styled.nav`
     z-index: 2;
 
 
-    opacity: 0; 
-    animation: ${fade};
+    // opacity: 0; 
+    // animation: ${fade};
     animation-timing-function: linear;
     animation-fill-mode: forwards; 
     animation-duration: .2s;
