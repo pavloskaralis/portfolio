@@ -71,8 +71,5 @@ let App = () => {
   )
 }
 
-// App = connect(
-//   mapStateToProps,
-//   null
-// )(App)
+
 export default App

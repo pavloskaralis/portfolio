@@ -21,8 +21,8 @@ const Wrapper = styled.nav`
     z-index: 2;
 
 
-    // opacity: 0; 
-    // animation: ${fade};
+    opacity: 0; 
+    animation: ${fade};
     animation-timing-function: linear;
     animation-fill-mode: forwards; 
     animation-duration: .2s;
@@ -115,10 +115,9 @@ function Cover(){
         const [scroll, setScroll] = useState(container.current.scrollTop)
 
         useEffect( () => {
-            //for safari, set container on mount 
-            if ((navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1)) {
-                container.current = document.querySelector('#container');
-            }
+
+            container.current = document.querySelector('#container');
+           
             
             const onScroll = () => {
                 //if viewing cover
