@@ -118,7 +118,6 @@ function Cover(){
             //for safari, set container on mount 
             if ((navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1)) {
                 container.current = document.querySelector('#container');
-                console.log(container.current.scrollHeight )
             }
             
             const onScroll = () => {
@@ -151,6 +150,18 @@ function Cover(){
             
     }, [scroll, container.current.scrollHeight, maxHeight])
 
+    //safari scroll bug
+    const onClick = () => {
+        if(navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1){
+            const container = document.querySelector('#container');
+            const scrollCheck1 = container.scrollTop >= 0 && container.scrollTop <= 950;
+            const scrollCheck2 = container.scrollTop >= 950;
+
+            if (scrollCheck1 || scrollCheck2) {
+               setTimeout(()=> setScroll(container.scrollTop), 0);        
+            }
+        }
+    }
     return (
         <Wrapper 
         // when not in full screen, give color and shadow to background when scrolling down from initial page load position
@@ -160,10 +171,10 @@ function Cover(){
             {/* when in full screen, change text color over white background sections */}
             <Title href='/' color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
             <LinkWrap color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
-                <a href='/#About'>About</a>
-                <a href='/#CafeRacers'>Portfolio</a>
-                <a href='/#Technologies'>Technologies</a>
-                <a href='/#Photography'>Photography</a>
+                <a href='/#About' onClick={onClick}>About</a>
+                <a href='/#CafeRacers' onClick={onClick}>Portfolio</a>
+                <a href='/#Technologies' onClick={onClick}>Technologies</a>
+                <a href='/#Photography' onClick={onClick}>Photography</a>
             </LinkWrap>
         </Wrapper>
     )

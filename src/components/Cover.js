@@ -132,7 +132,7 @@ const IconsWrap = styled(Section)`
   top: 0;
   box-sizing: border-box; 
 
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2.5px);
   opacity: 0; 
   animation: ${fade};
   animation-timing-function: linear;
