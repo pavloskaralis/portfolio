@@ -125,7 +125,7 @@ function About(){
       <SideA>
         <Title>About</Title>
         <Text>
-        I’m a Full-Stack Developer capable of tackling a project from multiple-perspectives, and can dependably deliver tailored, maintainable results via a crafted approach. My General Assembly education has established a foundation that allows me to create quality software and effectively continue to grow my skills. To date, I have built several backends using Node.js, Java, PHP, Python and Ruby, along with frontends composed of React, Vue, Angular, and jQuery. 
+        I’m a Full-Stack Developer capable of tackling a project from multiple-perspectives, and can dependably deliver tailored, maintainable results via a crafted approach. My General Assembly education has established a foundation that allows me to create quality software and effectively continue to grow my skills. To date, I have built several backends using Node.js, Java, PHP, Python, and Ruby, along with frontends composed of React, Vue, Angular, and jQuery. 
           <br/><br/>
           For the past 8 years, I’ve also been employed as a photographer across a number of different work arrangements. This has included freelance assignments, managing my own business profile, being contracted as a representative for other studios, and working full time at RedFin. These experiences have taught me to work effectively with clients as well as team members, and to manage my time across several projects in order to quickly deliver a polished product.
         </Text>
