@@ -108,7 +108,7 @@ function Cover(){
         //set container to app.js; use root div as backup for first load.
         let container = useRef(document.querySelector('#container') || root);
         //set scroll height to app.js scroll height; use window height * 9 as backup for first load
-        let scrollHeight = container.current.scrollHeight > 0 ? container.current.scrollHeight : window.innerHeight * 9;
+        let scrollHeight = container.current.scrollHeight > 0 ? container.current.scrollHeight : window.innerHeight * 10;
         //total page height relative to current browser size
         const [maxHeight, setMaxHeight] = useState(scrollHeight);
         //current scroll height 
@@ -121,15 +121,15 @@ function Cover(){
             
             const onScroll = () => {
                 //if viewing cover
-                const scrollCheck1 = container.current.scrollTop >= 0 && container.current.scrollTop <= 950;
+                // const scrollCheck1 = container.current.scrollTop >= 0 && container.current.scrollTop <= 950;
                 //if viewing past cover, buffering every 2 pixels 
-                const scrollCheck2 = container.current.scrollTop >= 950 && container.current.scrollTop%2 === 0;
+                // const scrollCheck2 = container.current.scrollTop >= 950 && container.current.scrollTop%2 === 0;
             
 
-                if (scrollCheck1 || scrollCheck2) {
+                // if (scrollCheck1 || scrollCheck2) {
                     //reset current scroll height
                     setScroll(container.current.scrollTop);        
-                }
+                // }
             }
 
             const onResize = () => {
@@ -168,8 +168,8 @@ function Cover(){
             shadow={ scroll > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
         >    
             {/* when in full screen, change text color over white background sections */}
-            <Title href='/' color={ (scroll >= (maxHeight * .10) && scroll <= (maxHeight * .20)) || (scroll >= (maxHeight * .84) && scroll <= (maxHeight * .94)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap color={ (scroll >= (maxHeight * .10) && scroll <= (maxHeight * .20)) || (scroll >= (maxHeight * .84) && scroll <= (maxHeight * .94)) ? 'black' : 'white' }>
+            <Title href='/' color={ (scroll >= (maxHeight * .08) && scroll <= (maxHeight * .18)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap color={ (scroll >= (maxHeight * .08) && scroll <= (maxHeight * .18)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
                 <a href='/#About' onClick={onClick}>About</a>
                 <a href='/#CafeRacers' onClick={onClick}>Portfolio</a>
                 <a href='/#Technologies' onClick={onClick}>Technologies</a>
