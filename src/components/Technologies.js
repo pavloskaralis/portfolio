@@ -14,10 +14,11 @@ import express from '../images/express.png'
 import spring from '../images/springboot.png'
 import photoshop from '../images/photoshop.png'
 import sass from '../images/sass.png'
-import bootstrap from '../images/bootstrap.png'
+// import bootstrap from '../images/bootstrap.png'
 import angular from '../images/angular.png'
 import vue from '../images/vue.png'
 import laravel from '../images/laravel.png'
+import django from '../images/django.png'
 
 const Wrapper = styled(Section)`
   background-color: rgba(240,240,240);
@@ -124,7 +125,6 @@ const Icon = styled.a`
     background-size: 80%;
   }
 
-
 `;
 
 function Technologies(){
@@ -146,14 +146,14 @@ function Technologies(){
         <Icon rel="noopener noreferrer" href="https://spring.io/projects/spring-boot" target="__blank" image={spring}/>
         <Icon rel="noopener noreferrer" href="https://laravel.com/" target="__blank" image={laravel}/>
         <Icon rel="noopener noreferrer" href="https://rubyonrails.org/" target="__blank" image={rails}/>
-        <Icon rel="noopener noreferrer" href="https://www.adobe.com/products/photoshopfamily.html" target="__blank" image={photoshop}/>
+        <Icon rel="noopener noreferrer" href="https://www.djangoproject.com/" target="__blank" image={django}/>
 
       
         <Icon rel="noopener noreferrer" href="https://www.mysql.com/" target="__blank" image={mysql}/>
         <Icon rel="noopener noreferrer" href="https://www.postgresql.org/" target="__blank" image={postgresql}/>
         <Icon rel="noopener noreferrer" href="https://www.mongodb.com/" target="__blank" image={mongodb}/>
         <Icon rel="noopener noreferrer" href="https://sass-lang.com/" target="__blank" image={sass}/>
-        <Icon rel="noopener noreferrer" href="https://getbootstrap.com/" target="__blank" image={bootstrap}/>
+        <Icon rel="noopener noreferrer" href="https://www.adobe.com/products/photoshopfamily.html" target="__blank" image={photoshop}/>
 
       </IconWrap>
     </Wrapper>

@@ -10,6 +10,7 @@ import icon2 from '../images/icon2.png';
 import icon3 from '../images/icon3.png';
 import icon4 from '../images/icon4.png';
 import icon5 from '../images/icon5.png';
+import icon6 from '../images/icon6.png';
 
 const mapStateToProps = state => {
   return {
@@ -75,7 +76,7 @@ const FullStack = styled.div`
     animation-timing-function: linear;
     animation-fill-mode: forwards; 
     animation-duration: .2s;
-    animation-delay: 1.25s;
+    animation-delay: 1.5s;
 
     @media (max-width: 1200px), (max-height: 732px) {
       font-size: 64px;
@@ -145,7 +146,7 @@ const IconsWrap = styled(Section)`
 
 const Icons = styled('div')`
   display: flex;
-  max-width: 500px;
+  // max-width: 500px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -195,11 +196,12 @@ const IconText = styled('div')`
 `;
 
 const projects = [
-  {url: icon1, text: 'Café Racers', delay: '0s', href:'#CafeRacers'}, 
-  {url: icon2, text: 'Traveler', delay: '.25s', href:'#Traveler'}, 
-  {url: icon3, text: 'Spell ✓ It', delay: '.5s', href:'#SpellCheckIt'}, 
-  {url: icon4, text: 'Appstractor', delay: '.75s', href:'#Appstractor'}, 
-  {url: icon5, text: 'Go Fish', delay: '1s', href:'#GoFish'}
+  {url: icon6, text: 'Astral', delay: '0s', href:'#Astral'},
+  {url: icon1, text: 'Café Racers', delay: '.25s', href:'#CafeRacers'}, 
+  {url: icon2, text: 'Traveler', delay: '.5s', href:'#Traveler'}, 
+  {url: icon3, text: 'Spell ✓ It', delay: '.75s', href:'#SpellCheckIt'}, 
+  {url: icon4, text: 'Appstractor', delay: '1s', href:'#Appstractor'}, 
+  {url: icon5, text: 'Go Fish', delay: '1.25s', href:'#GoFish'}
 ];
 
 let Cover = ({status}) => {

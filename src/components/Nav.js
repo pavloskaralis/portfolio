@@ -108,7 +108,7 @@ function Cover(){
         //set container to app.js; use root div as backup for first load.
         let container = useRef(document.querySelector('#container') || root);
         //set scroll height to app.js scroll height; use window height * 9 as backup for first load
-        let scrollHeight = container.current.scrollHeight > 0 ? container.current.scrollHeight : window.innerHeight * 8;
+        let scrollHeight = container.current.scrollHeight > 0 ? container.current.scrollHeight : window.innerHeight * 9;
         //total page height relative to current browser size
         const [maxHeight, setMaxHeight] = useState(scrollHeight);
         //current scroll height 
@@ -168,8 +168,8 @@ function Cover(){
             shadow={ scroll > 0 ? '0 5px 10px 0 rgba(0,0,0,.25)' : 'none' }
         >    
             {/* when in full screen, change text color over white background sections */}
-            <Title href='/' color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
-            <LinkWrap color={ (scroll >= (maxHeight * .11) && scroll <= (maxHeight * .22)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
+            <Title href='/' color={ (scroll >= (maxHeight * .10) && scroll <= (maxHeight * .20)) || (scroll >= (maxHeight * .84) && scroll <= (maxHeight * .94)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
+            <LinkWrap color={ (scroll >= (maxHeight * .10) && scroll <= (maxHeight * .20)) || (scroll >= (maxHeight * .84) && scroll <= (maxHeight * .94)) ? 'black' : 'white' }>
                 <a href='/#About' onClick={onClick}>About</a>
                 <a href='/#CafeRacers' onClick={onClick}>Portfolio</a>
                 <a href='/#Technologies' onClick={onClick}>Technologies</a>
