@@ -71,7 +71,7 @@ const Title = styled.a`
 const LinkWrap = styled.div`
     display: flex;
     justify-content: space-between;
-    max-width: 100%;
+    max-width: 90%;
     & a {
         display: flex;
         flex-direction: column; 
