@@ -178,7 +178,7 @@ const SideB = styled.div`
       min-width:0;
       margin: 0 auto;
       width: 768px;
-      height: 267px;
+      height: 258px;
       justify-content: flex-start;
     }
    
