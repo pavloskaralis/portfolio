@@ -196,9 +196,9 @@ const IconText = styled('div')`
 `;
 
 const projects = [
-  {url: icon1, text: 'Café Racers', delay: '.25s', href:'#CafeRacers'}, 
-  {url: icon2, text: 'Traveler', delay: '.5s', href:'#Traveler'}, 
-  {url: icon6, text: 'Astral', delay: '0s', href:'#Astral'},
+  {url: icon1, text: 'Café Racers', delay: '0s', href:'#CafeRacers'}, 
+  {url: icon2, text: 'Traveler', delay: '.25s', href:'#Traveler'}, 
+  {url: icon6, text: 'Astral', delay: '.5s', href:'#Astral'},
   {url: icon3, text: 'Spell ✓ It', delay: '.75s', href:'#SpellCheckIt'}, 
   {url: icon4, text: 'Appstractor', delay: '1s', href:'#Appstractor'}, 
   {url: icon5, text: 'Go Fish', delay: '1.25s', href:'#GoFish'}
