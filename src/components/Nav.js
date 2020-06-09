@@ -171,7 +171,7 @@ function Cover(){
             <Title href='/' color={ (scroll >= (maxHeight * .08) && scroll <= (maxHeight * .18)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
             <LinkWrap color={ (scroll >= (maxHeight * .08) && scroll <= (maxHeight * .18)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
                 <a href='/#About' onClick={onClick}>About</a>
-                <a href='/#Astral' onClick={onClick}>Portfolio</a>
+                <a href='/#CafeRacers' onClick={onClick}>Portfolio</a>
                 <a href='/#Technologies' onClick={onClick}>Technologies</a>
                 <a href='/#Photography' onClick={onClick}>Photography</a>
             </LinkWrap>
