@@ -8,6 +8,7 @@ import linkedin from '../images/linkedin.png'
 import gmail from '../images/gmail.png'
 import cv from '../images/cv.png'
 import resume from '../images/PK_Resume.pdf'
+import stackoverflow from '../images/stackoverflow.png'
 
 const Wrapper = styled(Section)`
   background-color: rgba(240,240,240);
@@ -94,11 +95,23 @@ const SideA = styled.div`
       background-size: cover;
       background-image: url(${props => props.image});
 
+      @media(max-width: 499px) {
+        width: 30px;
+        height: 30px;
+      }
+      
       &:hover {
         width: 50px;
         height: 50px;
         margin: 0px 8px;
+
+        @media(max-width: 499px) {
+          width: 40px;
+          height: 40px;
+        }
       }
+
+    
     `;
 
 const SideB = styled.div`
@@ -138,6 +151,9 @@ function About(){
           </a>
           <a target="_blank" rel="noopener noreferrer" href='https://github.com/pavloskaralis'>
             <Icon image={github}/>
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href='https://stackoverflow.com/users/12364678/pavlos-karalis?tab=profile'>
+            <Icon image={stackoverflow}/>
           </a>
           <a target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/in/pavlos-karalis/'>
             <Icon image={linkedin}/>
