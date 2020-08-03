@@ -12,7 +12,8 @@ import rails from '../images/rails.png'
 // import bcrypt from '../images/bcrypt.png'
 import express from '../images/express.png'
 import spring from '../images/springboot.png'
-import photoshop from '../images/photoshop.png'
+// import photoshop from '../images/photoshop.png'
+import materialui from '../images/materialui.png'
 import sass from '../images/sass.png'
 // import bootstrap from '../images/bootstrap.png'
 import angular from '../images/angular.png'
@@ -153,7 +154,7 @@ function Technologies(){
         <Icon rel="noopener noreferrer" href="https://www.postgresql.org/" target="__blank" image={postgresql}/>
         <Icon rel="noopener noreferrer" href="https://www.mongodb.com/" target="__blank" image={mongodb}/>
         <Icon rel="noopener noreferrer" href="https://sass-lang.com/" target="__blank" image={sass}/>
-        <Icon rel="noopener noreferrer" href="https://www.adobe.com/products/photoshopfamily.html" target="__blank" image={photoshop}/>
+        <Icon rel="noopener noreferrer" href="https://material-ui.com/" target="__blank" image={materialui}/>
 
       </IconWrap>
     </Wrapper>
