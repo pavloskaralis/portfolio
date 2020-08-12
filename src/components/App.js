@@ -66,7 +66,7 @@ let App = () => {
       <Portfolio id='GoFish' backgroundImage={portfolio2} project='6' title='Go Fish' href='https://pavloskaralis.github.io/go-fish/' />
       {/* <Portfolio id='portfolio5' backgroundImage={portfolio4} project='5' title='Foodie' href='https://foodie-list-app.herokuapp.com/' /> */}
       <Technologies/>
-      <Photography/>
+      {/* <Photography/> */}
       <Nav/> 
       
     </Wrapper>

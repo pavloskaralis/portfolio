@@ -138,15 +138,15 @@ function About(){
       <SideA>
         <Title>About</Title>
         <Text>
-        I’m a Full-Stack Developer capable of tackling a project from multiple-perspectives, and can dependably deliver tailored, maintainable results via a crafted approach. On the frontend, I’ve devoted a lot of time toward mastering the React framework and have implented even its more obscure features several times over. Summarily, I’m practiced in designing both functional and class components, writing unit tests, and implementing state containers like Redux. My knowledge does not end with React, however, as I’ve also built advanced SPAs using Angular and Vue. When it comes to backend, I’m equally confident in my ability to configure REST oriented APIs, and have done so with 5 different language frameworks: Express, Rails, Laravel, Django, and Spring Boot. I’ve integrated these applications with both noSQL and SQL databases, user authentication, and occasionally web sockets. In parallel with my freelance work, I continue to develop my image editing service Appstractor, which I plan to launch in the near future. 
+        I'm a self-starting developer capable of building robust solutions to any kind of technical challenge. On the frontend, I’ve devoted a lot of time toward mastering the React framework and have implented even its more obscure features several times over. Summarily, I’m practiced in designing both functional and class components, writing unit tests, and implementing state containers like Redux. My frontend knowledge does not end with React, however, as I’ve also built advanced SPAs using Angular and Vue. When it comes to backend, I’m equally confident in my ability to configure REST oriented APIs, and have done so with 5 different language frameworks: Express, Rails, Laravel, Django, and Spring Boot. I’ve integrated these applications with both noSQL and SQL databases, user authentication, and occasionally web sockets. In parallel with my freelance work, I continue to develop my image editing service Appstractor, which I plan to launch in the near future. 
         </Text>
         <IconWrap>
           <a target="_blank" href={resume} rel="noopener noreferrer" download='PK_Resume.pdf' >
             <Icon image={cv}/>
           </a>
-          <a target="_blank" rel="noopener noreferrer" href='https://profiles.generalassemb.ly/pavlos-karalis'>
+          {/* <a target="_blank" rel="noopener noreferrer" href='https://profiles.generalassemb.ly/pavlos-karalis'>
             <Icon image={ga}/>
-          </a>
+          </a> */}
           <a target="_blank" rel="noopener noreferrer" href='https://github.com/pavloskaralis'>
             <Icon image={github}/>
           </a>

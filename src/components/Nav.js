@@ -173,7 +173,7 @@ function Cover(){
                 <a href='/#About' onClick={onClick}>About</a>
                 <a href='/#CafeRacers' onClick={onClick}>Portfolio</a>
                 <a href='/#Technologies' onClick={onClick}>Technologies</a>
-                <a href='/#Photography' onClick={onClick}>Photography</a>
+                {/* <a href='/#Photography' onClick={onClick}>Photography</a> */}
             </LinkWrap>
         </Wrapper>
     )
