@@ -147,15 +147,17 @@ function About(){
           {/* <a target="_blank" rel="noopener noreferrer" href='https://profiles.generalassemb.ly/pavlos-karalis'>
             <Icon image={ga}/>
           </a> */}
-          <a target="_blank" rel="noopener noreferrer" href='https://github.com/pavloskaralis'>
-            <Icon image={github}/>
+            <a target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/in/pavlos-karalis/'>
+            <Icon image={linkedin}/>
           </a>
           <a target="_blank" rel="noopener noreferrer" href='https://stackoverflow.com/users/12364678/pavlos-karalis?tab=profile'>
             <Icon image={stackoverflow}/>
           </a>
-          <a target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/in/pavlos-karalis/'>
-            <Icon image={linkedin}/>
+          <a target="_blank" rel="noopener noreferrer" href='https://github.com/pavloskaralis'>
+            <Icon image={github}/>
           </a>
+        
+         
           <a target="_blank" rel="noopener noreferrer" href='mailto:pavloskaralis@gmail.com'>
             <Icon image={gmail}/>
           </a>
