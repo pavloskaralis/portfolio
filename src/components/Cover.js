@@ -233,7 +233,7 @@ let Cover = ({status}) => {
               </Icons>
             </IconsWrap>
     
-            <FullStack>Full-Stack Developer</FullStack>
+            <FullStack>Fullstack Developer</FullStack>
           </> :
           <>
             {delay && <Canvas/>}
