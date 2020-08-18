@@ -223,7 +223,7 @@ function Portfolio({backgroundImage, project, title, href, id}){
               <Column>
                 
                   <Fade>
-                    <Project>{`Project ${project} of 6`}</Project>
+                    <Project>{`Project ${project} of 5`}</Project>
                     <Title>{title}</Title>
                   </Fade>
             
