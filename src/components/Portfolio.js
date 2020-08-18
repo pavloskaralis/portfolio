@@ -247,8 +247,8 @@ function Portfolio({backgroundImage, project, title, href, id}){
                         {project === '2' && <Text1/>}
                         {project === '3' && <Text7/>}
                         {project === '4' && <Text5/>}
-                        {project === '5' && <Text3/>}
-                        {project === '6' && <Text2/>}
+                        {/* {project === '5' && <Text3/>} */}
+                        {project === '5' && <Text2/>}
                       </Text>
                     </InnerWrap>
                   </Fade>
