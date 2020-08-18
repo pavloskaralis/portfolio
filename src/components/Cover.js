@@ -67,7 +67,7 @@ const FullStack = styled.div`
     box-sizing: border-box;
     text-align: right;
     z-index: ;
-    color: white;
+    color: white; 
     padding: 16px 32px;
     cursor: default;
 
@@ -232,7 +232,7 @@ let Cover = ({status}) => {
                 }
               </Icons>
             </IconsWrap>
-    
+                
             <FullStack>Fullstack Developer</FullStack>
           </> :
           <>
@@ -260,7 +260,7 @@ let Cover = ({status}) => {
               </IconsWrap>
             }
             {status && 
-              <FullStack>Full-Stack Developer</FullStack>        
+              <FullStack>Fullstack Developer</FullStack>        
             }
           </>
         }
