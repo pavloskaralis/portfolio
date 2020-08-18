@@ -76,7 +76,7 @@ const FullStack = styled.div`
     animation-timing-function: linear;
     animation-fill-mode: forwards; 
     animation-duration: .2s;
-    animation-delay: 1.5s;
+    animation-delay: 1.25s;
 
     @media (max-width: 1200px), (max-height: 732px) {
       font-size: 64px;
@@ -201,7 +201,7 @@ const projects = [
   {url: icon6, text: 'Astral', delay: '.5s', href:'#Astral'},
   {url: icon3, text: 'Spell ✓ It', delay: '.75s', href:'#SpellCheckIt'}, 
   // {url: icon4, text: 'Appstractor', delay: '1s', href:'#Appstractor'}, 
-  {url: icon5, text: 'Go Fish', delay: '1.25s', href:'#GoFish'}
+  {url: icon5, text: 'Go Fish', delay: '1s', href:'#GoFish'}
 ];
 
 let Cover = ({status}) => {
