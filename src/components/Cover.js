@@ -75,7 +75,7 @@ const FullStack = styled.div`
     animation: ${fade};
     animation-timing-function: linear;
     animation-fill-mode: forwards; 
-    animation-duration: .25s;
+    animation-duration: .2s;
     animation-delay: 1.5s;
 
     @media (max-width: 1200px), (max-height: 732px) {

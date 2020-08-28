@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
-import styled, {keyframes} from 'styled-components'
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 import Section from '../styles/Section.js'
 import cover from '../images/cell.jpg'
 import { connect } from 'react-redux'
 import toggleStatus from '../toggleStatus.js'
-import {useSelector} from 'react-redux'
 
 const mapDispatchToProps = {
   toggleStatus
@@ -33,7 +32,6 @@ const Wrapper = styled(Section)`
 
 
 let Canvas = ({toggleStatus}) => {
-    const status = useSelector(state => state.status);
   
     useEffect(()=> setTimeout(()=> toggleStatus(),0),[]);
       
@@ -87,21 +85,30 @@ let Canvas = ({toggleStatus}) => {
           const backgroundPostitonYMax = (i + 1) * (100/12) + (100/12 * shuffled[k]);
           const YDifference = (backgroundPostitonYMax - backgroundPositionYMin)/3
 
-          const delay = Math.random() * 1.8 + .2; 
           const cellStyle= {
-            opacity: status ? 1 : 0,
-            transition: `opacity .8s linear ${delay}s`,
             flexGrow: [1,3,5][randomC],
             backgroundImage: `url(${cover})`,
-            backgroundSize: '100000%',              
+            backgroundSize: '800%',              
             backgroundPositionX: blockStyle.flexDirection === 'row' ? `${backgroundPositionXMin + (XDifference * shuffled[k])}%` : `${backgroundPositionXMin}%`,
             backgroundPositionY: blockStyle.flexDirection === 'row' ?  `${backgroundPositionYMin}%` : `${backgroundPositionYMin + (YDifference * shuffled[k])}%`
           }
   
-          const cell = (
-            <div style={cellStyle}/>
-          )
-          cells.push(cell);
+          const Cell = () => {
+            const [visible, toggleVisible] = useState(false)
+            useEffect(()=> {
+              const delay = Math.random() * 3000 + 1400; 
+
+              const interval = setInterval(()=>{
+                toggleVisible(visible => !visible)
+              },delay)
+
+              return ()=> clearInterval(interval)
+            },[])
+            return <div style={{...cellStyle, opacity: visible ? 1 : 0, transition: 'opacity 1s ease-in'}}/>
+
+          }
+        
+          cells.push(<Cell/>);
         }
 
         const block = (
