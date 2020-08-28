@@ -81,21 +81,30 @@ const SideA = styled.div`
       font-weight: 600;
       width: 100%;
       white-space: nowrap;
- 
+      
+
       @media (max-width: 1200px), (max-height: 732px) {
         font-size: 64px;
+        line-height: 64x; 
       }
       @media (max-width: 992px) {
         font-size: 48px;
+        line-height: 48px; 
       }
       @media (max-width: 768px) {
         font-size: 32px;
+        line-height: 32px; 
+
       }
       @media (max-width: 576px) {
         font-size: 24px;
+        line-height: 24px; 
+
       }
       @media (max-width: 480px) {
         font-size: 18px;
+        line-height: 18px; 
+
       }
     `;
 
