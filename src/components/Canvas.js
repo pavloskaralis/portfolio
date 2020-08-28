@@ -96,7 +96,7 @@ let Canvas = ({toggleStatus}) => {
           const Cell = () => {
             const [visible, toggleVisible] = useState(false)
             useEffect(()=> {
-              const delay = Math.random() * 3000 + 1500; 
+              const delay = Math.random() * 2500 + 1500; 
 
               const interval = setInterval(()=>{
                 toggleVisible(visible => !visible)
