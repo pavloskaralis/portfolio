@@ -104,7 +104,7 @@ let Canvas = ({toggleStatus}) => {
 
               return ()=> clearInterval(interval)
             },[])
-            return <div style={{...cellStyle, opacity: visible ? 1 : 0, transition: 'opacity 1s ease-in'}}/>
+            return <div style={{...cellStyle, opacity: visible ? .85 : 0, transition: 'opacity 1s ease-in'}}/>
 
           }
         
