@@ -33,7 +33,10 @@ const Wrapper = styled(Section)`
 
 let Canvas = ({toggleStatus}) => {
   
-    useEffect(()=> setTimeout(()=> toggleStatus(),0),[]);
+    useEffect(()=> {
+      setTimeout(()=> toggleStatus(),0)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
       
     const rows = [];
 
@@ -49,7 +52,7 @@ let Canvas = ({toggleStatus}) => {
       }
 
       const row = (
-        <div style={rowStyle}>
+        <div key={Math.random() * 1000000} style={rowStyle}>
           {blocks}
         </div>
       )
@@ -103,16 +106,17 @@ let Canvas = ({toggleStatus}) => {
               },delay)
 
               return ()=> clearInterval(interval)
+              // eslint-disable-next-line react-hooks/exhaustive-deps
             },[])
             return <div style={{...cellStyle, opacity: visible ? .85 : 0, transition: 'opacity 1s linear'}}/>
 
           }
         
-          cells.push(<Cell/>);
+          cells.push(<Cell key={Math.random() * 1000000}/>);
         }
 
         const block = (
-          <div style={blockStyle}>
+          <div key={Math.random() * 1000000} style={blockStyle}>
             {cells}
           </div>
         )

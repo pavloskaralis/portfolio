@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Section from '../styles/Section.js'
-import Text1 from '../texts/Text1.js'
+// import Text1 from '../texts/Text1.js'
 import Text2 from '../texts/Text2.js'
 import Text3 from '../texts/Text3.js'
 // import Text4 from '../texts/Text4.js'
