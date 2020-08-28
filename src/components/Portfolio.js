@@ -243,11 +243,11 @@ function Portfolio({backgroundImage, project, title, href, id}){
                   <Fade>
                     <InnerWrap>
                       <Text>
-                        {project === '1' && <Text6/>}
-                        {project === '2' && <Text1/>}
+                        {project === '1' && <Text3/>}
+                        {project === '2' && <Text6/>}
+                        {/* {project === '2' && <Text1/>} */}
                         {project === '3' && <Text7/>}
                         {project === '4' && <Text5/>}
-                        {/* {project === '5' && <Text3/>} */}
                         {project === '5' && <Text2/>}
                       </Text>
                     </InnerWrap>

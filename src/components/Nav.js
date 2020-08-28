@@ -89,9 +89,9 @@ const LinkWrap = styled.div`
         @media (max-width: 1200px), (max-height: 732px) {
             color: white; 
         }
-        @media (max-width: 499px) {
+        @media (max-width: 768px) {
             font-size: 14px;
-            margin: 0 6px;
+            margin: 0;
         }
     }
 
@@ -114,22 +114,18 @@ function Cover(){
         //current scroll height 
         const [scroll, setScroll] = useState(container.current.scrollTop)
 
+
         useEffect( () => {
-
             container.current = document.querySelector('#container');
-           
-            
-            const onScroll = () => {
-                //if viewing cover
-                // const scrollCheck1 = container.current.scrollTop >= 0 && container.current.scrollTop <= 950;
-                //if viewing past cover, buffering every 2 pixels 
-                // const scrollCheck2 = container.current.scrollTop >= 950 && container.current.scrollTop%2 === 0;
-            
 
-                // if (scrollCheck1 || scrollCheck2) {
-                    //reset current scroll height
-                    setScroll(container.current.scrollTop);        
-                // }
+            let resizing = false; 
+            const toggleResizing = () => {
+                resizing = true; 
+            }
+
+            let scrolling = false; 
+            const toggleScrolling = () => {
+                scrolling = true; 
             }
 
             const onResize = () => {
@@ -138,14 +134,30 @@ function Cover(){
                     setMaxHeight(container.current.scrollHeight)
                 }
             }
-            //sync method to resize event listener 
-            window.onresize = onResize;
-            //add scroll event listener to app.js
-            container.current.addEventListener('scroll', onScroll, {
-                capture: true,
-                passive: true
-            });
-    
+
+            const onScroll = () => {
+                setScroll(container.current.scrollTop);        
+            }
+     
+            //throttling
+            setInterval(() => {
+                if (resizing) {
+                    resizing = false
+                    onResize();
+                }
+                if (scrolling) {
+                    scrolling = false
+                    onScroll(); 
+                }
+            },250);
+        
+            window.addEventListener('resize', toggleResizing);
+            container.current.addEventListener('scroll', toggleScrolling);
+
+            return ()=> {
+                window.removeEventListener('resize', toggleResizing);
+                window.removeEventListener('scroll',toggleScrolling) 
+            }
             
     }, [scroll, container.current.scrollHeight, maxHeight])
 
@@ -171,7 +183,7 @@ function Cover(){
             <Title href='/' color={ (scroll >= (maxHeight * .08) && scroll <= (maxHeight * .18)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }><div>Pavlos<span>Karalis</span></div></Title>
             <LinkWrap color={ (scroll >= (maxHeight * .08) && scroll <= (maxHeight * .18)) || (scroll >= (maxHeight * .77) && scroll <= (maxHeight * .88)) ? 'black' : 'white' }>
                 <a href='/#About' onClick={onClick}>About</a>
-                <a href='/#CafeRacers' onClick={onClick}>Portfolio</a>
+                <a href='/#Appstractor' onClick={onClick}>Portfolio</a>
                 <a href='/#Technologies' onClick={onClick}>Technologies</a>
                 {/* <a href='/#Photography' onClick={onClick}>Photography</a> */}
             </LinkWrap>

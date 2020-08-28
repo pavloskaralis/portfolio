@@ -1,19 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, {keyframes} from 'styled-components'
 import Section from '../styles/Section.js'
 import cover from '../images/cell.jpg'
 import { connect } from 'react-redux'
 import toggleStatus from '../toggleStatus.js'
-
+import {useSelector} from 'react-redux'
 
 const mapDispatchToProps = {
   toggleStatus
 }
-
-const fade = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
 
 
 const Wrapper = styled(Section)`
@@ -22,8 +17,8 @@ const Wrapper = styled(Section)`
   min-width: calc(100vw - 32px);
   display: flex;
   justify-content: space-evenly;
-  flex-direction: row-reverse;
-  flex-wrap: wrap-reverse; 
+  flex-direction: row;
+  flex-wrap: wrap; 
   pointer-events: none;
   opacity: 1;
   overflow: hidden; 
@@ -35,112 +30,97 @@ const Wrapper = styled(Section)`
   }
 `;
 
-const Block = styled.div.attrs(props => ({
-  style: {
-    flexDirection: props.blockDirection,
-    minWidth: props.blockWidth
-  },
-}))`
-  display: flex; 
-  max-height: 8.5%;
-  min-height: 8.5%;
-  overflow: hidden; 
-`;
 
-
-const Cell = styled.div.attrs(props => ({
-  style: {
-    minWidth: props.cellWidth,
-    minHeight: props.cellHeight,
-    backgroundPositionX: props.cellX,
-    backgroundPositionY: props.cellY,
-    animationDelay: props.delay
-  },
-}))`
-  width: 100%;
-  height: 100%; 
-  background-image: url(${cover});
-  background-size: 800%;
-  animation: ${fade};
-  animation-timing-function: ease-out;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-duration: ${props => props.duration};
-  opacity: 0;
-
-  // animation-fill-mode: forwards;
-`;
 
 let Canvas = ({toggleStatus}) => {
-   
-    const blocks = [];
-
-    const promise = async () => {
-
-
-      let x = 95;
-      let y = 95; 
-      let base = 0;
+    const status = useSelector(state => state.status);
+  
+    useEffect(()=> setTimeout(()=> toggleStatus(),0),[]);
+      
+    const rows = [];
 
 
-      const loop = () => { 
-          for(let i = 0; i < 170; i ++) {
-          //cell quantity
-          const r1 = Math.floor(Math.random() * 3 + 3);
-          //block direction
-          const r2 = Math.round(Math.random());
-          //block width
-          const r3 = Math.round(Math.random());
+    for(let i = 0; i < 12; i++){
 
-          const cells = [];
-          
-          for(let j = 0; j < r1; j ++) {
-          //cell size
-            const r4 = Math.floor(Math.random() * 3);
-            //x position 
-            const r5 = Math.floor(Math.random() * 3);
-            //y position 
-            const r6 = Math.floor(Math.random() * 3);
-            //delay
-            const r7 = Math.floor(Math.random() * 3);
+      const blocks = [];
 
-            cells.push({
-                maxWidth: r2 === 0 ? ['10%','20%','30%'][r4] : '100%',
-                maxHeight: r2 === 1 ? ['10%','20%','40%'][r4] : '100%',
-                posX: `${[x - 40, x, x + 40][r5]}%`,
-                posY: `${[y - 10, y, y + 10][r6]}%`,
-                key: j,
-                delay: [base, base + .5, base + 1][r7],
-                duration: (Math.floor(Math.random() * 5) + 1) * 1.3
-            })
-          }
-
-          x -= 6.5;
-          if(x < 0) x = 95;
-          if((i%14 === 0) && (i > 13)) y -= 7.5;
-          if((i%14 === 0) && (i > 13)) base += .21;
-
-          blocks.push(
-          <Block blockDirection={r2 === 0 ? 'row' : 'column'} blockWidth={r3 === 0 ? '5%' : '8%'} key={i} id={i}>
-              {cells.map(cell => {
-                  return(
-                  <Cell key={`${i}${cell.key}`} duration={`${cell.duration}s`} delay={`${cell.delay}s`} cellX={cell.posX} cellY={cell.posY} cellWidth={cell.maxWidth} cellHeight={cell.maxHeight}  background={`rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`}/>
-                  )
-              })}
-          </Block>
-          )     
-        }
+      const rowStyle= {
+        width: '100%',
+        display: 'flex',
+        flexGrow: 1,
       }
 
-      await loop();
-      toggleStatus();
+      const row = (
+        <div style={rowStyle}>
+          {blocks}
+        </div>
+      )
+
+      for(let j = 0; j < 18; j++){
+        const cells = []; 
+
+        const randomA = Math.round(Math.random() * 2);
+        const randomB = Math.round(Math.random() * 1);
+
+        const blockStyle= {
+          display: 'flex',
+          flexGrow: [1,2,3][randomA],
+          flexDirection: ['column','row'][randomB],
+        }
+
+        let shuffled = [0,1,2];
+        for(let l = 0; l < shuffled.length; l++){
+          let randomD = Math.round(Math.random() * 2);
+          let temp = shuffled[l];
+          shuffled[l] = shuffled[randomD];
+          shuffled[randomD] = temp; 
+        }
+
+        for(let k = 0; k < 3; k++ ){
+          const randomC = Math.round(Math.random() * 2);
+
+          const backgroundPositionXMin = j * (100/18) + (100/18 * shuffled[k]);
+          const backgroundPositionXMax = (j + 1) * (100/18) + (100/18 * shuffled[k]);
+          const XDifference = (backgroundPositionXMax - backgroundPositionXMin)/3
+
+          const backgroundPositionYMin = i * (100/12) + (100/12 * shuffled[k]);
+          const backgroundPostitonYMax = (i + 1) * (100/12) + (100/12 * shuffled[k]);
+          const YDifference = (backgroundPostitonYMax - backgroundPositionYMin)/3
+
+          const delay = Math.random() * 1.8 + .2; 
+          const cellStyle= {
+            opacity: status ? 1 : 0,
+            transition: `opacity .8s linear ${delay}s`,
+            flexGrow: [1,3,5][randomC],
+            backgroundImage: `url(${cover})`,
+            backgroundSize: '100000%',              
+            backgroundPositionX: blockStyle.flexDirection === 'row' ? `${backgroundPositionXMin + (XDifference * shuffled[k])}%` : `${backgroundPositionXMin}%`,
+            backgroundPositionY: blockStyle.flexDirection === 'row' ?  `${backgroundPositionYMin}%` : `${backgroundPositionYMin + (YDifference * shuffled[k])}%`
+          }
+  
+          const cell = (
+            <div style={cellStyle}/>
+          )
+          cells.push(cell);
+        }
+
+        const block = (
+          <div style={blockStyle}>
+            {cells}
+          </div>
+        )
+
+        blocks.push(block)
+
+      }
+
+      rows.push(row);
     }
 
-    promise();
 
   return (
       <Wrapper> 
-        {blocks}
+        {rows}
       </Wrapper>
   )
 }
