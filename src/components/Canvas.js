@@ -88,7 +88,7 @@ let Canvas = ({toggleStatus}) => {
           const cellStyle= {
             flexGrow: [1,3,5][randomC],
             backgroundImage: `url(${cover})`,
-            backgroundSize: '800%',              
+            backgroundSize: '1000%',              
             backgroundPositionX: blockStyle.flexDirection === 'row' ? `${backgroundPositionXMin + (XDifference * shuffled[k])}%` : `${backgroundPositionXMin}%`,
             backgroundPositionY: blockStyle.flexDirection === 'row' ?  `${backgroundPositionYMin}%` : `${backgroundPositionYMin + (YDifference * shuffled[k])}%`
           }
@@ -96,7 +96,7 @@ let Canvas = ({toggleStatus}) => {
           const Cell = () => {
             const [visible, toggleVisible] = useState(false)
             useEffect(()=> {
-              const delay = Math.random() * 3000 + 1400; 
+              const delay = Math.random() * 3000 + 1500; 
 
               const interval = setInterval(()=>{
                 toggleVisible(visible => !visible)
@@ -104,7 +104,7 @@ let Canvas = ({toggleStatus}) => {
 
               return ()=> clearInterval(interval)
             },[])
-            return <div style={{...cellStyle, opacity: visible ? 1 : 0, transition: 'opacity 1s ease-in'}}/>
+            return <div style={{...cellStyle, opacity: visible ? 1 : 0, transition: 'opacity 1.2s ease-in'}}/>
 
           }
         
