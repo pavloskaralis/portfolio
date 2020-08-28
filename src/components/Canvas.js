@@ -99,7 +99,7 @@ let Canvas = ({toggleStatus}) => {
           const Cell = () => {
             const [visible, toggleVisible] = useState(false)
             useEffect(()=> {
-              const delay = Math.random() * 2500 + 1500; 
+              const delay = Math.random() * 2500 + 1250; 
 
               const interval = setInterval(()=>{
                 toggleVisible(visible => !visible)
@@ -108,7 +108,7 @@ let Canvas = ({toggleStatus}) => {
               return ()=> clearInterval(interval)
               // eslint-disable-next-line react-hooks/exhaustive-deps
             },[])
-            return <div style={{...cellStyle, opacity: visible ? .85 : 0, transition: 'opacity 1s linear'}}/>
+            return <div style={{...cellStyle, opacity: visible ? .95 : 0, transition: 'opacity 1s linear'}}/>
 
           }
         

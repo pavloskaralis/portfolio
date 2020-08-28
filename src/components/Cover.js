@@ -76,7 +76,7 @@ const FullStack = styled.div`
     animation-timing-function: linear;
     animation-fill-mode: forwards; 
     animation-duration: .2s;
-    animation-delay: 1.5s;
+    animation-delay: 1.25s;
 
     @media (max-width: 1200px), (max-height: 732px) {
       font-size: 64px;
@@ -197,11 +197,11 @@ const IconText = styled('div')`
 
 const projects = [
   {url: icon4, text: 'Appstractor', delay: '0s', href:'#Appstractor'}, 
-  {url: icon1, text: 'Café Racers', delay: '.3s', href:'#CafeRacers'}, 
+  {url: icon1, text: 'Café Racers', delay: '.25s', href:'#CafeRacers'}, 
   // {url: icon2, text: 'Traveler', delay: '.25s', href:'#Traveler'}, 
-  {url: icon6, text: 'Astral', delay: '.65s', href:'#Astral'},
-  {url: icon3, text: 'Spell ✓ It', delay: '.9s', href:'#SpellCheckIt'}, 
-  {url: icon5, text: 'Go Fish', delay: '1.2s', href:'#GoFish'}
+  {url: icon6, text: 'Astral', delay: '.5s', href:'#Astral'},
+  {url: icon3, text: 'Spell ✓ It', delay: '.75s', href:'#SpellCheckIt'}, 
+  {url: icon5, text: 'Go Fish', delay: '1s', href:'#GoFish'}
 ];
 
 let Cover = ({status}) => {
