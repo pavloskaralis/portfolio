@@ -91,7 +91,7 @@ let Canvas = ({toggleStatus}) => {
           const cellStyle= {
             flexGrow: [1,3,5][randomC],
             backgroundImage: `url(${cover})`,
-            backgroundSize: '1000%',              
+            backgroundSize: '800%',              
             backgroundPositionX: blockStyle.flexDirection === 'row' ? `${backgroundPositionXMin + (XDifference * shuffled[k])}%` : `${backgroundPositionXMin}%`,
             backgroundPositionY: blockStyle.flexDirection === 'row' ?  `${backgroundPositionYMin}%` : `${backgroundPositionYMin + (YDifference * shuffled[k])}%`
           }
