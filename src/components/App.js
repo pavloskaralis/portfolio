@@ -58,10 +58,10 @@ let App = () => {
     <Wrapper id="container">
       <Cover/>
       <About/>
-      <Portfolio id='Appstractor' backgroundImage={portfolio3} project='1' title='Appstractor' href='http://www.appstractorart.com/' />
+      <Portfolio id='Appstractor' backgroundImage={portfolio3} project='1' title='Appstractor' href='https://www.appstractorart.com/' />
       <Portfolio id='CafeRacers' backgroundImage={portfolio6} project='2' title='Cafe Racers' href='https://cafe-racers.herokuapp.com/' />
       {/* <Portfolio id='Traveler' backgroundImage={portfolio1} project='3' title='Traveler' href='https://traveler-planning-app.herokuapp.com/' /> */}
-      <Portfolio id='Astral' backgroundImage={portfolio7} project='3' title='Astral' href='http://astral-chat-app.herokuapp.com/' />
+      <Portfolio id='Astral' backgroundImage={portfolio7} project='3' title='Astral' href='https://astral-chat-app.herokuapp.com/' />
       <Portfolio id='SpellCheckIt' backgroundImage={portfolio5} project='4' title='Spell &#x2713; It' href='https://spell-check-it.herokuapp.com//' />
       <Portfolio id='GoFish' backgroundImage={portfolio2} project='5' title='Go Fish' href='https://pavloskaralis.github.io/go-fish/' />
       {/* <Portfolio id='portfolio5' backgroundImage={portfolio4} project='5' title='Foodie' href='https://foodie-list-app.herokuapp.com/' /> */}
